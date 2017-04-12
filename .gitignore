@@ -1,0 +1,11 @@
+.DS_Store
+*.aux
+*.log
+*.nav
+*.out
+*.pdf
+*.snm
+*.synctex.gz
+*.toc
+References.bib
+*.html
