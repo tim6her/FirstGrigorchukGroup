@@ -74,6 +74,9 @@
 %\setbeamertemplate{navigation symbols}{}
 %\setbeamertemplate{blocks}[default]
 
+% Tightlist for pandoc
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 \renewcommand{\arraystretch}{1.5}
 
@@ -105,28 +108,30 @@
 \usepackage{nicefrac}
 
 \begin{document}
-\begin{frame}
-\maketitle
-\end{frame}
-\section{Burnside's Problems}
-
-\subsection{Problem Statement}
-
-\begin{frame}{Periodic Groups}
-    \begin{defin}
-        A group $G$ is called \emph{periodic} if for each element $a \in G$ there exists an integer $ n > 0 $ such that $a^n = e$.
-    \end{defin}
-
-    \begin{exam}<2>
-        \begin{itemize}
-            \item Every finite group is periodic.
-            \item The direct sum of cyclic groups
-            \[\bigoplus_{i=2}^\infty \nicefrac \Z{i\Z}\]
-            is periodic.
-        \end{itemize}
-    \end{exam}
-\end{frame}
-
+  \begin{frame}
+    \maketitle
+  \end{frame}
+  
+  \include{index}
+%\section{Burnside's Problems}
+%
+%\subsection{Problem Statement}
+%
+%\begin{frame}{Periodic Groups}
+%    \begin{defin}
+%        A group $G$ is called \emph{periodic} if for each element $a \in G$ there exists an integer $ n > 0 $ such that $a^n = e$.
+%    \end{defin}
+%
+%    \begin{exam}<2>
+%        \begin{itemize}
+%            \item Every finite group is periodic.
+%            \item The direct sum of cyclic groups
+%            \[\bigoplus_{i=2}^\infty \nicefrac \Z{i\Z}\]
+%            is periodic.
+%        \end{itemize}
+%    \end{exam}
+%\end{frame}
+%
 %\begin{frame}{Periodic Groups}
 %\begin{defin}
 %    A group $G$ is called \emph{periodic} if for each group element $a \in G$ there exists an integer $n_a > 0$ such that $a^{n_a} = 1$. 

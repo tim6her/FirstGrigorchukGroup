@@ -9,3 +9,7 @@
 *.toc
 References.bib
 *.html
+*.lb
+*.fdb_latexmk
+*.fls
+index.tex
