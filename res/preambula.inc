@@ -38,6 +38,7 @@
 
 \tikzstyle{bgn}=[node distance=6mm, font=normal]
 \tikzstyle{hlarrow}=[<->, shorten <=1pt, shorten >=1pt, draw=cHighlight, thick]
+\tikzstyle{walk}=[line width=5pt, line join=round, triangle 90  cap reversed-stealth, draw=cHighlight]
 
 \tikzstyle{level 1}=[sibling distance=60mm]
 \tikzstyle{level 2}=[sibling distance=30mm]

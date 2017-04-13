@@ -1,0 +1,17 @@
+
+\input{preambula.inc}
+
+\begin{tikzpicture}[scale=3, transform shape]
+
+\foreach \name/\angle/\text in {P-4/234/4, P-5/162/5, P-1/90/1, P-2/18/2, P-3/-54/3}
+    \node (\name) at (\angle:1cm) {$\text$};
+\foreach \name/\angle in {R-4/234, R-5/162, R-1/90, R-2/18/2, R-3/-54}
+    \node[draw=none, minimum size=2mm] (\name) at (\angle:1cm) {};
+\foreach \from/\to in {1/2,2/3,3/4,4/5,5/1,2/4,3/5,5/2}
+     \draw[draw=cLines, very thick] (P-\from) -- (P-\to);
+     
+\draw[walk] (R-1) -- (R-2.base) -- (R-4.base) -- (R-3.base) -- (R-5.base) -- (R-1);
+
+\end{tikzpicture}
+
+\end{document}
