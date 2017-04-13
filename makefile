@@ -1,5 +1,7 @@
 pdf:
 	pandoc -t beamer --biblio References.bib --slide-level 2 presentation.md -o index.tex
+	sed -i -e 's/.svg}/}/g' index.tex
+	sed -i -e 's/\\caption{.*}/ /g' index.tex
 	latexmk -xelatex BurnsidesProblem.tex
 
 revealjs:
