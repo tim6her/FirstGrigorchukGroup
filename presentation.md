@@ -68,10 +68,32 @@ The answer to [UBP][Unbounded Burnside Problem] is affirmative by the [fundament
 
 ![A Graph](res/Graph.svg){ height=30% }
 
- * Graph
- * Walk
- * Path
- * connected
- * adjacent
+A (simple) *graph* is a pair of two sets $(V,E)$, where $V$ is non-empty and $E$ is a subset of all unordered pairs $\lbrace v_1,v_2\rbrace\in\mathcal{P}(V)$ that fulfil $v_1\neq v_2$. The set $V$ is called the \emph{vertex set} and $E$ the \emph{edge set} of the graph $(V,E)$.
+
+## Walks
+
+![A 4 − 3-Walk](res/Walk.svg){ height=30% }
+
+A *$u-v$-walk* is a finite sequence $(u=v_0,\seq{v}=v)$ in which $\lbrace v_{i-1},v_i\rbrace\in E$ for $1\leq i\leq n$.
+
+## Paths
+
+![A Path](res/Path.svg){ height=30% }
+
+A *$u-v$-path* is a $u-v$-walk, such that all vertices in the walk except $u$ and $v$ differ pairwise.
+
+## Cycles
+
+![A Cycle](res/Cycle.svg){ height=30% }
+
+An $u-u$-path $(u=v_0,\seq{v}=u)$ is called *cycle* if it contains more than $2$ vertices.
+
+## Graph-Automorphism
+
+![An Automorphism](res/Automorphism.svg){ height=30% }
+
+Let $G = (V, E)$ be a graph.
+A mapping $\phi \colon V \to V$ is called *graph-automorphism* of $G$ if
+$$\lbrace v_1,v_2\rbrace\in E_1 \Leftrightarrow \lbrace.$$
 
 ---
