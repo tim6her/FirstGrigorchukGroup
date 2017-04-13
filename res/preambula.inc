@@ -31,7 +31,7 @@
 \colorlet{cLeft}{moderatered}
 \colorlet{cRight}{verysofblue}
 
-\tikzstyle{every node}=[circle,draw=cLines,font=\small,text=cLines,inner sep=1pt, minimum size=5mm]
+\tikzstyle{every node}=[circle,draw=cLines,font=\small,text=cLines,inner sep=1pt, minimum size=5mm, very thick]
 \tikzstyle{edge from parent}=[draw=cLines]
 \tikzstyle{st}=[cLeft, line join=round, line width=2mm]
 \tikzstyle{st1}=[cRight, line join=round, line width=2mm]

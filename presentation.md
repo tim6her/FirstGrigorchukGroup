@@ -66,7 +66,7 @@ The answer to [UBP][Unbounded Burnside Problem] is affirmative by the [fundament
 
 ## Graphs
 
-![Graph](res/Graph.png)
+![A Graph](res/Graph.svg){ height=30% }
 
  * Graph
  * Walk

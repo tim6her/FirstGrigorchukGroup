@@ -8,7 +8,7 @@
 #                     $pdf_update_method = 0;
 
 
-EDITOR   ?= gedit
+EDITOR   ?= mate
 TEXFILES := $(wildcard *.tex)
 PDFFILES := $(TEXFILES:.tex=.pdf)
 
@@ -19,7 +19,7 @@ PDFFILES := $(TEXFILES:.tex=.pdf)
 all: ${PDFFILES}
 
 %.pdf: %.tex
-	latexmk -pdf -pdflatex="pdflatex" $<
+	latexmk -pdf -xelatex $<
 
 clean:
 	latexmk -c
