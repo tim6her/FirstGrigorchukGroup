@@ -1,0 +1,58 @@
+\input{preambula.inc}%
+\begin{tikzpicture}[level distance=7.5mm, baseline=(b.base)]
+\node (b) {$\emptyset$}
+  child foreach \i in {0,1} {node {$\i$}
+ {child foreach \j in {0,1} {node {$\j$}
+ {child foreach \k in {0,1} {node {$\k$}
+ }}}}};
+
+\begin{scope}[node distance=7mm, font=normall]
+\node[draw=none,rectangle] [above of=b] (ST) {$b$};
+
+\node[draw=none] [above of=b-1] (ST0) {$a$};
+\node[draw=none] [above of=b-2] (ST1) {$c$};
+\end{scope}
+
+\begin{scope}[bgn]
+\node[draw=none] [above of=b-2-1] (ST10) {$a$};
+\node[draw=none] [above of=b-2-2] (ST11) {$d$};
+\end{scope}
+
+\begin{scope}[bgn]
+\tikzstyle{every node}=[rectangle,draw=none,font=\scriptsize]
+
+\path[hlarrow] (b-1-1) .. controls +(1.5,-0.5) .. (b-1-2);
+
+\path[hlarrow] (b-2-1-1) .. controls +(0.75,-0.5) .. (b-2-1-2);
+
+\path (b-1-1-1) ++(0,-8mm) -- ++(-155:18mm) node[midway,sloped] {$\beta_3(0,1,0)=3$};
+\path (b-1-1-2) ++(0,-8mm) -- ++(-155:18mm) node[midway,sloped] {$\beta_3(0,1,1)=4$};
+\path (b-1-2-1) ++(0,-8mm) -- ++(-155:18mm) node[midway,sloped] {$\beta_3(0,0,0)=1$};
+\path (b-1-2-2) ++(0,-8mm) -- ++(-155:18mm) node[midway,sloped] {$\beta_3(0,0,1)=2$};
+
+\path (b-2-1-1) ++(0,-8mm) -- ++(-155:18mm) node[midway,sloped] {$\beta_3(1,0,1)=6$};
+\path (b-2-1-2) ++(0,-8mm) -- ++(-155:18mm) node[midway,sloped] {$\beta_3(1,0,0)=5$};
+\path (b-2-2-1) ++(0,-8mm) -- ++(-155:18mm) node[midway,sloped] {$\beta_3(1,1,0)=7$};
+\path (b-2-2-2) ++(0,-8mm) -- ++(-155:18mm) node[midway,sloped] {$\beta_3(1,1,1)=8$};
+\end{scope}
+
+\node[fill=black!20] at (b-1-1) {$1$};
+\node[fill=black!20] at (b-1-2) {$0$};
+
+\node[fill=black!40] at (b-2-1-1) {$1$};
+\node[fill=black!40] at (b-2-1-2) {$0$};
+
+
+
+\begin{pgfonlayer}{background}
+
+%\filldraw[st] 	(ST0.north)  -- (b-1-2.north east) -- (b-1-2-2.east) to[out=-45,in=0] (b-1-2-2.south) --(b-1-1-1.south) to[out=-180,in=225] (b-1-1-1.west) -- (b-1-1.north west) -- cycle;
+\filldraw[black!20,line width=10mm, line join=round] 	(ST0.base)  -- (b-1-2.base) -- (b-1-2-2.base) --(b-1-1-1.base)  -- (b-1-1.base) -- cycle;
+\filldraw[black!20,line width=10mm, line join=round] 	(ST1.base)  -- (ST11.base) -- (b-2-2-2.base) -- (b-2-1-1.base) -- (ST10.base) -- cycle;
+
+\filldraw[black!40,line width=10mm, line join=round] 	(ST10.base) -- (b-2-1-1.base)  -- (b-2-1-2.base)  -- cycle;
+\filldraw[black!40,line width=10mm, line join=round] 	(ST11.base) -- (b-2-2-1.base)  -- (b-2-2-2.base)  -- cycle;
+\end{pgfonlayer}
+\end{tikzpicture}
+%
+\end{document}

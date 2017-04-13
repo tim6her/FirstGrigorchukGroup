@@ -1,0 +1,23 @@
+\input{preambula.inc}
+\begin{tikzpicture}[level distance=7.5mm, baseline=(b.base)]
+\node (b) {$\emptyset$}
+  child foreach \i in {0,1} {node {$\i$}
+ {child foreach \j in {0,1} {node {$\j$}
+ {child foreach \k in {0,1} {node {$\k$}
+ }}}}};
+
+\begin{scope}[bgn]
+\tikzstyle{every node}=[rectangle,draw=none,font=\small]
+\path[hlarrow] (b-1) .. controls +(3,-0.5) .. (b-2) node [draw=none, midway, above] {$a$};
+
+\path[hlarrow] (b-1-1) .. controls +(1.5,-0.5) .. (b-1-2) node [draw=none, midway, above] {$c$};
+\path[hlarrow] (b-2-1) .. controls +(1.5,-0.5) .. (b-2-2) node [draw=none, midway, above] {$aca$};
+
+\path[hlarrow] (b-1-1-1) .. controls +(0.75,-0.5) .. (b-1-1-2) node [draw=none, midway, below] {$ada$};
+\path[hlarrow] (b-1-2-1) .. controls +(0.75,-0.5) .. (b-1-2-2) node [draw=none, midway, below] {$cadac$};
+\path[hlarrow] (b-2-1-1) .. controls +(0.75,-0.5) .. (b-2-1-2) node [draw=none, midway, below] {$d$};
+\path[hlarrow] (b-2-2-1) .. controls +(0.75,-0.5) .. (b-2-2-2) node [midway, below] {$acadaca$};
+\end{scope}
+\end{tikzpicture}
+
+\end{document}

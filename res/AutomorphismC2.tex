@@ -1,0 +1,31 @@
+\input{preambula.inc}
+\begin{tikzpicture}[level distance=7.5mm, baseline=(b.base)]
+\node (b) {$\emptyset$}
+  child foreach \i in {0,1} {node {$\i$}
+ {child foreach \j in {0,1} {node {$\j$}
+ {child foreach \k in {0,1} {node {$\k$}
+ {child foreach \l in {0,1} {node {$\l$}
+ {child foreach \m in {0,1} {coordinate edge from parent[dashed]}}}}}}}}};
+
+\node[very thick, fill=black, text=white] at (b-2-2-1-1) {$0$};	
+\foreach \from/\to in {b/b-2,b-2/b-2-2,b-2-2/b-2-2-1,b-2-2-1/b-2-2-1-1}
+	\node[very thick] at (\from) {}
+	edge[very thick] (\to);
+
+\begin{scope}[bgn]
+\node[draw=none] [above of=b-2-1] (ST0) {$\id$};
+\node[draw=none] [above of=b-2-2] (ST1) {$b$};
+\end{scope}
+
+\begin{pgfonlayer}{background}
+\filldraw[st] (ST0.north)  -- (b-2-1-1.west) -- (b-2-1-1-1.west) -- (b-2-1-1-1-1) -- (b-2-1-2-2-2) -- (b-2-1-2-2.east) -- (b-2-1-2.east) -- cycle;
+\filldraw[st] (ST1.north) -- (b-2-2-1.west) -- (b-2-2-1-1.west) -- (b-2-2-1-1-1) -- (b-2-2-2-2-2) -- (b-2-2-2-2.east) -- (b-2-2-2.east) -- cycle; 
+\end{pgfonlayer}
+
+\path[hlarrow] (b-1-1) .. controls +(1.5,-0.5) .. (b-1-2);
+
+\node[fill=white] at (b-1-1) {$1$};
+\node[fill=white] at (b-1-2) {$0$};
+\end{tikzpicture}
+
+\end{document}
