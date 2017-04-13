@@ -285,7 +285,7 @@ h1.title {
     margin: 15px 0px;
     background: rgba(255, 255, 255, 0.12);
     position: relative;
-    left: 50%;
+    left: 20%;
     @include translateX(-50%);
     max-height: 100%;
 /*    border: 4px solid #000;
