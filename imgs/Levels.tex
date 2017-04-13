@@ -7,11 +7,17 @@
  {child foreach \l in {0,1} {node {$\l$}
  {child foreach \m in {0,1} {coordinate edge from parent[dashed]}}}}}}}}};
 
-\node[highlight, fill=cLeft] at (b-1-1-2-2) {$1$};	
-\foreach \from/\to in {b/b-1,b-1/b-1-1,b-1-1/b-1-1-2,b-1-1-2/b-1-1-2-2}
-  {
-    \node[highlight] at (\from) {} edge[highlight] (\to);
-  }
+\begin{scope}[bgn]
+\path (b-2-2) +(2, 0) node[draw=none] (L2) {$\mathrm{L}(2)$};
+\coordinate[above right of=L2] (UR);
+\coordinate[below left of=b-1-1] (LL);
+\end{scope}
+
+
+
+\begin{pgfonlayer}{background}
+\filldraw[st, line width=4mm] (L2.north east) rectangle (b-1-1.south west);
+\end{pgfonlayer}
 \end{tikzpicture}
 
 \end{document}

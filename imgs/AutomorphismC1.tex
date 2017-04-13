@@ -1,5 +1,5 @@
 \input{preambula.inc}
-\begin{tikzpicture}[level distance=7.5mm, baseline=(b.base)]
+\begin{tikzpicture}[level distance=7.5mm, baseline=(b.base), scale=1.8, transform shape]
 \node (b) {$\emptyset$}
   child foreach \i in {0,1} {node {$\i$}
  {child foreach \j in {0,1} {node {$\j$}
@@ -7,10 +7,10 @@
  {child foreach \l in {0,1} {node {$\l$}
  {child foreach \m in {0,1} {coordinate edge from parent[dashed]}}}}}}}}};
 
-\node[very thick, fill=black, text=white] at (b-2-2-1-1) {$0$};	
+\node[highlight, fill=verymoderatered] at (b-2-2-1-1) {$0$};	
 \foreach \from/\to in {b/b-2,b-2/b-2-2,b-2-2/b-2-2-1,b-2-2-1/b-2-2-1-1}
-	\node[very thick] at (\from) {}
-	edge[very thick] (\to);
+	\node[highlight] at (\from) {}
+	edge[highlight] (\to);
 
 \begin{scope}[bgn]
 \node[draw=none] [above of=b-1] (ST0) {$a$};

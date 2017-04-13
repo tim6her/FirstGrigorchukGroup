@@ -11,7 +11,7 @@
 
 
 \DeclareMathOperator{\End}{\mathrm{End}}
-\DeclareMathOperator{\aut}{\mathrm{Aut}}
+\DeclareMathOperator{\Aut}{\mathrm{Aut}}
 
 \newcommand{\seq}[2][n]{#2_1,\ldots, #2_{#1}}
 \newcommand{\T}{T^{(2)}}

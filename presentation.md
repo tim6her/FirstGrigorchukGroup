@@ -32,6 +32,7 @@ for all elements $a$ of a group $G$, we say $G$ *is of exponent* $N$.
 ### Example
 Let $\F_2$ be the field of order 2. Then the polynomials $\mathbb F_2[X]$ over $\F_2$ form a group of exponent $2$ w. r. t. addition.
 
+
 ## Bounded Burnside Problem
 > A still undecided problem in the theory of discontinuous groups is whether the order of a group may be not finite while the order of every operation it contains is finite.  
 > — [@burnside1902]
@@ -59,10 +60,13 @@ by the [fundamental theorem of finitely generated abelian groups.](https://en.wi
 
 ## Special Case: Exponent $2$
 If the group is of exponent $2$ then it is abelian since
-$$ (ab)(ab) = e (ab)(ba). $$
+$$ (ab)(ab) = e = (ab)(ba). $$
 The answer to [UBP][Unbounded Burnside Problem] is affirmative by the [fundamental theorem of finitely generated abelian groups.](https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Classification)
 
+
+
 # Graphtheoretical Preliminaries
+
 
 ## Graphs
 
@@ -70,11 +74,13 @@ The answer to [UBP][Unbounded Burnside Problem] is affirmative by the [fundament
 
 A (simple) *graph* is a pair of two sets $(V,E)$, where $V$ is non-empty and $E$ is a subset of all unordered pairs $\lbrace v_1,v_2\rbrace\in\mathcal{P}(V)$ that fulfil $v_1\neq v_2$. The set $V$ is called the *vertex set* and $E$ the *edge set* of the graph $(V,E)$.
 
+
 ## Walks
 
 ![A 4 − 3-Walk](res/Walk.svg){ height=30% }
 
 A *$u-v$-walk* is a finite sequence $(u=v_0,\seq{v}=v)$ in which $\lbrace v_{i-1},v_i\rbrace\in E$ for $1\leq i\leq n$.
+
 
 ## Paths
 
@@ -82,13 +88,15 @@ A *$u-v$-walk* is a finite sequence $(u=v_0,\seq{v}=v)$ in which $\lbrace v_{i-1
 
 A *$u-v$-path* is a $u-v$-walk, such that all vertices in the walk except $u$ and $v$ differ pairwise.
 
+
 ## Cycles
 
 ![A Cycle](res/Cycle.svg){ height=30% }
 
 An $u-u$-path $(u=v_0,\seq{v}=u)$ is called *cycle* if it contains more than $2$ vertices.
 
-## Graph-Automorphism
+
+## Graph-Automorphisms
 
 ![An Automorphism](res/Automorphism.svg){ height=30% }
 
@@ -98,16 +106,16 @@ An $u-u$-path $(u=v_0,\seq{v}=u)$ is called *cycle* if it contains more than $2$
 
 . . .
 
-* The set $\aut(G)$ forms a group w. r. t. composition.
+* The set $\Aut(G)$ of all automorphisms of $G$ forms a group w. r. t. composition.
 
 
 ## The Full Binary Tree $\T$
 
 ![Binary Tree](res/BinaryTree.svg){ height=30% }
 
-The *full binary tree* is the graph $\T := (\VT, \ET)$ where
+The *full binary tree* is the graph $\T := \left(\VT, \ET\right)$ where
 $$ \VT := \lbrace (\seq{b}) \mid \seq{b} \in \lbrace{0, 1\rbrace}, n \geq 0 \rbrace $$
-and two vertices are adjacent if the longer sequence can be obtained by concatenating $0$ or $1$ to the shorter sequence
+and two vertices are adjacent if the longer sequence can be obtained by concatenating $0$ or $1$ to the shorter sequence.
 
 
 ## The Full Binary Tree $\T$
@@ -122,5 +130,109 @@ The red vertex is identified with the sequence $(0, 0, 1, 1)$.
 ![Subtree](res/Subtree.svg){ height=30%}
 
 The *induced* subgraph of $\T$ containing all sequences that extend $(\seq{b}) \in \T$ is denoted by $\ST{(\seq{b})}$.
+
+
+## Levels of $\T$
+
+![Level 2](res/Levels.svg){ height=30% }
+
+ * The vertex $(\seq{b})$ is *on level $n$*.
+ * We note $| (\seq{b}) | = n$ and
+ $$ \mathrm{L}(k):=\left\lbrace v\in\VT\middle\vert \lvert v\rvert=k\right\rbrace $$
+
+
+## Automorphisms of $\T$
+
+### Theorem
+Let $\varphi\in\AutT$. Then
+
+> * $\varphi$ fixes the root, i. e.
+  $$\varphi(\emptyset) = \emptyset$$
+  and
+> * $\varphi$ fixes the levels, i. e.
+  $$\lvert \varphi(v)\rvert=\lvert v\rvert,\quad\forall v\in\VT.$$
+
+
+## Action of $\AutT{}$ on $\mathrm{L}(k)$
+
+![Action on L3](res/ActionOfAutT.svg){ height=30% }
+
+By enumerating the vertices on level $k$ with $\beta_k\colon\mathrm{L}(k)\to\lbrace 1,2,\ldots 2^k\rbrace$ defined by 
+$$ (\seq[k]{b})\mapsto 1+\sum_{i=1}^{k} b_i2^{k-i}, $$
+one obtains a group-homomorphism
+$$ p_k \colon \AutT \to \mathfrak{S}_{2^k}. $$
+
+## Stabiliser Groups
+
+### Definition
+The normal subgroup $\St{k}=\ker(p_k)$ of the automorphism group $\AutT$ is called *$k$-th stabiliser group of $\T$*.
+
+. . .
+
+**Note:** $\St{k}$ preserves the first $k + 1$ levels of $\T$ pointwise.
+
+
+
+# Definition and Elementary Properties of the First Grigorchuk Group
+
+---
+
+### Lemma
+The mapping
+$$ \psi\colon\St{1}\to\AutT\times\AutT $$
+defined by
+$$ \varphi\mapsto\left(\varphi\big\vert_{\ST{(0)}},\varphi\big\vert_{\ST{(1)}}\right) $$
+is an isomorphism of groups.
+
+. . .
+
+![Mapping psi](res/Mappingpsi.svg){ height=30% }
+
+The mapping $\psi$ identifies an automorphism with its action on $\ST{(0)}$ and $\ST{(1)}$.
+
+## First Grigorchuk Group
+### Definition
+
+> * One defines the automorphisms $a, b, c$ and $d \in \AutT$ as follows  
+  $a(\seq{b}) := (1-b_1, b_2, \ldots, b_n)$ and recursively  
+  $b := \psi^{-1}(a, c),$  
+  $c := \psi^{-1}(a, d)$ as well as  
+  $d := \psi^{-1}(\id, b).$  
+> * The *first Grigorchuk group* is defined as
+  $$ \Gamma := \langle a, b, c, d \rangle \subseteq \AutT. $$
+
+
+## Automorphism $c$
+$\psi(c) = (a, d)$
+
+![Automorphism c 1](res/AutomorphismC1.svg){ height=30% }
+
+. . .
+
+$a(1, 1, 0, 0) = (1, d(1, 0, 0))$
+
+
+## Automorphism $c$
+$\psi(c) = (a, d)$, $\psi(d) = (\id, b)$
+
+![Automorphism c 2](res/AutomorphismC2.svg){ height=30% }
+
+$a(1, 1, 0, 0) = (1, d(1, 0, 0)) = (1, 1, b(0, 0))$
+
+
+## Automorphism $c$
+$\psi(c) = (a, d)$, $\psi(d) = (\id, b)$ and $\psi(b) = (a, c)$
+
+![Automorphism c 3](res/AutomorphismC3.svg){ height=30% }
+
+$a(1, 1, 0, 0) = (1, d(1, 0, 0)) = (1, 1, b(0, 0)) = (1, 1, 0, a(0))$
+
+
+## Automorphism $c$
+$\psi(c) = (a, d)$, $\psi(d) = (\id, b)$ and $\psi(b) = (a, c)$
+
+![Automorphism c 4](res/AutomorphismC4.svg){ height=30% }
+
+$a(1, 1, 0, 0) = (1, d(1, 0, 0)) = (1, 1, b(0, 0)) = (1, 1, 0, a(0)) = (1, 1, 0, 1)$
 
 ---

@@ -14,7 +14,7 @@
 \usetikzlibrary{arrows}
 
 \usepackage{xcolor}
-\definecolor{verysofblue}{HTML}{88CCEE}
+\definecolor{verysoftblue}{HTML}{88CCEE}
 \definecolor{darkblue}{HTML}{332288}
 \definecolor{darkmoderatecyan}{HTML}{44AA99}
 \definecolor{darkcyan}{HTML}{117777}
@@ -22,19 +22,19 @@
 \definecolor{darkmoderatemagenta}{HTML}{AA4499}
 \definecolor{darkpink}{HTML}{882255}
 \definecolor{moderatered}{HTML}{CC6677}
+\definecolor{verymoderatered}{HTML}{FF99AA}
 \definecolor{darkred}{HTML}{AE1C3E}
 \definecolor{mDarkTeal}{HTML}{23373b}
 %\definecolor{mLightBrown}{HTML}{EB811B}
 
 \colorlet{cLines}{mDarkTeal}
 \colorlet{cHighlight}{darkred}
-\colorlet{cLeft}{moderatered}
-\colorlet{cRight}{verysofblue}
+\colorlet{cLeft}{verysoftblue}
 
 \tikzstyle{every node}=[circle,draw=cLines,font=\small,text=cLines,inner sep=1pt, minimum size=5mm, very thick]
 \tikzstyle{edge from parent}=[draw=cLines, very thick]
 \tikzstyle{st}=[cLeft, line join=round, line width=2mm]
-\tikzstyle{st1}=[cRight, line join=round, line width=2mm]
+\tikzstyle{st1}=[cLeft!90!black, line join=round, line width=2mm]
 
 \tikzstyle{bgn}=[node distance=6mm, font=normal]
 \tikzstyle{hlarrow}=[stealth-stealth, shorten <=1pt, shorten >=1pt, draw=cHighlight, line width=2.5pt]
