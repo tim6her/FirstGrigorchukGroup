@@ -27,17 +27,51 @@ $$a^n = e.$$
 If there exists a positive integer $N$, such that
 $$a^N = e$$
 for all elements $a$ of a group $G$, we say $G$ *is of exponent* $N$.
-
 . . .
 
 ### Example
-Let $\F_2$ be the field of order 2. Then the polynomials $\mathbb F_2[X]$ over $(\F_2, +)$ form a group of exponent $2$.
+Let $\F_2$ be the field of order 2. Then the polynomials $\mathbb F_2[X]$ over $\F_2$ form a group of exponent $2$ w. r. t. addition.
 
-## Bounded Burnsides Problem
+## Bounded Burnside Problem
 > A still undecided problem in the theory of discontinuous groups is whether the order of a group may be not finite while the order of every operation it contains is finite.  
-> -- Burnside 1902
+> — [@burnside1902]
 
 . . .
 
-### Bounded Burnside Problem
+### Common Interpretation
 Is every finitely generated, periodic group finite?
+
+
+## Special Case: Abelian Groups
+If the group $G$ is assumed to be abelian then the answer to [BBP][Bounded Burnside Problem] is affirmative since
+$$ G\cong\Z^n \oplus \Z_{q_1} \oplus \cdots \oplus \Z_{q_t} $$
+by the [fundamental theorem of finitely generated abelian groups.](https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Classification)
+
+
+## Unbounded Burnside Problem
+> Let $\seq[m]{A}$ be a set of independent operations finite in number, and suppose that they satisfy the system of relations given by
+> $$S^n=1$$
+> where $n$ is a given integer, while $S$ represents in turn any and every operation which can be generated from the m given operations $A$.
+>
+> Is the group thus defined one of finite order, and if so what is its order?  
+> — [@burnside1902]
+
+
+## Special Case: Exponent $2$
+If the group is of exponent $2$ then it is abelian since
+$$ (ab)(ab) = e (ab)(ba). $$
+The answer to [UBP][Unbounded Burnside Problem] is affirmative by the [fundamental theorem of finitely generated abelian groups.](https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Classification)
+
+# Graphtheoretical Preliminaries
+
+## Graphs
+
+![Graph](res/Graph.png)
+
+ * Graph
+ * Walk
+ * Path
+ * connected
+ * adjacent
+
+---
