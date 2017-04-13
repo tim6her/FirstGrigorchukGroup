@@ -13,3 +13,5 @@ References.bib
 *.fdb_latexmk
 *.fls
 index.tex
+*.svg
+*.tex-e
