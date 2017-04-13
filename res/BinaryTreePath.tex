@@ -7,14 +7,11 @@
  {child foreach \l in {0,1} {node {$\l$}
  {child foreach \m in {0,1} {coordinate edge from parent[dashed]}}}}}}}}};
 
-\begin{scope}[bgn]
-\node[draw=none] [above of=b]  {$\T$};
-\node[draw=none] [above of=b-1] (ST0) {$\ST{(0)}$};
-\end{scope}
-
-\begin{pgfonlayer}{background}
-\filldraw[st] (ST0.north) -- (b-1-1.north west) -- (b-1-1-1.west) -- (b-1-1-1-1.west) -- (b-1-1-1-1-1) -- (b-1-2-2-2-2) -- (b-1-2-2-2.east) -- (b-1-2-2.east) -- (b-1-2.north east) -- cycle; 
-\end{pgfonlayer}
+\node[highlight, fill=cLeft] at (b-1-1-2-2) {$1$};	
+\foreach \from/\to in {b/b-1,b-1/b-1-1,b-1-1/b-1-1-2,b-1-1-2/b-1-1-2-2}
+  {
+    \node[highlight] at (\from) {} edge[highlight] (\to);
+  }
 \end{tikzpicture}
 
 \end{document}

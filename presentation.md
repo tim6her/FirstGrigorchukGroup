@@ -68,7 +68,7 @@ The answer to [UBP][Unbounded Burnside Problem] is affirmative by the [fundament
 
 ![A Graph](res/Graph.svg){ height=30% }
 
-A (simple) *graph* is a pair of two sets $(V,E)$, where $V$ is non-empty and $E$ is a subset of all unordered pairs $\lbrace v_1,v_2\rbrace\in\mathcal{P}(V)$ that fulfil $v_1\neq v_2$. The set $V$ is called the \emph{vertex set} and $E$ the \emph{edge set} of the graph $(V,E)$.
+A (simple) *graph* is a pair of two sets $(V,E)$, where $V$ is non-empty and $E$ is a subset of all unordered pairs $\lbrace v_1,v_2\rbrace\in\mathcal{P}(V)$ that fulfil $v_1\neq v_2$. The set $V$ is called the *vertex set* and $E$ the *edge set* of the graph $(V,E)$.
 
 ## Walks
 
@@ -92,8 +92,35 @@ An $u-u$-path $(u=v_0,\seq{v}=u)$ is called *cycle* if it contains more than $2$
 
 ![An Automorphism](res/Automorphism.svg){ height=30% }
 
-Let $G = (V, E)$ be a graph.
-A mapping $\phi \colon V \to V$ is called *graph-automorphism* of $G$ if
-$$\lbrace v_1,v_2\rbrace\in E_1 \Leftrightarrow \lbrace.$$
+* Let $G = (V, E)$ be a graph.
+  A mapping $\varphi \colon V \to V$ is called *graph-automorphism* of $G$ if
+  $$\lbrace v_1,v_2\rbrace\in E \Leftrightarrow \lbrace \varphi(v_1),\varphi(v_2)\rbrace\in E$$
+
+. . .
+
+* The set $\aut(G)$ forms a group w. r. t. composition.
+
+
+## The Full Binary Tree $\T$
+
+![Binary Tree](res/BinaryTree.svg){ height=30% }
+
+The *full binary tree* is the graph $\T := (\VT, \ET)$ where
+$$ \VT := \lbrace (\seq{b}) \mid \seq{b} \in \lbrace{0, 1\rbrace}, n \geq 0 \rbrace $$
+and two vertices are adjacent if the longer sequence can be obtained by concatenating $0$ or $1$ to the shorter sequence
+
+
+## The Full Binary Tree $\T$
+
+![Binary Tree with a Path](res/BinaryTreePath.svg){ height=30% }
+
+The red vertex is identified with the sequence $(0, 0, 1, 1)$.
+
+
+## Subtrees of $\T$
+
+![Subtree](res/Subtree.svg){ height=30%}
+
+The *induced* subgraph of $\T$ containing all sequences that extend $(\seq{b}) \in \T$ is denoted by $\ST{(\seq{b})}$.
 
 ---

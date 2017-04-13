@@ -32,13 +32,14 @@
 \colorlet{cRight}{verysofblue}
 
 \tikzstyle{every node}=[circle,draw=cLines,font=\small,text=cLines,inner sep=1pt, minimum size=5mm, very thick]
-\tikzstyle{edge from parent}=[draw=cLines]
+\tikzstyle{edge from parent}=[draw=cLines, very thick]
 \tikzstyle{st}=[cLeft, line join=round, line width=2mm]
 \tikzstyle{st1}=[cRight, line join=round, line width=2mm]
 
 \tikzstyle{bgn}=[node distance=6mm, font=normal]
-\tikzstyle{hlarrow}=[<->, shorten <=1pt, shorten >=1pt, draw=cHighlight, thick]
+\tikzstyle{hlarrow}=[stealth-stealth, shorten <=1pt, shorten >=1pt, draw=cHighlight, line width=2.5pt]
 \tikzstyle{walk}=[line width=5pt, line join=round, triangle 90  cap reversed-stealth, draw=cHighlight]
+\tikzstyle{highlight}=[draw=cHighlight, line width=3pt]
 
 \tikzstyle{level 1}=[sibling distance=60mm]
 \tikzstyle{level 2}=[sibling distance=30mm]
