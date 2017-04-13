@@ -256,6 +256,9 @@ h1.title {
 .reveal small * {
     vertical-align: top; }
 
+.reveal figcaption {
+    font-size: 0;
+}
 /*********************************************
  * LINKS
  *********************************************/
