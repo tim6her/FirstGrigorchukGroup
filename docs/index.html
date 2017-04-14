@@ -152,15 +152,14 @@
 <figure>
 <img src="res/ActionOfAutT.svg" alt="Action on L3" style="height:30.0%" /><figcaption>Action on L3</figcaption>
 </figure>
-<p>Enumerating the vertices on level <span class="math inline">\(k\)</span> via <span class="math display">\[ \beta_k({b_1,\ldots, b_{k}}) := 1+\sum_{i=1}^{k} b_i2^{k-i}, \]</span> one obtains a group-homomorphism <span class="math display">\[ p_k \colon {\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}\to \mathfrak{S}_{2^k}. \]</span></p>
+<p>By enumerating the vertices on level <span class="math inline">\(k\)</span> via <span class="math display">\[ \beta_k({b_1,\ldots, b_{k}}) := 1+\sum_{i=1}^{k} b_i2^{k-i}, \]</span> one obtains a group-homomorphism <span class="math display">\[ p_k \colon {\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}\to \mathfrak{S}_{2^k}. \]</span></p>
 </section><section id="stabiliser-groups" class="slide level2">
 <h2>Stabiliser Groups</h2>
 <h3 id="definition-2">Definition</h3>
 <p>The normal subgroup <span class="math inline">\({\mathrm{St}_{}(k)}=\ker(p_k)\)</span> of the automorphism group <span class="math inline">\({\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}\)</span> is called <em><span class="math inline">\(k\)</span>-th stabiliser group of <span class="math inline">\({T^{(2)}}\)</span></em>.</p>
 <h3 id="remark">Remark</h3>
 <p><span class="math inline">\({\mathrm{St}_{}(k)}\)</span> preserves the first <span class="math inline">\(k + 1\)</span> levels of <span class="math inline">\({T^{(2)}}\)</span> pointwise.</p>
-</section></section>
-<section><section id="definition-and-elementary-properties-of-the-first-grigorchuk-group" class="titleslide slide level1"><h1>Definition and Elementary Properties of the First Grigorchuk Group</h1></section><section class="slide level2">
+</section><section class="slide level2">
 
 <h3 id="lemma">Lemma</h3>
 <p>The mapping <span class="math display">\[ \psi\colon{\mathrm{St}_{}(1)}\to{\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}\times{\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}\]</span> defined by <span class="math display">\[ \varphi\mapsto\left(\varphi\big\vert_{{{T^{(2)}}_{(0)}}},\varphi\big\vert_{{{T^{(2)}}_{(1)}}}\right) \]</span> is an isomorphism of groups.</p>
@@ -169,7 +168,7 @@
 <figure>
 <img src="res/Mappingpsi.svg" alt="Mapping psi" style="height:30.0%" /><figcaption>Mapping psi</figcaption>
 </figure>
-<p>The mapping <span class="math inline">\(\psi\)</span> identifies an automorphism with its action on <span class="math inline">\({{T^{(2)}}_{(0)}}\)</span> and <span class="math inline">\({{T^{(2)}}_{(1)}}\)</span>.</p>
+<p><span class="math inline">\(\psi\)</span> identifies an automorphism with its action on <span class="math inline">\({{T^{(2)}}_{(0)}}\)</span> and <span class="math inline">\({{T^{(2)}}_{(1)}}\)</span>.</p>
 </section><section id="first-grigorchuk-group" class="slide level2">
 <h2>First Grigorchuk Group</h2>
 <h3 id="definition-3">Definition</h3>
@@ -212,7 +211,51 @@
 <img src="res/AutomorphismC4.svg" alt="Automorphism c 4" style="height:30.0%" /><figcaption>Automorphism c 4</figcaption>
 </figure>
 <p><span class="math inline">\(a(1, 1, 0, 0) = (1, d(1, 0, 0)) = (1, 1, b(0, 0)) = (1, 1, 0, a(0)) = (1, 1, 0, 1)\)</span></p>
-</section><section class="slide level2">
+</section><section id="identities-of-the-generators" class="slide level2">
+<h2>Identities of the Generators</h2>
+<h3 id="theorem-1">Theorem</h3>
+<ul>
+<li>The generators are of order <span class="math inline">\(2\)</span>, i. e. <span class="math display">\[ a^2 = b^2 = c^2 = d^2. \]</span></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Three generators suffice since<br />
+$ bc = cb = d, bd = db = c$ and <span class="math inline">\(cd = dc = b\)</span></li>
+</ul>
+</div>
+<div class="fragment">
+<p>As a consequence, each <span class="math inline">\(\gamma \in \Gamma\)</span> can be written as</p>
+<p><span class="math display">\[ \gamma=u_0au_1au_2a\ldots u_lau_{l+1}, \]</span></p>
+<p>where <span class="math inline">\(u_1\ldots u_{l}\in\lbrace b,c,d\rbrace\)</span> and <span class="math inline">\(u_0,u_{l+1}\in\lbrace \operatorname{id},b,c,d\rbrace.\)</span></p>
+</div>
+</section></section>
+<section><section id="a-counterexample-to-the-unbounded-burnside-problem" class="titleslide slide level1"><h1>A Counterexample to the Unbounded Burnside Problem</h1></section><section id="stabiliser-groups-revisited" class="slide level2">
+<h2>Stabiliser Groups Revisited</h2>
+<p>One defines <span class="math inline">\({\mathrm{St}_{\Gamma}(k)} := {\mathrm{St}_{}(k)} \cap \Gamma.\)</span></p>
+<div class="fragment">
+<h3 id="lemma-1">Lemma</h3>
+<p>Let <span class="math inline">\(\gamma=u_0au_1a\ldots u_lau_{l+1}.\)</span> Then <span class="math inline">\(\gamma \in {\mathrm{St}_{\Gamma}(1)}\)</span> iff <span class="math inline">\(l\)</span> is odd.</p>
+<div class="fragment">
+<figure>
+<img src="res/AutomorphismA.svg" alt="Automorphism a" style="height:30.0%" /><figcaption>Automorphism a</figcaption>
+</figure>
+</div>
+</div>
+</section><section id="stabiliser-groups-revisited-1" class="slide level2">
+<h2>Stabiliser Groups Revisited</h2>
+<h3 id="theorem-2">Theorem</h3>
+<p>Let <span class="math inline">\(\psi\colon{\mathrm{St}_{}(1)}\to{\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}^2\)</span> be defined as before. Then</p>
+<p><span class="math display">\[ \psi(aba) = (c, a), \]</span> <span class="math display">\[ \psi(aca) = (d, a), \]</span> <span class="math display">\[ \psi(ada) = (b, \operatorname{id}). \]</span></p>
+</section><section id="gamma-is-infinite" class="slide level2">
+<h2><span class="math inline">\(\Gamma\)</span> is infinite</h2>
+<h3 id="theorem-3">Theorem</h3>
+<p>The mapping <span class="math inline">\(\psi_\mathrm{right}\colon{\mathrm{St}_{\Gamma}(1)}\to\Gamma\)</span>, defined by</p>
+<p><span class="math display">\[ \psi_\mathrm{right}(\gamma)=\gamma_2 \]</span></p>
+<p>if <span class="math inline">\(\psi(\gamma)=(\gamma_1,\gamma_2)\)</span>, is an epimorphism of groups.</p>
+</section><section id="todo-überlege-dir-wie-du-den-letzten-satz-beweist" class="slide level2">
+<h2>TODO: Überlege dir, wie du den letzten Satz beweist</h2>
+</section></section>
+<section><section id="growth-of-the-first-grigorchuk-group" class="titleslide slide level1"><h1>Growth of the First Grigorchuk Group</h1></section><section class="slide level2">
 
 <div id="refs" class="references">
 <div id="ref-burnside1902">

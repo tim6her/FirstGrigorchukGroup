@@ -1,7 +1,7 @@
 all:
 	latexmk -xelatex *.tex
 	bash pdf2svg.sh
-	mv *.pdf ../res/
+	cp *.pdf ../res/
 	mv *.svg ../docs/res/
 
 pdf:

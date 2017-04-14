@@ -173,9 +173,6 @@ The normal subgroup $\St{k}=\ker(p_k)$ of the automorphism group $\AutT$ is call
 $\St{k}$ preserves the first $k + 1$ levels of $\T$ pointwise.
 
 
-
-# Definition and Elementary Properties of the First Grigorchuk Group
-
 ---
 
 ### Lemma
@@ -189,9 +186,10 @@ is an isomorphism of groups.
 
 ![Mapping psi](res/Mappingpsi.svg){ height=30% }
 
-The mapping $\psi$ identifies an automorphism with its action on $\ST{(0)}$ and $\ST{(1)}$.
+$\psi$ identifies an automorphism with its action on $\ST{(0)}$ and $\ST{(1)}$.
 
 ## First Grigorchuk Group
+
 ### Definition
 
 > * One defines the automorphisms $a, b, c$ and $d \in \AutT$ as follows  
@@ -235,5 +233,75 @@ $\psi(c) = (a, d)$, $\psi(d) = (\id, b)$ and $\psi(b) = (a, c)$
 ![Automorphism c 4](res/AutomorphismC4.svg){ height=30% }
 
 $a(1, 1, 0, 0) = (1, d(1, 0, 0)) = (1, 1, b(0, 0)) = (1, 1, 0, a(0)) = (1, 1, 0, 1)$
+
+
+## Identities of the Generators
+
+### Theorem
+* The generators are of order $2$, i. e.
+  $$ a^2 = b^2 = c^2 = d^2. $$
+
+. . .
+
+* Three generators suffice since  
+  $ bc = cb = d, bd = db = c$ and $cd = dc = b$
+
+. . .
+
+As a consequence, each $\gamma \in \Gamma$ can be written as
+
+$$ \gamma=u_0au_1au_2a\ldots u_lau_{l+1}, $$
+
+where $u_1\ldots u_{l}\in\lbrace b,c,d\rbrace$ and $u_0,u_{l+1}\in\lbrace \id,b,c,d\rbrace.$
+
+
+
+# A Counterexample to the Unbounded Burnside Problem
+
+## Stabiliser Groups Revisited
+
+One defines $\St[\Gamma]{k} := \St{k} \cap \Gamma.$
+
+. . .
+
+### Lemma
+
+Let $\gamma=u_0au_1a\ldots u_lau_{l+1}.$
+Then $\gamma \in \St[\Gamma]{1}$ iff $l$ is odd.
+
+. . .
+
+![Automorphism a](res/AutomorphismA.svg){ height=30% }
+
+
+## Stabiliser Groups Revisited
+
+### Theorem
+
+Let $\psi\colon\St{1}\to\AutT^2$ be defined as before. Then
+
+$$ \psi(aba) = (c, a), $$
+$$ \psi(aca) = (d, a), $$
+$$ \psi(ada) = (b, \id). $$
+
+
+## $\Gamma$ is infinite
+
+### Theorem
+
+The mapping $\psi_\mathrm{right}\colon\St[\Gamma]{1}\to\Gamma$, defined by
+
+$$ \psi_\mathrm{right}(\gamma)=\gamma_2 $$
+
+if $\psi(\gamma)=(\gamma_1,\gamma_2)$, is an epimorphism of groups.
+
+
+## TODO: Überlege dir, wie du den letzten Satz beweist
+
+
+
+# Growth of the First Grigorchuk Group
+
+
 
 ---
