@@ -16,3 +16,4 @@ index.tex
 *.svg
 *.tex-e
 res/
+node_modules/
