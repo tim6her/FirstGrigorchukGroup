@@ -16,4 +16,5 @@ index.tex
 *.svg
 *.tex-e
 res/
-node_modules/
+docs/node_modules/
+!docs/index.html
