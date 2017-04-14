@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Tim B. Herbstrith">
+  <meta name="dcterms.date" content="2017-04-28">
+  <title>The First Grigorchuk Group</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/metropolis.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">The First Grigorchuk Group</h1>
+  <p class="subtitle">in Context of Burnside's Problems</p>
+  <p class="author">Tim B. Herbstrith</p>
+  <p class="date">28 April 2017</p>
+</section>
+
+<section><section id="bounded-burnsides-problem" class="titleslide slide level1"><h1>Bounded Burnside's Problem</h1></section><section id="periodic-groups" class="slide level2">
+<h2>Periodic Groups</h2>
+<h3 id="definition">Definition</h3>
+<p>A group <span class="math inline">\(G\)</span> is called <em>periodic</em> if for each element <span class="math inline">\(a \in G\)</span> there exists an integer <span class="math inline">\(n &gt; 0\)</span> such that <span class="math display">\[a^n = e.\]</span></p>
+<h3 id="examples">Examples</h3>
+<ul>
+<li>Every finite group is periodic.</li>
+<li>The group of bijective mappings from <span class="math inline">\(\operatorname{\mathbb{N}}\)</span> onto <span class="math inline">\(\operatorname{\mathbb{N}}\)</span> is periodic.</li>
+</ul>
+</section><section id="groups-with-exponent" class="slide level2">
+<h2>Groups with Exponent</h2>
+<h3 id="definition-1">Definition</h3>
+<p>If there exists a positive integer <span class="math inline">\(N\)</span>, such that <span class="math display">\[a^N = e\]</span> for all elements <span class="math inline">\(a\)</span> of a group <span class="math inline">\(G\)</span>, we say <span class="math inline">\(G\)</span> <em>is of exponent</em> <span class="math inline">\(N\)</span>. . . .</p>
+<h3 id="example">Example</h3>
+<p>Let <span class="math inline">\(\operatorname{\mathbb{F}}_2\)</span> be the field of order 2. Then the polynomials <span class="math inline">\(\mathbb F_2[X]\)</span> over <span class="math inline">\(\operatorname{\mathbb{F}}_2\)</span> form a group of exponent <span class="math inline">\(2\)</span> w. r. t. addition.</p>
+</section><section id="bounded-burnside-problem" class="slide level2">
+<h2>Bounded Burnside Problem</h2>
+<blockquote>
+<p>A still undecided problem in the theory of discontinuous groups is whether the order of a group may be not finite while the order of every operation it contains is finite.<br />
+— <span class="citation" data-cites="burnside1902">(Burnside 1902)</span></p>
+</blockquote>
+<div class="fragment">
+<h3 id="common-interpretation">Common Interpretation</h3>
+<p>Is every finitely generated, periodic group finite?</p>
+</div>
+</section><section id="special-case-abelian-groups" class="slide level2">
+<h2>Special Case: Abelian Groups</h2>
+<p>If the group <span class="math inline">\(G\)</span> is assumed to be abelian then the answer to <a href="#/bounded-burnside-problem">BBP</a> is affirmative since <span class="math display">\[ G\cong\operatorname{\mathbb{Z}}^n \oplus \operatorname{\mathbb{Z}}_{q_1} \oplus \cdots \oplus \operatorname{\mathbb{Z}}_{q_t} \]</span> by the <a href="https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Classification">fundamental theorem of finitely generated abelian groups.</a></p>
+</section><section id="unbounded-burnside-problem" class="slide level2">
+<h2>Unbounded Burnside Problem</h2>
+<blockquote>
+<p>Let <span class="math inline">\({A_1,\ldots, A_{m}}\)</span> be a set of independent operations finite in number, and suppose that they satisfy the system of relations given by <span class="math display">\[S^n=1\]</span> where <span class="math inline">\(n\)</span> is a given integer, while <span class="math inline">\(S\)</span> represents in turn any and every operation which can be generated from the m given operations <span class="math inline">\(A\)</span>.</p>
+<p>Is the group thus defined one of finite order, and if so what is its order?<br />
+— <span class="citation" data-cites="burnside1902">(Burnside 1902)</span></p>
+</blockquote>
+</section><section id="special-case-exponent-2" class="slide level2">
+<h2>Special Case: Exponent <span class="math inline">\(2\)</span></h2>
+<p>If the group is of exponent <span class="math inline">\(2\)</span> then it is abelian since <span class="math display">\[ (ab)(ab) = e = (ab)(ba). \]</span> The answer to <a href="#/unbounded-burnside-problem">UBP</a> is affirmative by the <a href="https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Classification">fundamental theorem of finitely generated abelian groups.</a></p>
+</section></section>
+<section><section id="graphtheoretical-preliminaries" class="titleslide slide level1"><h1>Graphtheoretical Preliminaries</h1></section><section id="graphs" class="slide level2">
+<h2>Graphs</h2>
+<figure>
+<img src="res/Graph.svg" alt="A Graph" style="height:30.0%" /><figcaption>A Graph</figcaption>
+</figure>
+<p>A (simple) <em>graph</em> is a pair of two sets <span class="math inline">\((V,E)\)</span>, where <span class="math inline">\(V\)</span> is non-empty and <span class="math inline">\(E\)</span> is a subset of all unordered pairs <span class="math inline">\(\lbrace v_1,v_2\rbrace\in\mathcal{P}(V)\)</span> that fulfil <span class="math inline">\(v_1\neq v_2\)</span>. The set <span class="math inline">\(V\)</span> is called the <em>vertex set</em> and <span class="math inline">\(E\)</span> the <em>edge set</em> of the graph <span class="math inline">\((V,E)\)</span>.</p>
+</section><section id="walks" class="slide level2">
+<h2>Walks</h2>
+<figure>
+<img src="res/Walk.svg" alt="A 4 − 3-Walk" style="height:30.0%" /><figcaption>A 4 − 3-Walk</figcaption>
+</figure>
+<p>A <em><span class="math inline">\(u-v\)</span>-walk</em> is a finite sequence <span class="math inline">\((u=v_0,{v_1,\ldots, v_{n}}=v)\)</span> in which <span class="math inline">\(\lbrace v_{i-1},v_i\rbrace\in E\)</span> for <span class="math inline">\(1\leq i\leq n\)</span>.</p>
+</section><section id="paths" class="slide level2">
+<h2>Paths</h2>
+<figure>
+<img src="res/Path.svg" alt="A Path" style="height:30.0%" /><figcaption>A Path</figcaption>
+</figure>
+<p>A <em><span class="math inline">\(u-v\)</span>-path</em> is a <span class="math inline">\(u-v\)</span>-walk, such that all vertices in the walk except <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> differ pairwise.</p>
+</section><section id="cycles" class="slide level2">
+<h2>Cycles</h2>
+<figure>
+<img src="res/Cycle.svg" alt="A Cycle" style="height:30.0%" /><figcaption>A Cycle</figcaption>
+</figure>
+<p>An <span class="math inline">\(u-u\)</span>-path <span class="math inline">\((u=v_0,{v_1,\ldots, v_{n}}=u)\)</span> is called <em>cycle</em> if it contains more than <span class="math inline">\(2\)</span> vertices.</p>
+</section><section id="graph-automorphisms" class="slide level2">
+<h2>Graph-Automorphisms</h2>
+<figure>
+<img src="res/Automorphism.svg" alt="An Automorphism" style="height:30.0%" /><figcaption>An Automorphism</figcaption>
+</figure>
+<ul>
+<li>Let <span class="math inline">\(G = (V, E)\)</span> be a graph. A mapping <span class="math inline">\(\varphi \colon V \to V\)</span> is called <em>graph-automorphism</em> of <span class="math inline">\(G\)</span> if <span class="math display">\[\lbrace v_1,v_2\rbrace\in E \Leftrightarrow \lbrace \varphi(v_1),\varphi(v_2)\rbrace\in E\]</span></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>The set <span class="math inline">\(\operatorname{\mathrm{Aut}}(G)\)</span> of all automorphisms of <span class="math inline">\(G\)</span> forms a group w. r. t. composition.</li>
+</ul>
+</div>
+</section><section id="the-full-binary-tree-t2" class="slide level2">
+<h2>The Full Binary Tree <span class="math inline">\({T^{(2)}}\)</span></h2>
+<figure>
+<img src="res/BinaryTree.svg" alt="Binary Tree" style="height:30.0%" /><figcaption>Binary Tree</figcaption>
+</figure>
+<p>The <em>full binary tree</em> is the graph <span class="math inline">\({T^{(2)}}:= \left({V\left({T^{(2)}}\right)}, {E\left({T^{(2)}}\right)}\right)\)</span> where <span class="math display">\[ {V\left({T^{(2)}}\right)}:= \lbrace ({b_1,\ldots, b_{n}}) \mid {b_1,\ldots, b_{n}} \in \lbrace{0, 1\rbrace}, n \geq 0 \rbrace \]</span> and two vertices are adjacent if the longer sequence can be obtained by concatenating <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span> to the shorter sequence.</p>
+</section><section id="the-full-binary-tree-t2-1" class="slide level2">
+<h2>The Full Binary Tree <span class="math inline">\({T^{(2)}}\)</span></h2>
+<figure>
+<img src="res/BinaryTreePath.svg" alt="Binary Tree with a Path" style="height:30.0%" /><figcaption>Binary Tree with a Path</figcaption>
+</figure>
+<p>The red vertex is identified with the sequence <span class="math inline">\((0, 0, 1, 1)\)</span>.</p>
+</section><section id="subtrees-of-t2" class="slide level2">
+<h2>Subtrees of <span class="math inline">\({T^{(2)}}\)</span></h2>
+<figure>
+<img src="res/Subtree.svg" alt="Subtree" style="height:30.0%" /><figcaption>Subtree</figcaption>
+</figure>
+<p>The <em>induced</em> subgraph of <span class="math inline">\({T^{(2)}}\)</span> containing all sequences that extend <span class="math inline">\(({b_1,\ldots, b_{n}}) \in {T^{(2)}}\)</span> is denoted by <span class="math inline">\({{T^{(2)}}_{({b_1,\ldots, b_{n}})}}\)</span>.</p>
+</section><section id="levels-of-t2" class="slide level2">
+<h2>Levels of <span class="math inline">\({T^{(2)}}\)</span></h2>
+<figure>
+<img src="res/Levels.svg" alt="Level 2" style="height:30.0%" /><figcaption>Level 2</figcaption>
+</figure>
+<ul>
+<li>The vertex <span class="math inline">\(({b_1,\ldots, b_{n}})\)</span> is <em>on level <span class="math inline">\(n\)</span></em>.</li>
+<li>We note <span class="math inline">\(| ({b_1,\ldots, b_{n}}) | = n\)</span> and <span class="math display">\[ \mathrm{L}(k):=\left\lbrace v\in{V\left({T^{(2)}}\right)}\middle\vert \lvert v\rvert=k\right\rbrace \]</span></li>
+</ul>
+</section><section id="automorphisms-of-t2" class="slide level2">
+<h2>Automorphisms of <span class="math inline">\({T^{(2)}}\)</span></h2>
+<h3 id="theorem">Theorem</h3>
+<p>Let <span class="math inline">\(\varphi\in{\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}\)</span>. Then</p>
+<ul>
+<li class="fragment"><span class="math inline">\(\varphi\)</span> fixes the root, i. e. <span class="math display">\[\varphi(\emptyset) = \emptyset\]</span> and</li>
+<li class="fragment"><span class="math inline">\(\varphi\)</span> fixes the levels, i. e. <span class="math display">\[\lvert \varphi(v)\rvert=\lvert v\rvert,\quad\forall v\in{V\left({T^{(2)}}\right)}.\]</span></li>
+</ul>
+</section><section id="action-of-operatornamemathrmautleftt2right-on-mathrmlk" class="slide level2">
+<h2>Action of <span class="math inline">\({\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}{}\)</span> on <span class="math inline">\(\mathrm{L}(k)\)</span></h2>
+<figure>
+<img src="res/ActionOfAutT.svg" alt="Action on L3" style="height:30.0%" /><figcaption>Action on L3</figcaption>
+</figure>
+<p>By enumerating the vertices on level <span class="math inline">\(k\)</span> with <span class="math inline">\(\beta_k\colon\mathrm{L}(k)\to\lbrace 1,2,\ldots 2^k\rbrace\)</span> defined by <span class="math display">\[ ({b_1,\ldots, b_{k}})\mapsto 1+\sum_{i=1}^{k} b_i2^{k-i}, \]</span> one obtains a group-homomorphism <span class="math display">\[ p_k \colon {\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}\to \mathfrak{S}_{2^k}. \]</span></p>
+</section><section id="stabiliser-groups" class="slide level2">
+<h2>Stabiliser Groups</h2>
+<h3 id="definition-2">Definition</h3>
+<p>The normal subgroup <span class="math inline">\({\mathrm{St}_{}(k)}=\ker(p_k)\)</span> of the automorphism group <span class="math inline">\({\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}\)</span> is called <em><span class="math inline">\(k\)</span>-th stabiliser group of <span class="math inline">\({T^{(2)}}\)</span></em>.</p>
+<div class="fragment">
+<p><strong>Note:</strong> <span class="math inline">\({\mathrm{St}_{}(k)}\)</span> preserves the first <span class="math inline">\(k + 1\)</span> levels of <span class="math inline">\({T^{(2)}}\)</span> pointwise.</p>
+</div>
+</section></section>
+<section><section id="definition-and-elementary-properties-of-the-first-grigorchuk-group" class="titleslide slide level1"><h1>Definition and Elementary Properties of the First Grigorchuk Group</h1></section><section class="slide level2">
+
+<h3 id="lemma">Lemma</h3>
+<p>The mapping <span class="math display">\[ \psi\colon{\mathrm{St}_{}(1)}\to{\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}\times{\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}\]</span> defined by <span class="math display">\[ \varphi\mapsto\left(\varphi\big\vert_{{{T^{(2)}}_{(0)}}},\varphi\big\vert_{{{T^{(2)}}_{(1)}}}\right) \]</span> is an isomorphism of groups.</p>
+<div class="fragment">
+<figure>
+<img src="res/Mappingpsi.svg" alt="Mapping psi" style="height:30.0%" /><figcaption>Mapping psi</figcaption>
+</figure>
+<p>The mapping <span class="math inline">\(\psi\)</span> identifies an automorphism with its action on <span class="math inline">\({{T^{(2)}}_{(0)}}\)</span> and <span class="math inline">\({{T^{(2)}}_{(1)}}\)</span>.</p>
+</div>
+</section><section id="first-grigorchuk-group" class="slide level2">
+<h2>First Grigorchuk Group</h2>
+<h3 id="definition-3">Definition</h3>
+<ul>
+<li class="fragment">One defines the automorphisms <span class="math inline">\(a, b, c\)</span> and <span class="math inline">\(d \in {\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}\)</span> as follows<br />
+<span class="math inline">\(a({b_1,\ldots, b_{n}}) := (1-b_1, b_2, \ldots, b_n)\)</span> and recursively<br />
+<span class="math inline">\(b := \psi^{-1}(a, c),\)</span><br />
+<span class="math inline">\(c := \psi^{-1}(a, d)\)</span> as well as<br />
+<span class="math inline">\(d := \psi^{-1}(\operatorname{id}, b).\)</span><br />
+</li>
+<li class="fragment">The <em>first Grigorchuk group</em> is defined as <span class="math display">\[ \Gamma := \langle a, b, c, d \rangle \subseteq {\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}. \]</span></li>
+</ul>
+</section><section id="automorphism-c" class="slide level2">
+<h2>Automorphism <span class="math inline">\(c\)</span></h2>
+<p><span class="math inline">\(\psi(c) = (a, d)\)</span></p>
+<figure>
+<img src="res/AutomorphismC1.svg" alt="Automorphism c 1" style="height:30.0%" /><figcaption>Automorphism c 1</figcaption>
+</figure>
+<div class="fragment">
+<p><span class="math inline">\(a(1, 1, 0, 0) = (1, d(1, 0, 0))\)</span></p>
+</div>
+</section><section id="automorphism-c-1" class="slide level2">
+<h2>Automorphism <span class="math inline">\(c\)</span></h2>
+<p><span class="math inline">\(\psi(c) = (a, d)\)</span>, <span class="math inline">\(\psi(d) = (\operatorname{id}, b)\)</span></p>
+<figure>
+<img src="res/AutomorphismC2.svg" alt="Automorphism c 2" style="height:30.0%" /><figcaption>Automorphism c 2</figcaption>
+</figure>
+<p><span class="math inline">\(a(1, 1, 0, 0) = (1, d(1, 0, 0)) = (1, 1, b(0, 0))\)</span></p>
+</section><section id="automorphism-c-2" class="slide level2">
+<h2>Automorphism <span class="math inline">\(c\)</span></h2>
+<p><span class="math inline">\(\psi(c) = (a, d)\)</span>, <span class="math inline">\(\psi(d) = (\operatorname{id}, b)\)</span> and <span class="math inline">\(\psi(b) = (a, c)\)</span></p>
+<figure>
+<img src="res/AutomorphismC3.svg" alt="Automorphism c 3" style="height:30.0%" /><figcaption>Automorphism c 3</figcaption>
+</figure>
+<p><span class="math inline">\(a(1, 1, 0, 0) = (1, d(1, 0, 0)) = (1, 1, b(0, 0)) = (1, 1, 0, a(0))\)</span></p>
+</section><section id="automorphism-c-3" class="slide level2">
+<h2>Automorphism <span class="math inline">\(c\)</span></h2>
+<p><span class="math inline">\(\psi(c) = (a, d)\)</span>, <span class="math inline">\(\psi(d) = (\operatorname{id}, b)\)</span> and <span class="math inline">\(\psi(b) = (a, c)\)</span></p>
+<figure>
+<img src="res/AutomorphismC4.svg" alt="Automorphism c 4" style="height:30.0%" /><figcaption>Automorphism c 4</figcaption>
+</figure>
+<p><span class="math inline">\(a(1, 1, 0, 0) = (1, d(1, 0, 0)) = (1, 1, b(0, 0)) = (1, 1, 0, a(0)) = (1, 1, 0, 1)\)</span></p>
+</section><section class="slide level2">
+
+<div id="refs" class="references">
+<div id="ref-burnside1902">
+<p>Burnside, W. 1902. “On an Unsettled Question in the Theory of Discontinuous Groups.” <em>Quarterly Journal of Pure and Applied Math</em> 33.</p>
+</div>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
