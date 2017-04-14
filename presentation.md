@@ -157,8 +157,8 @@ Let $\varphi\in\AutT$. Then
 
 ![Action on L3](res/ActionOfAutT.svg){ height=30% }
 
-By enumerating the vertices on level $k$ with $\beta_k\colon\mathrm{L}(k)\to\lbrace 1,2,\ldots 2^k\rbrace$ defined by 
-$$ (\seq[k]{b})\mapsto 1+\sum_{i=1}^{k} b_i2^{k-i}, $$
+By enumerating the vertices on level $k$ via
+$$ \beta_k(\seq[k]{b}) := 1+\sum_{i=1}^{k} b_i2^{k-i}, $$
 one obtains a group-homomorphism
 $$ p_k \colon \AutT \to \mathfrak{S}_{2^k}. $$
 
@@ -169,7 +169,8 @@ The normal subgroup $\St{k}=\ker(p_k)$ of the automorphism group $\AutT$ is call
 
 . . .
 
-**Note:** $\St{k}$ preserves the first $k + 1$ levels of $\T$ pointwise.
+### Remark
+$\St{k}$ preserves the first $k + 1$ levels of $\T$ pointwise.
 
 
 
@@ -184,7 +185,7 @@ defined by
 $$ \varphi\mapsto\left(\varphi\big\vert_{\ST{(0)}},\varphi\big\vert_{\ST{(1)}}\right) $$
 is an isomorphism of groups.
 
-. . .
+---
 
 ![Mapping psi](res/Mappingpsi.svg){ height=30% }
 
