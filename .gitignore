@@ -13,8 +13,8 @@ References.bib
 *.fdb_latexmk
 *.fls
 index.tex
-*.svg
 *.tex-e
 res/
 docs/node_modules/
 !docs/index.html
+!docs/res/
