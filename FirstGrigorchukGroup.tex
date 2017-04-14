@@ -1,0 +1,763 @@
+% !TeX spellcheck = en_GB
+% !TEX TS-program = xelatex
+
+\documentclass[compress]{beamer}
+\usetheme[progressbar=frametitle, block=fill]{metropolis}
+
+\setsansfont[Numbers=Lining]{EB Garamond}
+\setmonofont[Scale=MatchLowercase]{Monaco}
+
+\usepackage{polyglossia}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+
+
+\usepackage{amsmath,amsfonts,amssymb,enumerate,hyperref}
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows, backgrounds}
+
+\usepackage{xcolor}
+\definecolor{verysofblue}{HTML}{88CCEE}
+\definecolor{darkblue}{HTML}{332288}
+\definecolor{darkmoderatecyan}{HTML}{44AA99}
+\definecolor{darkcyan}{HTML}{117777}
+\definecolor{softyellow}{HTML}{DDCC77}
+\definecolor{darkmoderatemagenta}{HTML}{AA4499}
+\definecolor{darkpink}{HTML}{882255}
+\definecolor{moderatered}{HTML}{CC6677}
+\definecolor{darkred}{HTML}{AE1C3E}
+\definecolor{mDarkTeal}{HTML}{23373b}
+%\definecolor{mLightBrown}{HTML}{EB811B}
+
+\colorlet{cLines}{mDarkTeal}
+\colorlet{cHighlight}{darkred}
+\colorlet{cLeft}{moderatered}
+\colorlet{cRight}{verysofblue}
+
+
+
+\setbeamercolor{progress bar}{fg=cHighlight}
+
+\tikzset{
+ onslide/.code args={<#1>#2}{%
+  \only<#1>{\pgfkeysalso{#2}} % \pgfkeysalso doesn't change the path
+ }
+}
+
+\tikzset{
+ v_l/.style = {fill=cLines, text=white},
+ st_l/.style = {draw=cLeft},
+ st_r/.style = {draw=cRight},
+ highlight/.style={draw=cHighlight, line width=3pt},
+ hlarrow/.style={<->, shorten <=1pt, shorten >=1pt, draw=cHighlight, ultra thick}
+}
+
+%\usepackage{pgfpages}
+%\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+
+\author{Tim B.\ Herbstrith}
+\title{The First Grigorchuk Group}
+\subtitle{in Context of Burnside's Problems}
+%\institute{1063642}
+\date{Vienna, 28\textsuperscript{th} April 2017}
+%\logo{\pgfimage[width=1.5cm,height=1.5cm]{UniWienSiegel}}
+
+%\setbeamercovered{transparent}
+%\setbeamercolor{block title}{use=structure,fg=red!75!black, bg=white!90!black}
+%\setbeamertemplate{itemize item}[circle]
+%\setbeamertemplate{enumerate item}[default]
+%\setbeamercolor{itemize item}{fg=black}
+%\setbeamercolor{enumerate item}{fg=black}
+%\setbeamertemplate{navigation symbols}{}
+%\setbeamertemplate{blocks}[default]
+
+% Tightlist for pandoc
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\renewcommand{\caption}[1]{}
+
+\renewcommand{\arraystretch}{1.5}
+
+\DeclareMathOperator{\N}{\mathbb{N}}
+\DeclareMathOperator{\Z}{\mathbb{Z}}
+\DeclareMathOperator{\Q}{\mathbb{Q}}
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\F}{\mathbb{F}}
+\DeclareMathOperator{\Cay}{Cay}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\ls}{L(S)}
+\DeclareMathOperator{\kernel}{ker}
+\DeclareMathOperator{\End}{\mathrm{End}}
+\DeclareMathOperator{\Aut}{\mathrm{Aut}}
+
+\newcommand*{\seq}[2][n]{#2_1, \ldots, #2_{#1}}
+\renewcommand{\T}{T^{(2)}}
+\newcommand{\VT}{V\left(\T\right)}
+\newcommand{\ET}{E\left(\T\right)}
+\newcommand{\ST}[1]{\T_{#1}}
+\newcommand{\VST}[1]{V\left(\ST{#1}\right)}
+\newcommand{\EST}[1]{E\left(\ST{#1}\right)}
+\newcommand{\AutT}{\Aut\left(\T\right)}
+\newcommand{\St}[2][]{\mathrm{St}_{#1}(#2)}
+
+\newtheorem{theo}{Satz}[section]
+\newtheorem{lem}[theo]{Lemma}
+\newtheorem{prop}[theo]{Proposition}
+\newtheorem{cor}[theo]{Corollary}
+\theoremstyle{definition}
+\newtheorem{defin}[theo]{Definition}
+\newtheorem{exam}[theo]{Example}
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+
+\usepackage{nicefrac}
+
+\begin{document}
+  \begin{frame}
+    \maketitle
+  \end{frame}
+  
+  \include{index}
+%\section{Burnside's Problems}
+%
+%\subsection{Problem Statement}
+%
+%\begin{frame}{Periodic Groups}
+%    \begin{defin}
+%        A group $G$ is called \emph{periodic} if for each element $a \in G$ there exists an integer $ n > 0 $ such that $a^n = e$.
+%    \end{defin}
+%
+%    \begin{exam}<2>
+%        \begin{itemize}
+%            \item Every finite group is periodic.
+%            \item The direct sum of cyclic groups
+%            \[\bigoplus_{i=2}^\infty \nicefrac \Z{i\Z}\]
+%            is periodic.
+%        \end{itemize}
+%    \end{exam}
+%\end{frame}
+%
+%\begin{frame}{Periodic Groups}
+%\begin{defin}
+%    A group $G$ is called \emph{periodic} if for each group element $a \in G$ there exists an integer $n_a > 0$ such that $a^{n_a} = 1$. 
+%\end{defin}
+%
+%\begin{exam}<2>
+%\begin{itemize}
+%\item Jede endliche Gruppe ist periodisch.
+%\item Die direkte Summe
+%\begin{equation*}
+%\bigoplus_{i=2}^\infty\Z_i
+%\end{equation*}
+%ist versehen mit komponentenweiser Addition eine periodische Gruppe.
+%\end{itemize}
+%\end{exam}
+%\end{frame}
+%
+%\begin{frame}
+%\begin{block}{Unbounded Burnside's Problem (1902)}
+%Ist jede endlich erzeugte, periodische Gruppe endlich?
+%\end{block}
+%
+%\begin{exam}[Positive Resultate]<2>
+%\begin{itemize}
+%\item Jede endlich erzeugte, periodische, abelsche Gruppe ist endlich. (Hauptsatz \"uber endlich erzeugte abelsche Gruppen)
+%\item Jede endlich erzeugte, periodische Untergruppe einer linearen Gruppe $\mathrm{GL}_n(\mathbb{K})$ ist endlich. (Schur 1911)
+%\end{itemize}
+%\end{exam}
+%\end{frame}
+%
+%\subsection{Grigorchuks Gegenbeispiel}
+%\subsubsection{Elementare Eigenschaften und Definitionen}
+%
+%\begin{frame}{Graphen}
+%\begin{defin}
+%\begin{enumerate}
+%\item Ein \emph{Graph} ist ein Tupel $G=(V,E)$ bestehend aus der Knotenmenge $V$ und der Kantenmenge $E\subseteq V\times V$, wobei aus $(v_1,v_2)\in E$ stets $(v_2,v_1)\in E$ folgt.
+%\item Zwei Knoten $v_1$ und $v_2$ aus $V$ hei\ss{}en \emph{verbunden}, wenn $(v_1,v_2)\in E$.
+%\item $V(G)$ bezeichnet die Knotenmenge von $G$.
+%\end{enumerate}
+%\end{defin}
+%\end{frame}
+%
+%\begin{frame}{Beispiel eines Graphen}
+%\begin{minipage}{0.3\textwidth}
+%\begin{center}
+%\begin{tikzpicture}[level distance=10mm]
+%\tikzstyle{every node}=[circle,draw=black,thick,font=\small,text=black,inner sep=1pt, minimum size=5mm]
+%\foreach \name/\angle/\text in {P-4/234/4, P-5/162/5, 
+%                                  P-1/90/1, P-2/18/2, P-3/-54/3}
+%    \node (\name) at (\angle:1cm) {$\text$};
+%\foreach \from/\to in {1/2,2/3,3/4,4/5,5/1,2/4,3/5,5/2}
+%     \draw[draw=black,thick] (P-\from) -- (P-\to);
+%\end{tikzpicture}
+%\end{center}
+%\end{minipage}
+%\begin{minipage}{0.6\textwidth}
+%F\"ur den linken Graphen $G=(V,E)$ gilt
+%\begin{align*}
+%V&=\lbrace1,2,3,4,5\rbrace \text{ und}\\
+%E&=\lbrace (1,2),(1,5),\\
+%&(2,1),(2,3),(2,4),(2,5),\\
+%&(3,2),(3,4),(3,5),\\
+%&(4,2),(4,3),(4,5),\\
+%&(5,1),(5,2),(5,3),(5,4)\rbrace
+%\end{align*}
+%\end{minipage}
+%\end{frame}
+%
+%\begin{frame}{Automorphismengruppe eines Graphs}
+%\begin{defin}
+%Seien $G_1=(V_1,E_1)$ und $G_2=(V_2,E_2)$ zwei Graphen. Eine bijektive Abbildung $f\colon V_1\to V_2$ hei\ss{}t \textit{Graphenisomorphismus}, wenn $(v_1,v_2)\in E_1$ genau dann, wenn $(f(v_1),f(v_2))\in E_2$.\\
+%Gilt $G_1=G_2$, so wird $f$ ein \textit{Graphenautomorphismus} genannt.
+%\end{defin}
+%
+%\begin{theo}<2>
+%Die Menge $\aut(G)$ aller Graphenautomorphismen eines Graphen $G$ bildet bez\"uglich Verkn\"upfung von Abbildungen eine Gruppe. 
+%\end{theo}
+%\end{frame}
+%
+%\begin{frame}{Bin\"arb\"aume}
+%\begin{center}
+%\begin{tikzpicture}[level distance=10mm]
+%  \tikzstyle{edge from parent}=[draw=black,very thick]
+%  \tikzstyle{every node}=[circle,draw=black,very thick,font=\small,text=black,inner sep=1pt, minimum size=5mm]
+%  \tikzstyle{level 1}=[sibling distance=60mm]
+%  \tikzstyle{level 2}=[sibling distance=30mm]
+%  \tikzstyle{level 3}=[sibling distance=15mm]
+%  \tikzstyle{level 4}=[sibling distance=7.5mm]
+%  \tikzstyle{level 5}=[sibling distance=3.75mm, level distance=5mm]
+%  
+%  
+%  \node [fill=black!30] (root) {$\emptyset$}
+%  	child {node [v_l,onslide={<2> highlight}] {-1} edge from parent [onslide={<2> highlight}]
+%  		child {node [v_l,onslide={<2> highlight}] {-1} edge from parent [onslide={<2> highlight}]
+%  			child {node [v_l] {-1}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			child {node [onslide={<2> highlight}, onslide={<3> highlight, fill=red, text=white}] {1}
+%  				edge from parent [onslide={<2> highlight}]
+%  				child {node [v_l, onslide={<4> highlight, fill=red, text=white}] {-1} child foreach \a in {0,1}
+%  				{coordinate edge from parent[dotted]}}
+%  				child {node [onslide={<2-> highlight, fill=red, text=white}] {1} edge from parent [onslide={<2,3> highlight}]
+%  					child foreach \a in {0,1}{coordinate edge from parent[dotted, draw=black]}}
+%  				}
+%  			}
+%  		child {node {1}
+%  			child {node [v_l] {-1}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			child {node {1}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1}  child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			}
+%  		}
+%	child {node {1}
+%  		child {node [v_l] {-1}
+%  			child {node [v_l] {-1}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			child {node {1}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			}
+%  		child {node {1}
+%  			child {node [v_l] {-1}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			child {node {1}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			}
+%  		}
+%  	;		
+%\end{tikzpicture}
+%\end{center}
+%\begin{overlayarea}{\textwidth}{3em}
+%\only<2>{Den rot hinterlegten Knoten identifizieren wir mit der Folge $(-1,-1,1,1)$.}
+%\only<3>{Die Knoten $(-1,-1,1)$ und $(-1,-1,1,1)$ sind miteinander verbunden.}
+%\only<4>{Aber $(-1,-1,1,-1)$ und $(-1,-1,1,1)$ sind nicht verbunden.}
+%\end{overlayarea}
+%\end{frame}
+%
+%\begin{frame}{Bin\"arb\"aume}
+%\begin{defin}
+%Ein Bin\"arbaum $T^{(2)}=(V,E)$ ist ein Graph dessen Knotenmenge
+%\begin{equation*}
+%V:=\lbrace (b_i)_{i=1}^n\mid n\in \Z, n\geq 0, b_i\in\lbrace -1,1\rbrace\text{ f\"ur }1\leq i\leq n\rbrace
+%\end{equation*}
+%der Menge aller endlichen bin\"aren Folgen entspricht und dessen Kantenmenge $E$ gegeben ist durch
+%\begin{equation*}
+%E:=\lbrace ((b_i)_{i=1}^n,(b'_i)_{i=1}^m)\mid  ((b_i)_{i=1}^n,(b'_i)_{i=1}^m)\in E' \vee ((b'_i)_{i=1}^m,(b_i)_{i=1}^n)\in E'\rbrace,
+%\end{equation*}
+%wobei
+%\begin{equation*}
+%E':=\lbrace ((b_i)_{i=1}^n,(b'_i)_{i=1}^m)\in V\times V\mid m=n+1\text{ und } b_i=b'_i\text{ f\"ur } 1\leq i\leq n\rbrace.
+%\end{equation*}
+%
+%\end{defin}
+%\end{frame}
+%
+%\begin{frame}{Eigenschaften von $\aut(T^{(2)})$}
+%\begin{theo}
+%F\"ur den Bin\"arbaum $T^{(2)}=(V,E)$ gelten:
+%\begin{enumerate}
+%\item Jeder Automorphismus $\varphi\in\aut{(T^{(2)})}$ h\"alt die Wurzel $(\emptyset)$ von $T^{(2)}$ fest, d.h. $\varphi((\emptyset))=(\emptyset)$.
+%\item  Jeder Automorphismus $\varphi\in\aut{(T^{(2)})}$ permutiert nur Knoten in einer Ebene, d.h. f\"ur alle $n\geq 1$ und alle $(b_i)_{i=1}^n\in V$ gilt
+%\begin{equation*}
+%\varphi((b_i)_{i=1}^n)=(c_i)_{i=1}^n
+%\end{equation*}
+%f\"ur gewisse $c_1,\ldots,c_n\in \lbrace -1,1\rbrace$.
+%\end{enumerate}
+%\end{theo}
+%\end{frame}
+%
+%\begin{frame}
+%\begin{lem}
+% Die Teilmenge
+%\begin{align*}
+%St(m):=\lbrace \varphi\in\aut(T^{(2)})&\mid \varphi((b_i)_{i=1}^n)=(b_i)_{i=1}^n,\\
+%& \forall (b_i)_{i=1}^n\in V(T^{(2)}) \text{ mit } n\leq m\rbrace,
+%\end{align*}
+%d.h. die Menge aller Automorphismen, die Folgen mit einer L\"ange kleiner gleich $m$ fixieren, bildet eine Untergruppe.
+%\end{lem}
+%\begin{defin}<2>
+%Die im vorherigen Lemma eingef\"uhrte Gruppe wird \emph{$m$-te Stabilisatorgruppe} genannt.
+%\end{defin}
+%\end{frame}
+%
+%\begin{frame}{Teilb\"aume $T_{(b_i)_{i=1}^n}^{(2)}$}
+%\begin{center}
+%\begin{tikzpicture}[level distance=10mm]
+%  \tikzstyle{edge from parent}=[draw,very thick]
+%  \tikzstyle{every node}=[circle,draw,very thick,font=\small,text=mDarkTeal,inner sep=1pt, minimum size=5mm]
+%  \tikzstyle{level 1}=[sibling distance=60mm]
+%  \tikzstyle{level 2}=[sibling distance=30mm]
+%  \tikzstyle{level 3}=[sibling distance=15mm]
+%  \tikzstyle{level 4}=[sibling distance=7.5mm]
+%  \tikzstyle{level 5}=[sibling distance=3.75mm, level distance=5mm]
+%  
+%  \node [fill=black!30] (root) {$\emptyset$}
+%  	child {node [v_l,onslide={<2> highlight}] {-1} edge from parent [onslide={<2> highlight}]
+%  		child[] {node [v_l,onslide={<2> highlight}, onslide={<1,3> st_l}] {-1}
+%  		 edge from parent [onslide={<2> highlight}]
+%  			child[st_l] {node [v_l] {-1} edge from parent [draw=moderatered]
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			child[onslide={<1-3> st_l}] {node[onslide={<2,3> highlight}] {1}
+%  			  edge from parent [onslide={<2,3> highlight}]
+%  				child {node[onslide={<2,3> draw=moderatered}] [v_l] {-1} edge from parent [onslide={<2,3> draw=moderatered}]
+%  				  child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node[onslide={<2,3> fill=darkpink, highlight}] {1} edge from parent [onslide={<2,3> highlight}]
+%  				  child foreach \a in {0,1}{coordinate edge from parent[dotted, onslide={<2,3> draw=moderatered}]}}
+%  				}
+%  			}
+%  		child[] {node[onslide={<2> draw=mDarkTeal}] {1} edge from parent [onslide={<2> draw=black}]
+%  			child {node [v_l] {-1}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			child {node {1}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1}  child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			}
+%  		}
+%	child {node[] {1}
+%  		child[] {node [v_l] {-1}
+%  			child {node [v_l] {-1}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			child {node {1}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			}
+%  		child[] {node {1}
+%  			child {node [v_l] {-1}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			child {node {1}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			}
+%  		}
+%  	;
+%  	
+%  	\node[draw=none, font=\large, text=moderatered]  [above of=root-1-1] {$T_{(-1,-1)}^{(2)}$};
+%\end{tikzpicture}
+%\end{center}
+%
+%\begin{overlayarea}{\textwidth}{3em}
+%\only<2,3>{Den rot hinterlegten Knoten identifizieren wir mit der Folge $(-1,-1,1,1)\in V(T^{(2)})$}\only<2>{.}
+%\only<3>{und mit $(1,1)\in V(T_{(-1,-1)}^{(2)})$.}
+%\end{overlayarea}
+%\end{frame}
+%
+%\begin{frame}
+%\begin{defin}
+%Mit $T_{(b_i)_{i=1}^n}^{(2)}$ sei der Teilbaum von $T^{(2)}$, dessen Knotenmenge der Menge aller Fortsetzungen der Folge $(b_i)_{i=1}^n$ entspricht, bezeichnet. Wir k\"onnen $T_{(b_i)_{i=1}^n}^{(2)}$ selbst als Bin\"arbaum auf{}fassen.
+%\end{defin} 
+%\begin{lem}<2>
+%Die Abbildung $\psi\colon St(1)\to \aut(T^{(2)})\times\aut(T^{(2)})$ definiert durch
+%\begin{equation*}
+%\psi(\varphi)=(\varphi\big|_{T_{(-1)}^{(2)}},\varphi\big|_{T_{(1)}^{(2)}})
+%\end{equation*}
+%ist ein Gruppenisomorphismus.
+%\end{lem}
+%\end{frame}
+%
+%\begin{frame}{Die Abbildung $\psi$}
+%\begin{center}
+%\begin{tikzpicture}[level distance=10mm]
+%  \tikzstyle{edge from parent}=[very thick, draw]
+%  \tikzstyle{every node}=[circle,draw,very thick,font=\small,text=black,inner sep=1pt, minimum size=5mm]
+%  \tikzstyle{level 1}=[sibling distance=60mm]
+%  \tikzstyle{level 2}=[sibling distance=30mm]
+%  \tikzstyle{level 3}=[sibling distance=15mm]
+%  \tikzstyle{level 4}=[sibling distance=7.5mm]
+%  \tikzstyle{level 5}=[sibling distance=3.75mm, level distance=5mm]
+%  
+%  \node [fill=black!30] (root) {$\emptyset$}
+%  	child {node [v_l,st_l] {-1}
+%  		child[st_l] {node[v_l] {-1}
+%  			child {node [v_l] {-1}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			child {node {1}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			}
+%  		child[st_l] {node {1}
+%  			child {node [v_l] {-1}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			child {node {1}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			}
+%  		}
+%	child {node[st_r] {1}
+%  		child[st_r] {node[v_l] {-1}
+%  			child {node [v_l] {-1}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			child {node {1}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			}
+%  		child[st_r] {node {1}
+%  			child {node [v_l] {-1}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			child {node {1}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			}
+%  		}
+%  	;
+%
+%  	\node[draw=none, font=\large, text=blue]  [above of=root-1] {$T_{(-1)}^{(2)}$};
+%  	\node[draw=none, font=\large, text=green!60!black]  [above of=root-2] {$T_{(1)}^{(2)}$};
+%\end{tikzpicture}
+%\end{center}
+%
+%
+%$\psi$ beschreibt die Wirkung einer Abbildung auf den linken und den rechten Teilbaum.
+%
+%\end{frame}
+%
+%\begin{frame}{1. Grigorchk-Gruppe}
+%\begin{defin}
+%\begin{enumerate}
+%\item Es seien $a,b,c$ und $d$ aus $\aut(T^{(2)})$ definiert durch
+%\begin{align*}
+%a(b_1,b_2,\ldots,b_n)&:= (-b_1,b_2,\ldots,b_n)\\
+%b&:=\psi^{-1}(a,c)\\
+%c&:=\psi^{-1}(a,d) \text{ und}\\
+%d&:=\psi^{-1}(id,b).
+%\end{align*}
+%\item Die \textit{1. Grigorchuk-Gruppe} $\Gamma$ ist die von $a,b,c$ und $d$ erzeugte Untergruppe von $\aut(T^{(2)})$, d.h.
+%\begin{equation*}
+%\Gamma:=\langle a,b,c,d\rangle.
+%\end{equation*}
+%\end{enumerate}
+%\end{defin}
+%\end{frame}
+%
+%\begin{frame}
+%Es gilt $b:=\psi^{-1}(a,c), c:=\psi^{-1}(a,d)$ und $d:=\psi^{-1}(id,b)$. 
+%\begin{center}
+%\begin{tikzpicture}[>=angle 45, level distance=10mm]
+%  \tikzstyle{edge from parent}=[very thick, draw]
+%  \tikzstyle{every node}=[circle,draw,very thick,font=\small,text=black,inner sep=1pt, minimum size=5mm]
+%  \tikzstyle{level 1}=[sibling distance=60mm]
+%  \tikzstyle{level 2}=[sibling distance=30mm]
+%  \tikzstyle{level 3}=[sibling distance=15mm]
+%  \tikzstyle{level 4}=[sibling distance=7.5mm]
+%  \tikzstyle{level 5}=[sibling distance=3.75mm, level distance=5mm]
+%  
+%  \node [fill=black!30] (root) {$\emptyset$}
+%  	child {node [onslide={<1,2,4-> v_l},onslide={<5,10,15> st_l}] {$\only<1,2,4->{\text{-1}}\only<3>{\text{1}}$}
+%  		child[onslide={<5,10,15> st_l}]
+%  		 {node [onslide={<1-5,9-10,14-> v_l}] {$\only<1-5,9-10,14->{\text{-1}}\only<6-8,11-13>{\text{1}}$}
+%  			child {node [v_l] {-1}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			child {node {1}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1}  child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			}
+%  		child[onslide={<5,10,15> st_l}]
+%  		 {node [onslide={<6-8,11-13> v_l}] {$\only<6-8,11-13>{\text{-1}}\only<1-5,9-10,14->{\text{1}}$}
+%  			child {node [v_l] {-1}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			child {node {1}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1}  child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			}
+%  		}
+%	child {node [onslide={<3> v_l},onslide={<5,10,15> st_r}] {$\only<3>{\text{-1}}\only<1,2,4->{\text{1}}$}
+%  		child[onslide={<5,10,15> st_r}] {node [v_l,onslide={<6,11,16> st_l}] {-1}
+%  			child[onslide={<6,11,16> st_l}]
+%  			 {node [onslide={<1-6,9-16> v_l}] {$\only<1-6,9-16>{\text{-1}}\only<7-8,17->{\text{1}}$}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			child[onslide={<6,11,16> st_l}]
+%  			 {node [onslide={<7-8,17-> v_l}] {$\only<7-8,17->{\text{-1}}\only<1-6,9-16>{\text{1}}$}
+%  				child {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child {node {1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			}
+%  		child[onslide={<5,10,15> st_r}] {node [onslide={<6,11,16> st_r}] {1}
+%  			child[onslide={<6,11,16> st_r}] {node [v_l, onslide={<7,12,17> st_l}] {-1}
+%  				child[onslide={<7,12,17> st_l}]
+%  				 {node [onslide={<-12,14-17> v_l}]
+%  				  {$\only<-12,14-17>{\text{-1}}\only<13,18>{\text{1}}$}
+%  				   child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child[onslide={<7,12,17> st_l}]
+%  				 {node[fill=red] {$\only<13,18>{\text{-1}}\only<-12,14-17>{\text{1}}$}
+%  				  child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			child[onslide={<6,11,16> st_r}] {node [onslide={<7,12,17> st_r}] {1}
+%  				child[onslide={<7,12,17> st_r}]
+%  				 {node [v_l] {-1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				child[onslide={<7,12,17> st_r}]
+%  				 {node {1} child foreach \a in {0,1}{coordinate edge from parent[dotted]}}
+%  				}
+%  			}
+%  		}
+%  	;
+%  	
+%  	\path[onslide={<3> hlarrow}] (root-1) .. controls +(3,-0.5) .. (root-2);
+%  	\path[onslide={<6-8,11-13> hlarrow}] (root-1-1) .. controls +(1.5,-0.5) .. (root-1-2);
+%  	\path[onslide={<7-8,17-> hlarrow}] (root-2-1-1) .. controls +(0.75,-0.5) .. (root-2-1-2);
+%  	\path[onslide={<13,18> hlarrow}] (root-2-2-1-1) .. controls +(0.375,-0.5) .. (root-2-2-1-2);
+%  	\path[onslide={<8,13> hlarrow}] (root-2-2-2-1-1) .. controls +(0.1875,-0.5) .. (root-2-2-2-1-2);
+%  		 
+%  	\node[draw=none, font=\large, text=blue]  [above of=root-1] {$\only<5,10>{a}\only<15>{id}$};
+%  	\node[draw=none, font=\large, text=green!60!black]  [above of=root-2] {$\only<5>{c}\only<10>{d}\only<15>{b}$};
+%  	\node[draw=none, font=\large, text=blue]  [above of=root-2-1] {$\only<6,16>{a}\only<11>{id}$};
+%  	\node[draw=none, font=\large, text=green!60!black]  [above of=root-2-2] {$\only<6>{d}\only<11>{b}\only<16>{c}$};
+%  	\node[draw=none, font=\large, text=blue]  [above of=root-2-2-1] {$\only<7>{id}\only<12,17>{a}$};
+%  	\node[draw=none, font=\large, text=green!60!black]  [above of=root-2-2-2] {$\only<7>{b}\only<12>{c}\only<17>{d}$};
+%\end{tikzpicture}
+%\end{center}
+%
+%\begin{overlayarea}{\textwidth}{2em}
+%\only<1>{Wir bestimmen die Bilder von $v:=(1,1,-1,1)\in V(T^{(2)})$ bzgl. $a,b,c$ und $d$.}
+%\only<2,3>{
+%	\begin{equation*}
+%	a(1,1,-1,1)\onslide<3>{=(-1,1,-1,1)}
+%	\end{equation*}}
+%\only<4-8>{\vspace{-2.5em}
+%	\begin{align*}
+%	b(1,1,-1,1)	 &\onslide<5-8>{=(1,c(1,-1,1))}\onslide<6-8>{=(1,1,d(-1,1))}\onslide<7,8>{=(1,1,-1,id(1))}\\
+%				 &\onslide<8>{=(1,1,-1,1)=v}
+%	\end{align*}}
+%\only<9-13>{\vspace{-2.5em}
+%	\begin{align*}
+%	c(1,1,-1,1) 	&\onslide<10-13>{=(1,d(1,-1,1))}\onslide<11-13>{=(1,1,b(-1,1))}\onslide<12,13>{=(1,1,-1,a(1))}\\
+%				&\onslide<13>{=(1,1,-1,-1)}
+%	\end{align*}}
+%\only<14-18>{\vspace{-2.5em}
+%	\begin{align*}
+%	d(1,1,-1,1) 	&\onslide<15-18>{=(1,b(1,-1,1))}\onslide<16-18>{=(1,1,c(-1,1))}\onslide<17,18>{=(1,1,-1,a(1))}\\
+%				&\onslide<18>{=(1,1,-1,-1)}
+%	\end{align*}}
+%\end{overlayarea}
+%\end{frame}
+%
+%%\begin{frame}
+%%\begin{exam}
+%%F\"ur $v:=(1,1,-1,1)\in V(T^{(2)})$ ist
+%%\begin{align*}
+%%a(v)&=(-1,1,-1,1),\\
+%%b(v)&=(1,c(1,-1,1))=(1,1,d(-1,1))=(1,1,-1,id(1))\\
+%%&=(1,1,-1,1)=v,\\
+%%c(v)&=(1,d(1,-1,1))=(1,1,b(-1,1))=(1,1,-1,a(1))\\
+%%&=(1,1,-1,-1) \text{ und}\\
+%%d(v)&=(1,b(1,-1,1))=(1,1,c(-1,1))=(1,1,-1,a(1))\\
+%%&=(1,1,-1,-1).
+%%\end{align*}
+%%\end{exam}
+%%\end{frame}
+%
+%\subsubsection{Unendliche Ordnung von $\Gamma$}
+%\begin{frame}
+%\begin{theo}
+%F\"ur die Erzeuger $a,b,c$ und $d$ von $\Gamma$ gilt
+%\begin{enumerate}
+%\item \begin{equation*}
+%a^2=b^2=c^2=d^2=id
+%\end{equation*}
+%und
+%\item \begin{equation*}
+%bc = cb = d,\quad bd = db = c,\quad cd = dc = b.
+%\end{equation*}
+%\end{enumerate}
+%\end{theo}
+%\end{frame}
+%
+%\begin{frame}
+%Eine direkte Konsequenz des vorherigen Satzes ist, dass jedes Element von $\Gamma$ von der Form
+%\begin{equation*}
+%u_0au_1au_2a\ldots u_lau_{l+1}
+%\end{equation*}
+%ist, wobei $u_1\ldots u_{l}\in\lbrace b,c,d\rbrace$ und $u_0,u_{l+1}\in\lbrace id,b,c,d\rbrace$
+%\end{frame}
+%
+%\begin{frame}
+%\begin{defin}
+%F\"ur $m\in\Z$, $m\geq 1$ sei $St_\Gamma(m):=St(m)\cap \Gamma$ die \emph{$m$-te Stabilisatorgruppe von $\Gamma$.}
+%\end{defin}
+%\begin{lem}<2>
+%Ein Automorphismus $\gamma=u_0au_1au_2a\ldots u_lau_{l+1}$ ist genau dann in $St_\Gamma(1)$, wenn die Anzahl an Automorphismen $a$ in $\gamma$ gerade ist, d.h. $l$ ist ungerade.
+%\end{lem}
+%\end{frame}
+%
+%
+%\begin{frame}{$\Gamma$ ist unendlich}
+%\begin{lem}
+%F\"ur die Automorphismen $a,b,c$ und $d$ gelten
+%\begin{align*}
+%\psi(aba)&=(c,a)\\
+%\psi(aca)&=(d,a)\text{ und}\\
+%\psi(ada)&=(b,id).
+%\end{align*}
+%\end{lem}
+%
+%\begin{theo}<2>
+%Die Abbildung $\psi_1\colon St_\Gamma(1)\to \Gamma$ definiert durch $\gamma\mapsto \gamma\big|_{T_{(1)}^{(2)}}$ ist ein Gruppenepimorphismus.\\
+%Da $a\notin St_\Gamma(1)$ folgt, dass $\Gamma$ unendlich ist.
+%\end{theo}
+%\end{frame}
+%
+%\subsubsection{Periodizit\"at von $\Gamma$}
+%
+%\begin{frame}{$\Gamma$ ist periodisch}
+%\begin{theo}
+%$\Gamma$ ist eine 2-Gruppe, d.h. f\"ur alle $\gamma\in\Gamma$ existiert ein $n\in\Z, n\geq 0$, sodass $\gamma^{2^n}=id$. 
+%\end{theo}
+%\end{frame}
+%
+%\section{Weiterf\"uhrendes zu Burnside-Problemen}
+%\subsection{Geschichte und Varianten}
+%\begin{frame}
+%\begin{description}
+%\item[1902:] \textsc{William Burnside} stellt in seinem Artikel
+%\begin{quotation}
+%On an unsettled question in the\\ theory of discontinuous groups
+%\end{quotation}
+%das \emph{Unbounded Burnside's Problem} auf.\\
+%Da er das Problem nicht l\"osen kann, fragt Burnside die "`einfachere"' Frage
+%\begin{quotation}
+%Ist jede endlich erzeugte Gruppe mit\\ endlichem Exponent endlich?
+%\end{quotation}
+%(\emph{Bounded Burnside's Problem})
+%\end{description}
+%\end{frame}
+%
+%\begin{frame}
+%\begin{description}
+%\item[um 1930:] Das \emph{Restricted Burnside's Problem} wird formuliert:
+%\begin{quotation}
+%Gibt es bis auf Isomorphie nur endlich\\
+%viele endliche Gruppen, die von \\
+%$n$ Elementen mit Ordnung $m$ \\
+%erzeugt werden?
+%\end{quotation}
+%\item[1964:] \textsc{Evgeny Golod} and \textsc{Igor Shafarevich} konstruieren ein Gegenbeispiel f\"ur das \textit{Unbounded Burnside's Problem.}
+%\end{description}
+%\end{frame}
+%
+%\begin{frame}
+%\begin{description}
+%\item[1968:] \textsc{Pyotr Novikov} und \textsc{Sergei Adian} beweisen die Existenz von unendlichen, endlich erzeugten Gruppen mit Exponent $n$ f\"ur alle ungeraden $n\geq 4381$ (\textit{Novikov-Adian-Theorem}).
+%\item[1975:] \textsc{Sergei Adian} verallgemeinert die Aussage f\"ur ungerade Exponenten gr\"o\ss{}er 664.
+%\item[1980:] \textsc{Rostislav Grigorchuk} konstruiert mit der 1.~Grigorchuk-Gruppe ein zweites Gegenbeispiel f\"ur das \emph{Unbounded Burnside's Problem.}
+%\end{description}
+%\end{frame}
+%
+%\begin{frame}
+%\begin{description}
+%\item[1982:] \textsc{Alexander Yu. Ol\'{s}hanski\u{i}} ver\"offentlicht einen auf geometrischen Argumenten basierenden Beweis des \textit{Novikov-Adian-Theorem} f\"ur ungerade Exponenten gr\"o\ss{}er $10^{10}$.
+%\item[1992:] \textsc{Sergei Vasilievich Ivanov} widerlegt das \emph{Bounded Burnside's Problem} f\"ur alle geraden Exponenten $n\geq 2^{48}$, die durch $2^9$ teilbar sind.
+%\end{description}
+%\end{frame}
+%
+%\begin{frame}
+%\begin{description}
+%\item[1994:] \textsc{Efim Zelmanov} beantwortet das \emph{Restricted Burnside's Problem} positiv und erh\"alt f\"ur seine Arbeit die Fields-Medaille.
+%\item[1996:] \textsc{I. G. Lys\"{e}nok} gibt Gegenbeispiele des \textit{Bounded Burnside's Problem} f\"ur alle Exponenten $n\geq 8000$ an.
+%\end{description}
+%\end{frame}
+%
+%\section*{Literatur}
+%\begin{frame}{Literatur}
+%
+%\begin{thebibliography}{W}
+%\bibitem{Hud} \textsc{Hudec, Drew A.}: \emph{On the Burnside Problem}\\
+%University of Chicago REU, 2006
+%
+%\bibitem{Sap} \textsc{Sapir, Mark V.}: \emph{Combinatorial algebra: syntax and semantics}\\
+%Springer, 2013
+%
+%\end{thebibliography}
+%
+%\end{frame}
+%
+%\begin{frame}[standout]
+%    Thank you for your attention!
+%\end{frame}
+\end{document}
