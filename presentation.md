@@ -11,12 +11,14 @@ date: 28 April 2017
 ## Periodic Groups
 
 ### Definition
+
 A group $G$ is called *periodic* if for each element $a \in G$ there exists an integer $n > 0$ such that
 $$a^n = e.$$
 
 . . .
 
 ### Examples
+
  * Every finite group is periodic.
  * The group of bijective mappings from $\N$ onto $\N$ is periodic.
 
@@ -24,32 +26,39 @@ $$a^n = e.$$
 ## Groups with Exponent
 
 ### Definition
+
 If there exists a positive integer $N$, such that
 $$a^N = e$$
 for all elements $a$ of a group $G$, we say $G$ *is of exponent* $N$.
+
 . . .
 
 ### Example
+
 Let $\F_2$ be the field of order 2. Then the polynomials $\mathbb F_2[X]$ over $\F_2$ form a group of exponent $2$ w. r. t. addition.
 
 
 ## Bounded Burnside Problem
+
 > A still undecided problem in the theory of discontinuous groups is whether the order of a group may be not finite while the order of every operation it contains is finite.  
 > — [@burnside1902]
 
 . . .
 
 ### Common Interpretation
+
 Is every finitely generated, periodic group finite?
 
 
 ## Special Case: Abelian Groups
+
 If the group $G$ is assumed to be abelian then the answer to [BBP][Bounded Burnside Problem] is affirmative since
 $$ G\cong\Z^n \oplus \Z_{q_1} \oplus \cdots \oplus \Z_{q_t} $$
 by the [fundamental theorem of finitely generated abelian groups.](https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Classification)
 
 
 ## Unbounded Burnside Problem
+
 > Let $\seq[m]{A}$ be a set of independent operations finite in number, and suppose that they satisfy the system of relations given by
 > $$S^n=1$$
 > where $n$ is a given integer, while $S$ represents in turn any and every operation which can be generated from the m given operations $A$.
@@ -59,8 +68,11 @@ by the [fundamental theorem of finitely generated abelian groups.](https://en.wi
 
 
 ## Special Case: Exponent $2$
+
 If the group is of exponent $2$ then it is abelian since
+
 $$ (ab)(ab) = e = (ab)(ba). $$
+
 The answer to [UBP][Unbounded Burnside Problem] is affirmative by the [fundamental theorem of finitely generated abelian groups.](https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Classification)
 
 
@@ -100,13 +112,11 @@ An $u-u$-path $(u=v_0,\seq{v}=u)$ is called *cycle* if it contains more than $2$
 
 ![An Automorphism](res/Automorphism.svg){ height=30% }
 
-* Let $G = (V, E)$ be a graph.
+> * Let $G = (V, E)$ be a graph.
   A mapping $\varphi \colon V \to V$ is called *graph-automorphism* of $G$ if
   $$\lbrace v_1,v_2\rbrace\in E \Leftrightarrow \lbrace \varphi(v_1),\varphi(v_2)\rbrace\in E$$
 
-. . .
-
-* The set $\Aut(G)$ of all automorphisms of $G$ forms a group w. r. t. composition.
+> * The set $\Aut(G)$ of all automorphisms of $G$ forms a group w. r. t. composition.
 
 
 ## The Full Binary Tree $\T$
@@ -144,6 +154,7 @@ The *induced* subgraph of $\T$ containing all sequences that extend $(\seq{b}) \
 ## Automorphisms of $\T$
 
 ### Theorem
+
 Let $\varphi\in\AutT$. Then
 
 > * $\varphi$ fixes the root, i. e.
@@ -158,28 +169,38 @@ Let $\varphi\in\AutT$. Then
 ![Action on L3](res/ActionOfAutT.svg){ height=30% }
 
 By enumerating the vertices on level $k$ via
+
 $$ \beta_k(\seq[k]{b}) := 1+\sum_{i=1}^{k} b_i2^{k-i}, $$
+
 one obtains a group-homomorphism
+
 $$ p_k \colon \AutT \to \mathfrak{S}_{2^k}. $$
 
 ## Stabiliser Groups
 
 ### Definition
+
 The normal subgroup $\St{k}=\ker(p_k)$ of the automorphism group $\AutT$ is called *$k$-th stabiliser group of $\T$*.
 
 . . .
 
 ### Remark
+
 $\St{k}$ preserves the first $k + 1$ levels of $\T$ pointwise.
 
 
 ---
 
 ### Lemma
+
 The mapping
+
 $$ \psi\colon\St{1}\to\AutT\times\AutT $$
+
 defined by
+
 $$ \varphi\mapsto\left(\varphi\big\vert_{\ST{(0)}},\varphi\big\vert_{\ST{(1)}}\right) $$
+
 is an isomorphism of groups.
 
 ---
@@ -202,6 +223,7 @@ $\psi$ identifies an automorphism with its action on $\ST{(0)}$ and $\ST{(1)}$.
 
 
 ## Automorphism $c$
+
 $\psi(c) = (a, d)$
 
 ![Automorphism c 1](res/AutomorphismC1.svg){ height=30% }
@@ -212,6 +234,7 @@ $a(1, 1, 0, 0) = (1, d(1, 0, 0))$
 
 
 ## Automorphism $c$
+
 $\psi(c) = (a, d)$, $\psi(d) = (\id, b)$
 
 ![Automorphism c 2](res/AutomorphismC2.svg){ height=30% }
@@ -220,6 +243,7 @@ $a(1, 1, 0, 0) = (1, d(1, 0, 0)) = (1, 1, b(0, 0))$
 
 
 ## Automorphism $c$
+
 $\psi(c) = (a, d)$, $\psi(d) = (\id, b)$ and $\psi(b) = (a, c)$
 
 ![Automorphism c 3](res/AutomorphismC3.svg){ height=30% }
@@ -228,6 +252,7 @@ $a(1, 1, 0, 0) = (1, d(1, 0, 0)) = (1, 1, b(0, 0)) = (1, 1, 0, a(0))$
 
 
 ## Automorphism $c$
+
 $\psi(c) = (a, d)$, $\psi(d) = (\id, b)$ and $\psi(b) = (a, c)$
 
 ![Automorphism c 4](res/AutomorphismC4.svg){ height=30% }
@@ -238,13 +263,11 @@ $a(1, 1, 0, 0) = (1, d(1, 0, 0)) = (1, 1, b(0, 0)) = (1, 1, 0, a(0)) = (1, 1, 0,
 ## Identities of the Generators
 
 ### Theorem
-* The generators are of order $2$, i. e.
+
+> * The generators are of order $2$, i. e.
   $$ a^2 = b^2 = c^2 = d^2. $$
-
-. . .
-
-* Three generators suffice since  
-  $ bc = cb = d, bd = db = c$ and $cd = dc = b$
+> * Three generators suffice since  
+  $bc = cb = d, bd = db = c$ and $cd = dc = b$\ 
 
 . . .
 

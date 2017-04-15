@@ -48,7 +48,7 @@
 </section><section id="groups-with-exponent" class="slide level2">
 <h2>Groups with Exponent</h2>
 <h3 id="definition-1">Definition</h3>
-<p>If there exists a positive integer <span class="math inline">\(N\)</span>, such that <span class="math display">\[a^N = e\]</span> for all elements <span class="math inline">\(a\)</span> of a group <span class="math inline">\(G\)</span>, we say <span class="math inline">\(G\)</span> <em>is of exponent</em> <span class="math inline">\(N\)</span>. . . .</p>
+<p>If there exists a positive integer <span class="math inline">\(N\)</span>, such that <span class="math display">\[a^N = e\]</span> for all elements <span class="math inline">\(a\)</span> of a group <span class="math inline">\(G\)</span>, we say <span class="math inline">\(G\)</span> <em>is of exponent</em> <span class="math inline">\(N\)</span>.</p>
 <h3 id="example">Example</h3>
 <p>Let <span class="math inline">\(\operatorname{\mathbb{F}}_2\)</span> be the field of order 2. Then the polynomials <span class="math inline">\(\mathbb F_2[X]\)</span> over <span class="math inline">\(\operatorname{\mathbb{F}}_2\)</span> form a group of exponent <span class="math inline">\(2\)</span> w. r. t. addition.</p>
 </section><section id="bounded-burnside-problem" class="slide level2">
@@ -73,7 +73,9 @@
 </blockquote>
 </section><section id="special-case-exponent-2" class="slide level2">
 <h2>Special Case: Exponent <span class="math inline">\(2\)</span></h2>
-<p>If the group is of exponent <span class="math inline">\(2\)</span> then it is abelian since <span class="math display">\[ (ab)(ab) = e = (ab)(ba). \]</span> The answer to <a href="#/unbounded-burnside-problem">UBP</a> is affirmative by the <a href="https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Classification">fundamental theorem of finitely generated abelian groups.</a></p>
+<p>If the group is of exponent <span class="math inline">\(2\)</span> then it is abelian since</p>
+<p><span class="math display">\[ (ab)(ab) = e = (ab)(ba). \]</span></p>
+<p>The answer to <a href="#/unbounded-burnside-problem">UBP</a> is affirmative by the <a href="https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Classification">fundamental theorem of finitely generated abelian groups.</a></p>
 </section></section>
 <section><section id="graphtheoretical-preliminaries" class="titleslide slide level1"><h1>Graphtheoretical Preliminaries</h1></section><section id="graphs" class="slide level2">
 <h2>Graphs</h2>
@@ -105,13 +107,11 @@
 <img src="res/Automorphism.svg" alt="An Automorphism" style="height:30.0%" /><figcaption>An Automorphism</figcaption>
 </figure>
 <ul>
-<li>Let <span class="math inline">\(G = (V, E)\)</span> be a graph. A mapping <span class="math inline">\(\varphi \colon V \to V\)</span> is called <em>graph-automorphism</em> of <span class="math inline">\(G\)</span> if <span class="math display">\[\lbrace v_1,v_2\rbrace\in E \Leftrightarrow \lbrace \varphi(v_1),\varphi(v_2)\rbrace\in E\]</span></li>
+<li class="fragment">Let <span class="math inline">\(G = (V, E)\)</span> be a graph. A mapping <span class="math inline">\(\varphi \colon V \to V\)</span> is called <em>graph-automorphism</em> of <span class="math inline">\(G\)</span> if <span class="math display">\[\lbrace v_1,v_2\rbrace\in E \Leftrightarrow \lbrace \varphi(v_1),\varphi(v_2)\rbrace\in E\]</span></li>
 </ul>
-<div class="fragment">
 <ul>
-<li>The set <span class="math inline">\(\operatorname{\mathrm{Aut}}(G)\)</span> of all automorphisms of <span class="math inline">\(G\)</span> forms a group w. r. t. composition.</li>
+<li class="fragment">The set <span class="math inline">\(\operatorname{\mathrm{Aut}}(G)\)</span> of all automorphisms of <span class="math inline">\(G\)</span> forms a group w. r. t. composition.</li>
 </ul>
-</div>
 </section><section id="the-full-binary-tree-t2" class="slide level2">
 <h2>The Full Binary Tree <span class="math inline">\({T^{(2)}}\)</span></h2>
 <figure>
@@ -152,7 +152,10 @@
 <figure>
 <img src="res/ActionOfAutT.svg" alt="Action on L3" style="height:30.0%" /><figcaption>Action on L3</figcaption>
 </figure>
-<p>By enumerating the vertices on level <span class="math inline">\(k\)</span> via <span class="math display">\[ \beta_k({b_1,\ldots, b_{k}}) := 1+\sum_{i=1}^{k} b_i2^{k-i}, \]</span> one obtains a group-homomorphism <span class="math display">\[ p_k \colon {\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}\to \mathfrak{S}_{2^k}. \]</span></p>
+<p>By enumerating the vertices on level <span class="math inline">\(k\)</span> via</p>
+<p><span class="math display">\[ \beta_k({b_1,\ldots, b_{k}}) := 1+\sum_{i=1}^{k} b_i2^{k-i}, \]</span></p>
+<p>one obtains a group-homomorphism</p>
+<p><span class="math display">\[ p_k \colon {\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}\to \mathfrak{S}_{2^k}. \]</span></p>
 </section><section id="stabiliser-groups" class="slide level2">
 <h2>Stabiliser Groups</h2>
 <h3 id="definition-2">Definition</h3>
@@ -162,7 +165,11 @@
 </section><section class="slide level2">
 
 <h3 id="lemma">Lemma</h3>
-<p>The mapping <span class="math display">\[ \psi\colon{\mathrm{St}_{}(1)}\to{\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}\times{\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}\]</span> defined by <span class="math display">\[ \varphi\mapsto\left(\varphi\big\vert_{{{T^{(2)}}_{(0)}}},\varphi\big\vert_{{{T^{(2)}}_{(1)}}}\right) \]</span> is an isomorphism of groups.</p>
+<p>The mapping</p>
+<p><span class="math display">\[ \psi\colon{\mathrm{St}_{}(1)}\to{\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}\times{\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}\]</span></p>
+<p>defined by</p>
+<p><span class="math display">\[ \varphi\mapsto\left(\varphi\big\vert_{{{T^{(2)}}_{(0)}}},\varphi\big\vert_{{{T^{(2)}}_{(1)}}}\right) \]</span></p>
+<p>is an isomorphism of groups.</p>
 </section><section class="slide level2">
 
 <figure>
@@ -215,14 +222,10 @@
 <h2>Identities of the Generators</h2>
 <h3 id="theorem-1">Theorem</h3>
 <ul>
-<li>The generators are of order <span class="math inline">\(2\)</span>, i. e. <span class="math display">\[ a^2 = b^2 = c^2 = d^2. \]</span></li>
+<li class="fragment">The generators are of order <span class="math inline">\(2\)</span>, i. e. <span class="math display">\[ a^2 = b^2 = c^2 = d^2. \]</span></li>
+<li class="fragment">Three generators suffice since<br />
+<span class="math inline">\(bc = cb = d, bd = db = c\)</span> and <span class="math inline">\(cd = dc = b\)</span> </li>
 </ul>
-<div class="fragment">
-<ul>
-<li>Three generators suffice since<br />
-$ bc = cb = d, bd = db = c$ and <span class="math inline">\(cd = dc = b\)</span></li>
-</ul>
-</div>
 <div class="fragment">
 <p>As a consequence, each <span class="math inline">\(\gamma \in \Gamma\)</span> can be written as</p>
 <p><span class="math display">\[ \gamma=u_0au_1au_2a\ldots u_lau_{l+1}, \]</span></p>
