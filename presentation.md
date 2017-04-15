@@ -33,10 +33,11 @@ for all elements $a$ of a group $G$, we say $G$ *is of exponent* $N$.
 
 . . .
 
+<div fragment="fade-in">
 ### Example
 
 Let $\F_2$ be the field of order 2. Then the polynomials $\mathbb F_2[X]$ over $\F_2$ form a group of exponent $2$ w. r. t. addition.
-
+</div>
 
 ## Bounded Burnside Problem
 
@@ -93,6 +94,10 @@ A (simple) *graph* is a pair of two sets $(V,E)$, where $V$ is non-empty and $E$
 
 A *$u-v$-walk* is a finite sequence $(u=v_0,\seq{v}=v)$ in which $\lbrace v_{i-1},v_i\rbrace\in E$ for $1\leq i\leq n$.
 
+<div class="notes">
+  dt. »Weg«
+</div>
+
 
 ## Paths
 
@@ -100,6 +105,9 @@ A *$u-v$-walk* is a finite sequence $(u=v_0,\seq{v}=v)$ in which $\lbrace v_{i-1
 
 A *$u-v$-path* is a $u-v$-walk, such that all vertices in the walk except $u$ and $v$ differ pairwise.
 
+<div class="notes">
+  dt. »Pfad«
+</div>
 
 ## Cycles
 
