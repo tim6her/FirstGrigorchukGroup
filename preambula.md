@@ -9,6 +9,7 @@
 \DeclareMathOperator{\ls}{L(S)}
 \DeclareMathOperator{\kernel}{ker}
 \DeclareMathOperator{\D}{D}
+\DeclareMathOperator{\ord}{ord}
 
 \DeclareMathOperator{\End}{\mathrm{End}}
 \DeclareMathOperator{\Aut}{\mathrm{Aut}}

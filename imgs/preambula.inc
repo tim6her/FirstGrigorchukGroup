@@ -34,7 +34,7 @@
 \tikzstyle{every node}=[circle,draw=cLines,font=\small,text=cLines,inner sep=1pt, minimum size=5mm, very thick]
 \tikzstyle{edge from parent}=[draw=cLines, very thick]
 \tikzstyle{st}=[cLeft, line join=round, line width=2mm]
-\tikzstyle{st1}=[cLeft!90!black, line join=round, line width=2mm]
+\tikzstyle{st1}=[cLeft!60!white, line join=round, line width=1mm]
 
 \tikzstyle{bgn}=[node distance=6mm, font=normal]
 \tikzstyle{hlarrow}=[stealth-stealth, shorten <=1pt, shorten >=1pt, draw=cHighlight, line width=2.5pt]

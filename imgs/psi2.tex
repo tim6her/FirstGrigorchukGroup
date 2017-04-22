@@ -1,5 +1,5 @@
 \input{preambula.inc}
-\begin{tikzpicture}[level distance=7.5mm, baseline=(b.base)]
+\begin{tikzpicture}[level distance=7.5mm, baseline=(b.base), scale=1.8, transform shape]
 \node (b) {$\emptyset$}
   child foreach \i in {0,1} {node {$\i$}
  {child foreach \j in {0,1} {node {$\j$}
@@ -19,10 +19,15 @@
 \node[draw=none] [above of=b-1-2] (ST01) {$\id$};
 \node[draw=none] [above of=b-2-1] (ST10) {$a$};
 \node[draw=none] [above of=b-2-2] (ST11) {$c$};
+
+\coordinate [above of=ST00] (ST00*);
+\coordinate [above of=ST01] (ST01*);
+\coordinate [above of=ST10] (ST10*);
+\coordinate [above of=ST11] (ST11*);
 \end{scope}
 
 \begin{scope}[node distance=3mm,font=\scriptsize, inner sep=1pt]
-\tikzstyle{every node}=[draw=none]
+\tikzstyle{every node}=[draw=none,text=cLines]
 \node  [below of=ST] {$\psi_1(d)=(\id,b)$};
 
 \node  [below of=ST0] {$\psi_1(\id)=(\id,\id)$};
@@ -31,10 +36,10 @@
 
 \begin{pgfonlayer}{background}
 
-\filldraw[st] 	(ST0.north)  -- (ST01.north) -- (b-1-2-2.east) -- (b-1-2-2-2.east)-- (b-1-2-2-2-2) --
-				(b-1-1-1-1-1) -- (b-1-1-1-1.west) -- (b-1-1-1.west) -- (ST00.north) -- cycle;
-\filldraw[st] 	(ST1.north)  -- (ST11.north) -- (b-2-2-2.east) -- (b-2-2-2-2.east) -- (b-2-2-2-2-2) --
-				(b-2-1-1-1-1) -- (b-2-1-1-1.west) -- (b-2-1-1.west) -- (ST10.north) -- cycle;
+\filldraw[st] 	(ST0.north)  -- (ST01*.north) -- (b-1-2-2.east) -- (b-1-2-2-2.east)-- (b-1-2-2-2-2) --
+				(b-1-1-1-1-1) -- (b-1-1-1-1.west) -- (b-1-1-1.west) -- (ST00*.north) -- cycle;
+\filldraw[st] 	(ST1.north)  -- (ST11*.north) -- (b-2-2-2.east) -- (b-2-2-2-2.east) -- (b-2-2-2-2-2) --
+				(b-2-1-1-1-1) -- (b-2-1-1-1.west) -- (b-2-1-1.west) -- (ST10*.north) -- cycle;
 
 \filldraw[st1] 	(ST00.north)  -- (b-1-1-2.east) -- (b-1-1-2-2.east) -- (b-1-1-2-2-2.east) --
 				(b-1-1-1-1-1) -- (b-1-1-1-1.west) -- (b-1-1-1.west) -- cycle;

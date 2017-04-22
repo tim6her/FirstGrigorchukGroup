@@ -41,7 +41,7 @@
 <h3 id="definition">Definition</h3>
 <p>A group <span class="math inline">\(G\)</span> is called <em>periodic</em> if for each element <span class="math inline">\(a \in G\)</span> there exists an integer <span class="math inline">\(n &gt; 0\)</span> such that <span class="math display">\[a^n = e.\]</span></p>
 <div class="fragment">
-<div fragment="">
+<div fragment="true">
 <h3 id="examples">Examples</h3>
 <ul>
 <li>Every finite group is periodic.</li>
@@ -54,7 +54,7 @@
 <h3 id="definition-1">Definition</h3>
 <p>If there exists a positive integer <span class="math inline">\(N\)</span>, such that <span class="math display">\[a^N = e\]</span> for all elements <span class="math inline">\(a\)</span> of a group <span class="math inline">\(G\)</span>, we say <span class="math inline">\(G\)</span> <em>is of exponent</em> <span class="math inline">\(N\)</span>.</p>
 <div class="fragment">
-<div fragment="">
+<div fragment="true">
 <h3 id="example">Example</h3>
 <p>Let <span class="math inline">\(\operatorname{\mathbb{F}}_2\)</span> be the field of order <span class="math inline">\(2\)</span>. Then the polynomials <span class="math inline">\(\mathbb F_2[X]\)</span> over <span class="math inline">\(\operatorname{\mathbb{F}}_2\)</span> form a group of exponent <span class="math inline">\(2\)</span> w. r. t. addition.</p>
 </div>
@@ -173,13 +173,13 @@
 <h3 id="definition-2">Definition</h3>
 <p>The normal subgroup <span class="math inline">\({\mathrm{St}_{}(k)}=\ker(p_k)\)</span> of the automorphism group <span class="math inline">\({\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}\)</span> is called <em><span class="math inline">\(k\)</span>-th stabiliser group of <span class="math inline">\({T^{(2)}}\)</span></em>.</p>
 <div class="fragment">
-<div fragment="">
+<div fragment="true">
 <h3 id="remark">Remark</h3>
 <p><span class="math inline">\({\mathrm{St}_{}(k)}\)</span> preserves the first <span class="math inline">\(k + 1\)</span> levels of <span class="math inline">\({T^{(2)}}\)</span> pointwise.</p>
 </div>
 </div>
-</section><section class="slide level2">
-
+</section><section id="restrictions-to-subtrees" class="slide level2">
+<h2>Restrictions to Subtrees</h2>
 <h3 id="lemma">Lemma</h3>
 <p>The mapping</p>
 <p><span class="math display">\[ \psi\colon{\mathrm{St}_{}(1)}\to{\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}\times{\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}\]</span></p>
@@ -259,7 +259,7 @@
 <p>where <span class="math inline">\(u_1\ldots u_{l}\in\lbrace b,c,d\rbrace\)</span> and <span class="math inline">\(u_0,u_{l+1}\in\lbrace \operatorname{id},b,c,d\rbrace.\)</span></p>
 <div class="fragment">
 <h3 id="notation">Notation</h3>
-<p>The number of generators appearing in the shortes representation of <span class="math inline">\(\gamma\)</span> as as a word of the form above is denoted by <span class="math inline">\(\ell(\gamma)\)</span>.</p>
+<p>The number of generators appearing in the shortes representation of <span class="math inline">\(\gamma\)</span> as a word of the form above is denoted by <span class="math inline">\(\ell(\gamma)\)</span>.</p>
 </div>
 </section></section>
 <section><section id="a-counterexample-to-the-unbounded-burnside-problem" class="titleslide slide level1"><h1>A Counterexample to the Unbounded Burnside Problem</h1></section><section id="stabiliser-groups-revisited" class="slide level2">
@@ -280,7 +280,7 @@
 <p>Let <span class="math inline">\(\psi\colon{\mathrm{St}_{}(1)}\to{\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}^2\)</span> be defined as before. Then</p>
 <p><span class="math display">\[ \psi(aba) = (c, a), \]</span> <span class="math display">\[ \psi(aca) = (d, a), \]</span> <span class="math display">\[ \psi(ada) = (b, \operatorname{id}). \]</span></p>
 </section><section id="gamma-is-infinite" class="slide level2">
-<h2><span class="math inline">\(\Gamma\)</span> is infinite</h2>
+<h2><span class="math inline">\(\Gamma\)</span> is Infinite</h2>
 <h3 id="theorem">Theorem</h3>
 <p>The mapping <span class="math inline">\(\psi_\mathrm{right}\colon{\mathrm{St}_{\Gamma}(1)}\to\Gamma\)</span>, defined by</p>
 <p><span class="math display">\[ \psi_\mathrm{right}(\gamma)=\gamma_2 \]</span></p>
@@ -355,16 +355,97 @@
 <p>the first Grigorchuk group is</p>
 <ul>
 <li class="fragment">finitely generated,</li>
-<li class="fragment">periodic and</li>
+<li class="fragment">periodic as well as</li>
 <li class="fragment">infinite</li>
 </ul>
 <div class="fragment">
 <p>and poses a counterexample to the <em>unbounded Burnside problem.</em></p>
 </div>
 </section></section>
-<section><section id="growth-of-the-first-grigorchuk-group" class="titleslide slide level1"><h1>Growth of the First Grigorchuk Group</h1></section><section class="slide level2">
-
+<section><section id="growth-of-the-first-grigorchuk-group" class="titleslide slide level1"><h1>Growth of the First Grigorchuk Group</h1></section><section id="growth-of-the-orders-of-automorphisms" class="slide level2">
+<h2>Growth of the Orders of Automorphisms</h2>
+<h3 id="definition-4">Definition</h3>
+<p>The set of all orders of automorphisms of lenght at most <span class="math inline">\(k\)</span> is denoted <span class="math display">\[ O_k := \lbrace ord(\gamma) \mid \gamma\in\Gamma, \ell(\gamma) \leq k \rbrace \]</span></p>
+<div class="fragment">
+<p>The <em>growth function</em> is defined as <span class="math display">\[ o(k) = \max(O_k) \]</span></p>
+</div>
+<div class="fragment">
+<div fragment="true">
+<h3 id="remark-1">Remark</h3>
+<p>Since <span class="math inline">\(O_k \subseteq O_{k + 1}\)</span>, the growth function is monotonically increasing.</p>
+</div>
+</div>
+</section><section id="upper-bounds-for-the-growth-of-gamma" class="slide level2">
+<h2>Upper Bounds for the Growth of <span class="math inline">\(\Gamma\)</span></h2>
+<h3 id="corollary">Corollary</h3>
+<p>The growth of <span class="math inline">\(\Gamma\)</span> is bound by an exponential function. More precisely</p>
+<p><span class="math display">\[ o(k)\leq 2^{\frac{1}{2}k+3}. \]</span></p>
+<div class="fragment">
+<div fragment="true">
+<h3 id="remark-2">Remark</h3>
+<p>This is far from optimal. <span class="citation" data-cites="2006math">Bartholdi and Šunić (2006)</span> proved that <span class="math display">\[ o(k)\leq 4k^2+1.\]</span></p>
+</div>
+</div>
+</section><section id="restrictions-to-subtrees-1" class="slide level2">
+<h2>Restrictions to Subtrees</h2>
+<p>Recall the enumerating function <span class="math inline">\(\beta_k({b_1,\ldots, b_{k}}) := 1+\sum_{i=1}^{k} b_i2^{k-i}.\)</span></p>
+<div class="fragment">
+<h3 id="definition-5">Definition</h3>
+<p>Let <span class="math inline">\(k\geq 1\)</span> be an integer. We define <span class="math display">\[ \psi_k\colon{\mathrm{St}_{\Gamma}(k)}\to\Gamma^{2^k} \]</span> by <span class="math display">\[ \gamma\mapsto\left(\gamma\big\vert_{{{T^{(2)}}_{\beta_k^{-1}(1)}}},\gamma\big\vert_{{{T^{(2)}}_{\beta_k^{-1}(2)}}},\ldots,\gamma\big\vert_{{{T^{(2)}}_{\beta_k^{-1}(2^k)}}}\right). \]</span></p>
+</div>
+</section><section id="restrictions-to-subtrees-2" class="slide level2">
+<h2>Restrictions to Subtrees</h2>
+<h3 id="example-1">Example</h3>
+<figure>
+<img src="res/psi2.svg" alt="psi_2 of d" style="height:35.0%" /><figcaption>psi_2 of d</figcaption>
+</figure>
+<p><span class="math display">\[ \psi_2(d) = (\operatorname{id}, \operatorname{id}, a, c) \]</span></p>
+</section><section id="restrictions-to-subtrees-3" class="slide level2">
+<h2>Restrictions to Subtrees</h2>
+<h3 id="proposition-2">Proposition</h3>
+<p>The mapping <span class="math inline">\(\psi_k\colon{\mathrm{St}_{\Gamma}(k)}\to\Gamma^{2^k}\)</span> is a monomorphism of groups, which satisfies the recursion <span class="math inline">\(\psi_1=\psi\vert_\Gamma\)</span> and</p>
+<p><span class="math display">\[\psi_k(\gamma)=
+  \underbrace{
+    \left((\pi_1\circ\psi_1)(\gamma_1),(\pi_2\circ\psi_1)(\gamma_1),\ldots,(\pi_2\circ\psi_1)(\gamma_{2^{k-1}})\right)
+  }_
+  {=: \left(\psi_1(\gamma_1),\ldots,\psi_1(\gamma_{2^{k-1}})\right)_k}\]</span></p>
+<p>whenever</p>
+<p><span class="math display">\[\psi_{k-1}(\gamma)=(\gamma_1,\gamma_2,\ldots,\gamma_{2^{k-1}})\]</span></p>
+<p>and <span class="math inline">\(\pi_i\colon\Gamma^2\to\Gamma\)</span> denotes the projection defined by <span class="math inline">\((\alpha_1,\alpha_2)\mapsto\alpha_i\)</span> for <span class="math inline">\(i\in\lbrace 1,2\rbrace\)</span>.</p>
+</section><section id="one-technical-lemma" class="slide level2">
+<h2>One Technical Lemma</h2>
+<h3 id="lemma-4">Lemma</h3>
+<p>Let <span class="math inline">\(K\)</span> denote the <em>normal</em> subgroup of <span class="math inline">\(\Gamma\)</span> generated by <span class="math inline">\((ab)^2\)</span>.</p>
+<ol type="1">
+<li>For each integer <span class="math inline">\(k\geq 1\)</span>, the image <span class="math inline">\(\psi_k\left({\mathrm{St}_{\Gamma}(k)}\right)\)</span> contains <span class="math inline">\(K^{2^k}\)</span>.</li>
+<li>The element <span class="math inline">\((ab)^8\in K\)</span> is contained in <span class="math inline">\({\mathrm{St}_{\Gamma}(4)}\)</span>. It fulfils<br />
+<span class="math inline">\(\psi_3((ab)^8)=(b,b,b,b,b,b,b,b)\)</span> and by the previous proposition<br />
+<span class="math inline">\(\psi_4((ab)^8)=(a,c,a,c,a,c,a,c,a,c,a,c,a,c,a,c).\)</span></li>
+</ol>
+</section><section id="final-lemma" class="slide level2">
+<h2>Final Lemma</h2>
+<h3 id="lemma-5">Lemma</h3>
+<p>Let <span class="math inline">\(n\)</span> be a positive integer. Given an automorphism <span class="math inline">\(\gamma\in K\)</span>, such that <span class="math inline">\(\operatorname{ord}(\gamma)\geq 2^n\)</span>, we find an automorphism <span class="math inline">\(\eta\in K\)</span> satisfying</p>
+<p><span class="math display">\[\operatorname{ord}(\eta)\geq 2^{n+1}.\]</span></p>
+</section><section id="proof" class="slide level2">
+<h2>Proof</h2>
+<p>By the lemma above there exists an automorphism <span class="math inline">\(h\in{\mathrm{St}_{\Gamma}(5)}\subseteq K\)</span>, such that</p>
+<p><span class="math display">\[\psi_5(h)=(\gamma,\operatorname{id},\ldots,\operatorname{id})= ((\gamma,\operatorname{id}),\psi_1(\operatorname{id}),\ldots,\psi_1(\operatorname{id}))_5\]</span></p>
+<div class="fragment">
+<p>We set <span class="math inline">\(\eta:=(ab)^8h\)</span>. A short calculation shows</p>
+<p><span class="math display">\[ \psi_5\left(\eta^2\right)=(\gamma,\gamma,\operatorname{id},\ldots,\operatorname{id})\in{\mathrm{St}_{\Gamma}(1)}^{32}. \]</span></p>
+</div>
+</section><section id="infinite-growth" class="slide level2">
+<h2>Infinite Growth</h2>
+<h3 id="theorem-2">Theorem</h3>
+<p>Let <span class="math inline">\(n\)</span> be a positive integer. There exists an automorphism <span class="math inline">\(\gamma_{n}\in K\subseteq\Gamma\)</span>, such that</p>
+<p><span class="math display">\[\operatorname{ord}(\gamma)\geq 2^n.\]</span></p>
+</section><section id="references" class="slide level2 unnumbered">
+<h2>References</h2>
 <div id="refs" class="references">
+<div id="ref-2006math">
+<p>Bartholdi, L., and Z. Šunić. 2006. “Some Solvable Automaton Groups.” In <em>Topological and Asymptotic Aspects of Group Theory</em>, 394:11–29. Contemp. Math. Amer. Math. Soc., Providence, RI.</p>
+</div>
 <div id="ref-burnside1902">
 <p>Burnside, W. 1902. “On an Unsettled Question in the Theory of Discontinuous Groups.” <em>Quarterly Journal of Pure and Applied Math</em> 33.</p>
 </div>
