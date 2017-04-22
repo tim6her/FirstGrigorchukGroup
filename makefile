@@ -1,5 +1,5 @@
 pdf:
-	pandoc -t beamer --biblio References.bib --slide-level 2 --filter pandoc-crossref presentation.md -o index.tex
+	pandoc -t beamer --biblio References.bib --slide-level 2 --filter pandoc-crossref --filter unfragment presentation.md -o index.tex
 	sed -i -e 's/.svg}/}/g' index.tex
 	latexmk -xelatex FirstGrigorchukGroup.tex
 
