@@ -7,14 +7,15 @@
  {child foreach \l in {0,1} {node {$\l$}
  {child foreach \m in {0,1} {coordinate edge from parent[dashed]}}}}}}}}};
 
-%\begin{scope}[bgn]
-%\node[draw=none] [above of=b] (ST0) {$a$};
-%\end{scope}
+	
+\path[hlarrow] (b-2-1-1) .. controls +(0.75,-0.5) .. (b-2-1-2);
+\path[hlarrow] (b-2-2-1-1) .. controls +(0.375,-0.5) .. (b-2-2-1-2);
 
-\path[hlarrow] (b-1) .. controls (0,-12.5mm) .. (b-2);
+\node[fill=white] at (b-2-1-1) {$1$};
+\node[fill=white] at (b-2-1-2) {$0$};
+\node[fill=white] at (b-2-2-1-1) {$1$};	
+\node[fill=white] at (b-2-2-1-2) {$0$};
 
-\node[fill=white] at (b-1) {$1$};
-\node[fill=white] at (b-2) {$0$};
 \end{tikzpicture}
 
 \end{document}

@@ -8,7 +8,7 @@
 \DeclareMathOperator{\rk}{rk}
 \DeclareMathOperator{\ls}{L(S)}
 \DeclareMathOperator{\kernel}{ker}
-
+\DeclareMathOperator{\D}{D}
 
 \DeclareMathOperator{\End}{\mathrm{End}}
 \DeclareMathOperator{\Aut}{\mathrm{Aut}}

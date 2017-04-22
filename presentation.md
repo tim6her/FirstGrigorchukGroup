@@ -17,11 +17,12 @@ $$a^n = e.$$
 
 . . .
 
+<div fragment="fade-in">
 ### Examples
 
  * Every finite group is periodic.
  * The group of bijective mappings from $\N$ onto $\N$ is periodic.
-
+</div>
 
 ## Groups with Exponent
 
@@ -36,7 +37,7 @@ for all elements $a$ of a group $G$, we say $G$ *is of exponent* $N$.
 <div fragment="fade-in">
 ### Example
 
-Let $\F_2$ be the field of order 2. Then the polynomials $\mathbb F_2[X]$ over $\F_2$ form a group of exponent $2$ w. r. t. addition.
+Let $\F_2$ be the field of order $2$. Then the polynomials $\mathbb F_2[X]$ over $\F_2$ form a group of exponent $2$ w. r. t. addition.
 </div>
 
 ## Bounded Burnside Problem
@@ -161,7 +162,7 @@ The *induced* subgraph of $\T$ containing all sequences that extend $(\seq{b}) \
 
 ## Automorphisms of $\T$
 
-### Theorem
+### Proposition
 
 Let $\varphi\in\AutT$. Then
 
@@ -177,9 +178,7 @@ Let $\varphi\in\AutT$. Then
 ![Action on L3](res/ActionOfAutT.svg){ height=30% }
 
 By enumerating the vertices on level $k$ via
-
 $$ \beta_k(\seq[k]{b}) := 1+\sum_{i=1}^{k} b_i2^{k-i}, $$
-
 one obtains a group-homomorphism
 
 $$ p_k \colon \AutT \to \mathfrak{S}_{2^k}. $$
@@ -192,10 +191,11 @@ The normal subgroup $\St{k}=\ker(p_k)$ of the automorphism group $\AutT$ is call
 
 . . .
 
+<div fragement="fade-in">
 ### Remark
 
 $\St{k}$ preserves the first $k + 1$ levels of $\T$ pointwise.
-
+</div>
 
 ---
 
@@ -215,7 +215,7 @@ is an isomorphism of groups.
 
 ![Mapping psi](res/Mappingpsi.svg){ height=30% }
 
-$\psi$ identifies an automorphism with its action on $\ST{(0)}$ and $\ST{(1)}$.
+$\psi$ identifies an automorphism with its restirictions on $\ST{(0)}$ and $\ST{(1)}$.
 
 ## First Grigorchuk Group
 
@@ -267,25 +267,38 @@ $\psi(c) = (a, d)$, $\psi(d) = (\id, b)$ and $\psi(b) = (a, c)$
 
 $a(1, 1, 0, 0) = (1, d(1, 0, 0)) = (1, 1, b(0, 0)) = (1, 1, 0, a(0)) = (1, 1, 0, 1)$
 
+## Generators of $\Gamma$
+
+![Generators of Gamma](res/Generators.svg){ height=45% }
 
 ## Identities of the Generators
 
-### Theorem
+### Proposition
 
 > * The generators are of order $2$, i. e.
   $$ a^2 = b^2 = c^2 = d^2. $$
 > * Three generators suffice since  
   $bc = cb = d, bd = db = c$ and $cd = dc = b$\ 
 
-. . .
 
-As a consequence, each $\gamma \in \Gamma$ can be written as
+## Generators of $\Gamma$
+
+![Generators of Gamma](res/Generators.svg){ height=45% }
+
+
+## Word Length
+
+As a consequence of the proposition, each $\gamma \in \Gamma$ can be written as
 
 $$ \gamma=u_0au_1au_2a\ldots u_lau_{l+1}, $$
 
 where $u_1\ldots u_{l}\in\lbrace b,c,d\rbrace$ and $u_0,u_{l+1}\in\lbrace \id,b,c,d\rbrace.$
 
+. . .
 
+### Notation
+
+The number of generators appearing in the shortes representation of $\gamma$ as as a word of the form above is denoted by $\ell(\gamma)$.
 
 # A Counterexample to the Unbounded Burnside Problem
 
@@ -307,7 +320,7 @@ Then $\gamma \in \St[\Gamma]{1}$ iff $l$ is odd.
 
 ## Stabiliser Groups Revisited
 
-### Theorem
+### Lemma
 
 Let $\psi\colon\St{1}\to\AutT^2$ be defined as before. Then
 
@@ -327,9 +340,43 @@ $$ \psi_\mathrm{right}(\gamma)=\gamma_2 $$
 if $\psi(\gamma)=(\gamma_1,\gamma_2)$, is an epimorphism of groups.
 
 
-## TODO: Überlege dir, wie du den letzten Satz beweist
+## Dihedral Subgroups
+
+### Lemma
+$\Gamma$ contains the following subgroups isomorphic to an dihedral group
+
+* $\langle a,d\rangle\cong\D_4$,\label{thm:D4}
+* $\langle a,c\rangle\cong\D_8$ and
+* $\langle a,b\rangle\cong\D_{16}$.\label{thm:D16}
 
 
+## $\Gamma$ is periodic
+
+### Theorem
+
+The first Grigorchuk group $\Gamma$ is a $2$-group, i. e. for each automorphism $\gamma\in\Gamma$ there exists a non-negative integer $n$ such that
+
+$$ \gamma^{2^n}=\id. $$
+
+
+## Proof by Induction on the Lenght
+
+> * If $\ell(\gamma) = 0$ then $\gamma = \id$.
+> * If $\ell(\gamma) = 1$ then $\gamma \in \lbrace a, b, c, d \rbrace$.
+> * If $\ell(\gamma) = 2$ then $\gamma ^ {16} = \id$ by the [lemma above](#dihedral-subgroups).
+
+. . .
+
+Hence, one may assume $\ell(\gamma) > 2$ and the claim to be proven for all automorphisms of smaller length.
+
+## Proof – Case 1
+
+If $\ell(\gamma)$ is odd then 
+
+* $w =au_1a\ldots u_la$ or
+* $w=u_0au_1a\ldots u_lau_{l+1}$\ 
+
+for some $u_0,\ldots u_{l+1}\in\lbrace b,c,d\rbrace$.
 
 # Growth of the First Grigorchuk Group
 
