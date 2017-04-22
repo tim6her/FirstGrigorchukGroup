@@ -41,20 +41,24 @@
 <h3 id="definition">Definition</h3>
 <p>A group <span class="math inline">\(G\)</span> is called <em>periodic</em> if for each element <span class="math inline">\(a \in G\)</span> there exists an integer <span class="math inline">\(n &gt; 0\)</span> such that <span class="math display">\[a^n = e.\]</span></p>
 <div class="fragment">
-<section fragment="fade-in">
-</div>
+<div fragment="">
 <h3 id="examples">Examples</h3>
 <ul>
 <li>Every finite group is periodic.</li>
-<li>The group of bijective mappings from <span class="math inline">\(\operatorname{\mathbb{N}}\)</span> onto <span class="math inline">\(\operatorname{\mathbb{N}}\)</span> is periodic.</li>
+<li>The direct product of cyclic groups <span class="math display">\[ \bigoplus_{i=2}^\infty \operatorname{\mathbb{Z}}_i \]</span> is periodic.</li>
 </ul>
-</section>
+</div>
+</div>
 </section><section id="groups-with-exponent" class="slide level2">
 <h2>Groups with Exponent</h2>
 <h3 id="definition-1">Definition</h3>
 <p>If there exists a positive integer <span class="math inline">\(N\)</span>, such that <span class="math display">\[a^N = e\]</span> for all elements <span class="math inline">\(a\)</span> of a group <span class="math inline">\(G\)</span>, we say <span class="math inline">\(G\)</span> <em>is of exponent</em> <span class="math inline">\(N\)</span>.</p>
+<div class="fragment">
+<div fragment="">
 <h3 id="example">Example</h3>
 <p>Let <span class="math inline">\(\operatorname{\mathbb{F}}_2\)</span> be the field of order <span class="math inline">\(2\)</span>. Then the polynomials <span class="math inline">\(\mathbb F_2[X]\)</span> over <span class="math inline">\(\operatorname{\mathbb{F}}_2\)</span> form a group of exponent <span class="math inline">\(2\)</span> w. r. t. addition.</p>
+</div>
+</div>
 </section><section id="bounded-burnside-problem" class="slide level2">
 <h2>Bounded Burnside Problem</h2>
 <blockquote>
@@ -162,14 +166,18 @@
 <figure>
 <img src="res/ActionOfAutT.svg" alt="Action on L3" style="height:30.0%" /><figcaption>Action on L3</figcaption>
 </figure>
-<p>By enumerating the vertices on level <span class="math inline">\(k\)</span> via <span class="math display">\[ \beta_k({b_1,\ldots, b_{k}}) := 1+\sum_{i=1}^{k} b_i2^{k-i}, \]</span> one obtains a group-homomorphism</p>
+<p>By enumerating the vertices on level <span class="math inline">\(k\)</span> via <span class="math inline">\(\beta_k({b_1,\ldots, b_{k}}) := 1+\sum_{i=1}^{k} b_i2^{k-i},\)</span> one obtains a group-homomorphism</p>
 <p><span class="math display">\[ p_k \colon {\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}\to \mathfrak{S}_{2^k}. \]</span></p>
 </section><section id="stabiliser-groups" class="slide level2">
 <h2>Stabiliser Groups</h2>
 <h3 id="definition-2">Definition</h3>
 <p>The normal subgroup <span class="math inline">\({\mathrm{St}_{}(k)}=\ker(p_k)\)</span> of the automorphism group <span class="math inline">\({\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}\)</span> is called <em><span class="math inline">\(k\)</span>-th stabiliser group of <span class="math inline">\({T^{(2)}}\)</span></em>.</p>
+<div class="fragment">
+<div fragment="">
 <h3 id="remark">Remark</h3>
 <p><span class="math inline">\({\mathrm{St}_{}(k)}\)</span> preserves the first <span class="math inline">\(k + 1\)</span> levels of <span class="math inline">\({T^{(2)}}\)</span> pointwise.</p>
+</div>
+</div>
 </section><section class="slide level2">
 
 <h3 id="lemma">Lemma</h3>
@@ -303,12 +311,56 @@
 </div>
 </section><section id="proof-case-1" class="slide level2">
 <h2>Proof – Case 1</h2>
-<p>If <span class="math inline">\(\ell(\gamma)\)</span> is odd then</p>
+<p>If <span class="math inline">\(\ell(\gamma)\)</span> is <em>odd</em> then</p>
 <ul>
 <li><span class="math inline">\(w =au_1a\ldots u_la\)</span> or</li>
 <li><span class="math inline">\(w=u_0au_1a\ldots u_lau_{l+1}\)</span> </li>
 </ul>
 <p>for some <span class="math inline">\(u_0,\ldots u_{l+1}\in\lbrace b,c,d\rbrace\)</span>.</p>
+</section><section id="proof-case-2" class="slide level2">
+<h2>Proof – Case 2</h2>
+<p>If <span class="math inline">\(\ell(\gamma)\)</span> is <em>even</em> then w. l. o. g. one may assume</p>
+<p><span id="eq:word"><span class="math display">\[ \gamma = a u_1 a \ldots u_l \qquad(1)\]</span></span></p>
+<p>where <span class="math inline">\(l = \frac{\ell(\gamma)}{2}\)</span> and <span class="math inline">\({u_1,\ldots, u_{l}} \in \lbrace b, c, d \rbrace\)</span>.</p>
+<div class="fragment">
+<h3 id="note">Note</h3>
+<p>The word in eq. 1 does contain <span class="math inline">\(l\)</span> letters ‘<span class="math inline">\(a\)</span>’.</p>
+</div>
+</section><section id="proof-case-2.1" class="slide level2">
+<h2>Proof – Case 2.1</h2>
+<p>If <span class="math inline">\(l\)</span> is <em>even</em> then the word representing <span class="math inline">\(\gamma\)</span> contains an even number of letters ‘<span class="math inline">\(a\)</span>’. Hence, <span class="math display">\[ \gamma \in {\mathrm{St}_{\Gamma}(1)}. \]</span></p>
+<div class="fragment">
+<p>We have</p>
+<p><span class="math display">\[ (\gamma_1, \gamma_2) := \psi(\gamma) = \psi(au_1 a u_2 a\ldots u_l)
+   =\psi(au_1 a)\psi(u_2)\ldots\psi(au_{l-1}a)\psi(u_l) \]</span></p>
+</div>
+<div class="fragment">
+<p>and therefore <span class="math inline">\(\ell(\gamma_1), \ell(\gamma_2) \leq l\)</span>.</p>
+</div>
+</section><section id="proof-case-2.2" class="slide level2">
+<h2>Proof – Case 2.2</h2>
+<p>If <span class="math inline">\(l\)</span> is <em>odd</em> then <span class="math inline">\(\gamma^2 \in {\mathrm{St}_{\Gamma}(1)}\)</span>.</p>
+<div class="fragment">
+<p>Therefore, <span class="math display">\[ (\alpha,\beta) := \psi(\gamma^2)=\psi(au_1 a u_2 a\ldots u_lau_1 a u_2 a\ldots u_l)=\psi(au_1 a u_2 a\ldots u_l)=\]</span> <span class="math display">\[=\psi(au_1 a)\psi(u_2)\ldots\psi(au_{l-2}a)\psi(u_{l-1})\psi(au_l a)\psi(u_1)\ldots\psi(au_{l-1}a)\psi(u_l)\]</span></p>
+</div>
+</section><section id="proof-case-2.2-1" class="slide level2">
+<h2>Proof – Case 2.2</h2>
+<ol type="1">
+<li class="fragment">If <span class="math inline">\(\gamma\)</span> contains a ‘<span class="math inline">\(d\)</span>’ then <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> are at most of lenght <span class="math inline">\(\ell(\gamma) - 1\)</span>.</li>
+<li class="fragment">If <span class="math inline">\(\gamma\)</span> contains a ‘<span class="math inline">\(c\)</span>’ then <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> contain a ‘<span class="math inline">\(d\)</span>’.</li>
+<li class="fragment">If neither is the case then <span class="math inline">\(\gamma \in \langle a, b \rangle \cong \operatorname{D}_{16}\)</span>.</li>
+</ol>
+</section><section id="as-a-consequence" class="slide level2">
+<h2>As a Consequence …</h2>
+<p>the first Grigorchuk group is</p>
+<ul>
+<li class="fragment">finitely generated,</li>
+<li class="fragment">periodic and</li>
+<li class="fragment">infinite</li>
+</ul>
+<div class="fragment">
+<p>and poses a counterexample to the <em>unbounded Burnside problem.</em></p>
+</div>
 </section></section>
 <section><section id="growth-of-the-first-grigorchuk-group" class="titleslide slide level1"><h1>Growth of the First Grigorchuk Group</h1></section><section class="slide level2">
 

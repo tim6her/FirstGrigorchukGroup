@@ -17,11 +17,13 @@ $$a^n = e.$$
 
 . . .
 
-<div fragment="fade-in">
+<div fragment>
 ### Examples
 
  * Every finite group is periodic.
- * The group of bijective mappings from $\N$ onto $\N$ is periodic.
+ * The direct product of cyclic groups
+   $$ \bigoplus_{i=2}^\infty \Z_i $$
+   is periodic.
 </div>
 
 ## Groups with Exponent
@@ -34,7 +36,7 @@ for all elements $a$ of a group $G$, we say $G$ *is of exponent* $N$.
 
 . . .
 
-<div fragment="fade-in">
+<div fragment>
 ### Example
 
 Let $\F_2$ be the field of order $2$. Then the polynomials $\mathbb F_2[X]$ over $\F_2$ form a group of exponent $2$ w. r. t. addition.
@@ -177,9 +179,7 @@ Let $\varphi\in\AutT$. Then
 
 ![Action on L3](res/ActionOfAutT.svg){ height=30% }
 
-By enumerating the vertices on level $k$ via
-$$ \beta_k(\seq[k]{b}) := 1+\sum_{i=1}^{k} b_i2^{k-i}, $$
-one obtains a group-homomorphism
+By enumerating the vertices on level $k$ via $\beta_k(\seq[k]{b}) := 1+\sum_{i=1}^{k} b_i2^{k-i},$ one obtains a group-homomorphism
 
 $$ p_k \colon \AutT \to \mathfrak{S}_{2^k}. $$
 
@@ -191,7 +191,7 @@ The normal subgroup $\St{k}=\ker(p_k)$ of the automorphism group $\AutT$ is call
 
 . . .
 
-<div fragement="fade-in">
+<div fragment>
 ### Remark
 
 $\St{k}$ preserves the first $k + 1$ levels of $\T$ pointwise.
@@ -371,12 +371,74 @@ Hence, one may assume $\ell(\gamma) > 2$ and the claim to be proven for all auto
 
 ## Proof – Case 1
 
-If $\ell(\gamma)$ is odd then 
+If $\ell(\gamma)$ is *odd* then 
 
 * $w =au_1a\ldots u_la$ or
 * $w=u_0au_1a\ldots u_lau_{l+1}$\ 
 
 for some $u_0,\ldots u_{l+1}\in\lbrace b,c,d\rbrace$.
+
+
+## Proof – Case 2
+
+If $\ell(\gamma)$ is *even* then w. l. o. g. one may assume
+
+$$ \gamma = a u_1 a \ldots u_l $${#eq:word}
+
+where $l = \frac{\ell(\gamma)}{2}$ and $\seq[l]{u} \in \lbrace b, c, d \rbrace$.
+
+. . .
+
+### Note
+
+The word in @eq:word does contain $l$ letters ‘$a$’.
+
+
+## Proof – Case 2.1
+
+If $l$ is *even* then the word representing $\gamma$ contains an even number of letters ‘$a$’. Hence,
+$$ \gamma \in \St[\Gamma]{1}. $$
+
+. . .
+
+We have
+
+$$ (\gamma_1, \gamma_2) := \psi(\gamma) = \psi(au_1 a u_2 a\ldots u_l)
+   =\psi(au_1 a)\psi(u_2)\ldots\psi(au_{l-1}a)\psi(u_l) $$
+
+. . .
+
+and therefore $\ell(\gamma_1), \ell(\gamma_2) \leq l$.
+
+
+## Proof – Case 2.2
+
+If $l$ is *odd* then $\gamma^2 \in \St[\Gamma]{1}$.
+
+. . .
+
+Therefore,
+$$ (\alpha,\beta) := \psi(\gamma^2)=\psi(au_1 a u_2 a\ldots u_lau_1 a u_2 a\ldots u_l)=\psi(au_1 a u_2 a\ldots u_l)=$$
+$$=\psi(au_1 a)\psi(u_2)\ldots\psi(au_{l-2}a)\psi(u_{l-1})\psi(au_l a)\psi(u_1)\ldots\psi(au_{l-1}a)\psi(u_l)$$
+
+## Proof – Case 2.2
+
+>  1. If $\gamma$ contains a ‘$d$’ then $\alpha$ and $\beta$ are at most of lenght $\ell(\gamma) - 1$.
+>  2. If $\gamma$ contains a ‘$c$’ then $\alpha$ and $\beta$ contain a ‘$d$’.
+>  3. If neither is the case then $\gamma \in \langle a, b \rangle \cong \D_{16}$.
+
+## As a Consequence …
+
+the first Grigorchuk group is
+
+> * finitely generated,
+> * periodic and
+> * infinite
+
+. . .
+
+and poses a counterexample to the *unbounded Burnside problem.*
+
 
 # Growth of the First Grigorchuk Group
 
