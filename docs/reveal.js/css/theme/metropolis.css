@@ -75,17 +75,25 @@ body.dark .reveal h6 {
     word-wrap: break-word; }
 
 .reveal h1 {
-    font-size: 1.77em; }
+    font-size: 1.77em;
+    text-transform: lowercase;
+    letter-spacing: 0.2em;
+}
 
 .reveal h2 {
     font-size: 1.30em; 
     margin-bottom: 1.30em;
     padding-bottom: 15px;
     border-bottom: 2px solid #33474b;
+    text-transform: lowercase;
+    letter-spacing: 0.2em;
 }
 
 .reveal h3 {
-    font-size: .95em; }
+    font-size: .95em;
+    text-transform: lowercase;
+    letter-spacing: 0.2em;
+    }
 
 .reveal h4 {
     font-size: .75em; }
@@ -93,19 +101,26 @@ body.dark .reveal h6 {
 .reveal h1 {
     text-shadow: none; }
 
-h1.subtitle {
+p.subtitle {
     font-size: 1em;
+    margin-top: 0pt !important;
     padding-bottom:15px;
     font-variant: small-caps;
+    text-transform: lowercase;
+    letter-spacing: 0.2em;
     border-bottom: 2px solid #AE1C3E;
 }
 
-h2.author, h3.date {
-    font-size: .6em;
+p.author, p.date {
+    font-size: .7em;
 }
 
 h1.title {
+    font-size:1.67em;
     font-variant: small-caps;
+    margin-bottom: 5px;
+    text-transform: lowercase;
+    letter-spacing: 0.2em;
 }
 
 .level2 h1 {
