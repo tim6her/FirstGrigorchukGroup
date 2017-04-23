@@ -5,7 +5,7 @@ author: Tim B. Herbstrith
 date: 28 April 2017
 ---
 
-# Bounded Burnside's Problem
+# Burnside's Problems[^1]
 
 
 ## Periodic Groups
@@ -575,3 +575,6 @@ $$\ord(\gamma)\geq 2^n.$$
 
 
 ## References
+
+
+[^1]: For a brief exposition of the history and variants of Burnside's problems see <https://tim6her.github.io/FirstGrigorchukGroup/history.html>.
