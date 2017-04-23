@@ -216,7 +216,7 @@ is an isomorphism of groups.
 
 ![Mapping psi](res/Mappingpsi.svg){ height=30% }
 
-$\psi$ identifies an automorphism with its restirictions on $\ST{(0)}$ and $\ST{(1)}$.
+$\psi$ identifies an automorphism with its restrictions to $\ST{(0)}$ and $\ST{(1)}$.
 
 ## First Grigorchuk Group
 
@@ -299,7 +299,7 @@ where $u_1\ldots u_{l}\in\lbrace b,c,d\rbrace$ and $u_0,u_{l+1}\in\lbrace \id,b,
 
 ### Notation
 
-The number of generators appearing in the shortes representation of $\gamma$ as a word of the form above is denoted by $\ell(\gamma)$.
+The number of generators appearing in the shortest representation of $\gamma$ as a word of the form above is denoted by $\ell(\gamma)$.
 
 # A Counterexample to the Unbounded Burnside Problem
 
@@ -360,7 +360,7 @@ The first Grigorchuk group $\Gamma$ is a $2$-group, i. e. for each automorphis
 $$ \gamma^{2^n}=\id. $$
 
 
-## Proof by Induction on the Lenght
+## Proof by Induction on the Length
 
 > * If $\ell(\gamma) = 0$ then $\gamma = \id$.
 > * If $\ell(\gamma) = 1$ then $\gamma \in \lbrace a, b, c, d \rbrace$.
@@ -424,7 +424,7 @@ $$=\psi(au_1 a)\psi(u_2)\ldots\psi(au_{l-2}a)\psi(u_{l-1})\psi(au_l a)\psi(u_1)\
 
 ## Proof – Case 2.2
 
->  1. If $\gamma$ contains a ‘$d$’ then $\alpha$ and $\beta$ are at most of lenght $\ell(\gamma) - 1$.
+>  1. If $\gamma$ contains a ‘$d$’ then $\alpha$ and $\beta$ are at most of length $\ell(\gamma) - 1$.
 >  2. If $\gamma$ contains a ‘$c$’ then $\alpha$ and $\beta$ contain a ‘$d$’.
 >  3. If neither is the case then $\gamma \in \langle a, b \rangle \cong \D_{16}$.
 
@@ -447,7 +447,7 @@ and poses a counterexample to the *unbounded Burnside problem.*
 
 ### Definition
 
-The set of all orders of automorphisms of lenght at most $k$ is denoted
+The set of all orders of automorphisms of length at most $k$ is denoted
 $$ O_k := \lbrace ord(\gamma) \mid \gamma\in\Gamma, \ell(\gamma) \leq k \rbrace $$
 
 . . .
@@ -461,6 +461,13 @@ $$ o(k) = \max(O_k) $$
 ### Remark
 
 Since $O_k \subseteq O_{k + 1}$, the growth function is monotonically increasing.
+</div>
+
+<div class="notes">
+  There is another important growth function defined on Γ.
+  It considers the growth of the set of all *automorphisms* of length smaller or equal to *k* as compared to their orders.
+  
+  This function yields the *intermediate growth* property Γ is famous for.
 </div>
 
 
