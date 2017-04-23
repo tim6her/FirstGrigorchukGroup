@@ -5,7 +5,7 @@ author: Tim B. Herbstrith
 date: 28 April 2017
 ---
 
-# Burnside's Problems[^1]
+# Burnside's Problems[¹](https://tim6her.github.io/FirstGrigorchukGroup/history.html)
 
 
 ## Periodic Groups
@@ -78,8 +78,6 @@ If the group is of exponent $2$ then it is abelian since
 $$ (ab)(ab) = e = (ab)(ba). $$
 
 The answer to [UBP][Unbounded Burnside Problem] is affirmative by the [fundamental theorem of finitely generated abelian groups.](https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Classification)
-
-
 
 # Graphtheoretical Preliminaries
 
@@ -576,5 +574,3 @@ $$\ord(\gamma)\geq 2^n.$$
 
 ## References
 
-
-[^1]: For a brief exposition of the history and variants of Burnside's problems see <https://tim6her.github.io/FirstGrigorchukGroup/history.html>.
