@@ -3,6 +3,10 @@ title: The First Grigorchuk Group
 subtitle: in Context of Burnside's Problems
 author: Tim B. Herbstrith
 date: 28 April 2017
+keywords: [Grigorchuk Group, Burnside's Problems, Group Theory]
+description: >
+  This talk discusses the First Grigorchuk Group in Context of
+  Burnside's Problems
 ---
 
 # Burnside's Problems[¹](https://tim6her.github.io/FirstGrigorchukGroup/history.html)
@@ -58,7 +62,7 @@ Is every finitely generated, periodic group finite?
 
 If the group $G$ is assumed to be abelian then the answer to [BBP][Bounded Burnside Problem] is affirmative since
 $$ G\cong\Z^n \oplus \Z_{q_1} \oplus \cdots \oplus \Z_{q_t} $$
-by the [fundamental theorem of finitely generated abelian groups.](https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Classification)
+by the [Fundamental Theorem of Finitely Generated Abelian Groups.](https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Classification)
 
 
 ## Unbounded Burnside Problem
@@ -77,7 +81,7 @@ If the group is of exponent $2$ then it is abelian since
 
 $$ (ab)(ab) = e = (ab)(ba). $$
 
-The answer to [UBP][Unbounded Burnside Problem] is affirmative by the [fundamental theorem of finitely generated abelian groups.](https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Classification)
+The answer to [UBP][Unbounded Burnside Problem] is affirmative by the [Fundamental Theorem of Finitely Generated Abelian Groups.](https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Classification)
 
 # Graphtheoretical Preliminaries
 
@@ -225,7 +229,7 @@ $\psi$ identifies an automorphism with its restrictions to $\ST{(0)}$ and $\ST{(
   $b := \psi^{-1}(a, c),$  
   $c := \psi^{-1}(a, d)$ as well as  
   $d := \psi^{-1}(\id, b).$  
-> * The *first Grigorchuk group* is defined as
+> * The *First Grigorchuk Group* is defined as
   $$ \Gamma := \langle a, b, c, d \rangle \subseteq \AutT. $$
 
 
@@ -353,7 +357,7 @@ $\Gamma$ contains the following subgroups isomorphic to an dihedral group
 
 ### Theorem
 
-The first Grigorchuk group $\Gamma$ is a $2$-group, i. e. for each automorphism $\gamma\in\Gamma$ there exists a non-negative integer $n$ such that
+The First Grigorchuk Group $\Gamma$ is a $2$-group, i. e. for each automorphism $\gamma\in\Gamma$ there exists a non-negative integer $n$ such that
 
 $$ \gamma^{2^n}=\id. $$
 
@@ -372,8 +376,8 @@ Hence, one may assume $\ell(\gamma) > 2$ and the claim to be proven for all auto
 
 If $\ell(\gamma)$ is *odd* then 
 
-* $w =au_1a\ldots u_la$ or
-* $w=u_0au_1a\ldots u_lau_{l+1}$\ 
+* $\gamma = au_1a\ldots u_la$ or
+* $\gamma = u_0au_1a\ldots u_lau_{l+1}$\ 
 
 for some $u_0,\ldots u_{l+1}\in\lbrace b,c,d\rbrace$.
 
@@ -428,7 +432,7 @@ $$=\psi(au_1 a)\psi(u_2)\ldots\psi(au_{l-2}a)\psi(u_{l-1})\psi(au_l a)\psi(u_1)\
 
 ## As a Consequence …
 
-the first Grigorchuk group is
+the First Grigorchuk Group is
 
 > * finitely generated,
 > * periodic as well as
@@ -436,7 +440,7 @@ the first Grigorchuk group is
 
 . . .
 
-and poses a counterexample to the *unbounded Burnside problem.*
+and thus poses a counterexample to the *Unbounded Burnside Problem.*
 
 
 # Growth of the First Grigorchuk Group
