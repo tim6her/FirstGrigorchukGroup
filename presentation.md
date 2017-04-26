@@ -5,11 +5,11 @@ author: Tim B. Herbstrith
 date: 28 April 2017
 keywords: [Grigorchuk Group, Burnside's Problems, Group Theory]
 description: >
-  This talk discusses the First Grigorchuk Group in Context of
-  Burnside's Problems
+  This talk discusses the first Grigorchuk group in context of
+  Burnside's problems
 ---
 
-# Burnside's Problems[¹](https://tim6her.github.io/FirstGrigorchukGroup/history.html)
+# Burnside's Problems
 
 
 ## Periodic Groups
@@ -25,10 +25,35 @@ $$a^n = e.$$
 ### Examples
 
  * Every finite group is periodic.
- * The direct product of cyclic groups
+ * The direct sum of cyclic groups
    $$ \bigoplus_{i=2}^\infty \Z_i $$
    is periodic.
 </div>
+
+## Bounded Burnside Problem
+
+> A still undecided problem in the theory of discontinuous groups is whether the order of a group may be not finite while the order of every operation it contains is finite.  
+> — @burnside1902
+
+. . .
+
+### Common Interpretation
+
+Is every finitely generated, periodic group finite?
+
+<div class="notes">
+  Newman points out, that by ‘discontinuous groups’ Burnside either meant specific subgroups of Gl_n(ℂ) or assumed that the groups are finitely generated.
+  
+  M.F. Newman. ‘A Still Unsettled Question’. In: The Collected Papers of William Burnside. Ed. by P.M. Neumann, A.J. Mann and J.C. Tompson. Vol. I. Oxford University Press on Demand, 2004.
+</div>
+
+
+## Special Case: Abelian Groups
+
+If the group $G$ is assumed to be abelian then the answer to [BBP][Bounded Burnside Problem] is affirmative since
+$$ G\cong\Z^n \oplus \Z_{q_1} \oplus \cdots \oplus \Z_{q_t} $$
+by the [fundamental theorem of finitely generated abelian groups.](https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Classification)
+
 
 ## Groups with Exponent
 
@@ -46,24 +71,6 @@ for all elements $a$ of a group $G$, we say $G$ *is of exponent* $N$.
 Let $\F_2$ be the field of order $2$. Then the polynomials $\mathbb F_2[X]$ over $\F_2$ form a group of exponent $2$ w. r. t. addition.
 </div>
 
-## Bounded Burnside Problem
-
-> A still undecided problem in the theory of discontinuous groups is whether the order of a group may be not finite while the order of every operation it contains is finite.  
-> — [@burnside1902]
-
-. . .
-
-### Common Interpretation
-
-Is every finitely generated, periodic group finite?
-
-
-## Special Case: Abelian Groups
-
-If the group $G$ is assumed to be abelian then the answer to [BBP][Bounded Burnside Problem] is affirmative since
-$$ G\cong\Z^n \oplus \Z_{q_1} \oplus \cdots \oplus \Z_{q_t} $$
-by the [Fundamental Theorem of Finitely Generated Abelian Groups.](https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Classification)
-
 
 ## Unbounded Burnside Problem
 
@@ -72,7 +79,7 @@ by the [Fundamental Theorem of Finitely Generated Abelian Groups.](https://en.wi
 > where $n$ is a given integer, while $S$ represents in turn any and every operation which can be generated from the m given operations $A$.
 >
 > Is the group thus defined one of finite order, and if so what is its order?  
-> — [@burnside1902]
+> — @burnside1902
 
 
 ## Special Case: Exponent $2$
@@ -81,7 +88,9 @@ If the group is of exponent $2$ then it is abelian since
 
 $$ (ab)(ab) = e = (ab)(ba). $$
 
-The answer to [UBP][Unbounded Burnside Problem] is affirmative by the [Fundamental Theorem of Finitely Generated Abelian Groups.](https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Classification)
+The answer to [UBP][Unbounded Burnside Problem] is affirmative by the [fundamental theorem of finitely generated abelian groups.](https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Classification)
+
+
 
 # Graphtheoretical Preliminaries
 
@@ -92,7 +101,7 @@ The answer to [UBP][Unbounded Burnside Problem] is affirmative by the [Fundament
 
 A (simple) *graph* is a pair of two sets $(V,E)$, where $V$ is non-empty and $E$ is a subset of all unordered pairs $\lbrace v_1,v_2\rbrace\in\mathcal{P}(V)$ that fulfil $v_1\neq v_2$. The set $V$ is called the *vertex set* and $E$ the *edge set* of the graph $(V,E)$.
 
-
+<!--
 ## Walks
 
 ![A 4 − 3-Walk](res/Walk.svg){ height=30% }
@@ -119,7 +128,7 @@ A *$u-v$-path* is a $u-v$-walk, such that all vertices in the walk except $u$ an
 ![A Cycle](res/Cycle.svg){ height=30% }
 
 An $u-u$-path $(u=v_0,\seq{v}=u)$ is called *cycle* if it contains more than $2$ vertices.
-
+-->
 
 ## Graph-Automorphisms
 
@@ -154,6 +163,9 @@ The red vertex is identified with the sequence $(0, 0, 1, 1)$.
 
 The *induced* subgraph of $\T$ containing all sequences that extend $(\seq{b}) \in \T$ is denoted by $\ST{(\seq{b})}$.
 
+<div class="notes">
+  Note that these subtrees are isomorphic to the full binary tree
+</div>
 
 ## Levels of $\T$
 
@@ -170,10 +182,10 @@ The *induced* subgraph of $\T$ containing all sequences that extend $(\seq{b}) \
 
 Let $\varphi\in\AutT$. Then
 
-> * $\varphi$ fixes the root, i. e.
+> * $\varphi$ fixes the root, i. e.,
   $$\varphi(\emptyset) = \emptyset$$
   and
-> * $\varphi$ fixes the levels, i. e.
+> * $\varphi$ fixes the levels, i. e.,
   $$\lvert \varphi(v)\rvert=\lvert v\rvert,\quad\forall v\in\VT.$$
 
 
@@ -184,6 +196,7 @@ Let $\varphi\in\AutT$. Then
 By enumerating the vertices on level $k$ via $\beta_k(\seq[k]{b}) := 1+\sum_{i=1}^{k} b_i2^{k-i},$ one obtains a group-homomorphism
 
 $$ p_k \colon \AutT \to \mathfrak{S}_{2^k}. $$
+
 
 ## Stabiliser Groups
 
@@ -229,7 +242,7 @@ $\psi$ identifies an automorphism with its restrictions to $\ST{(0)}$ and $\ST{(
   $b := \psi^{-1}(a, c),$  
   $c := \psi^{-1}(a, d)$ as well as  
   $d := \psi^{-1}(\id, b).$  
-> * The *First Grigorchuk Group* is defined as
+> * The *first Grigorchuk group* is defined as
   $$ \Gamma := \langle a, b, c, d \rangle \subseteq \AutT. $$
 
 
@@ -241,7 +254,7 @@ $\psi(c) = (a, d)$
 
 . . .
 
-$a(1, 1, 0, 0) = (1, d(1, 0, 0))$
+$c(1, 1, 0, 0) = (1, d(1, 0, 0))$
 
 
 ## Automorphism $c$
@@ -250,7 +263,7 @@ $\psi(c) = (a, d)$, $\psi(d) = (\id, b)$
 
 ![Automorphism c 2](res/AutomorphismC2.svg){ height=30% }
 
-$a(1, 1, 0, 0) = (1, d(1, 0, 0)) = (1, 1, b(0, 0))$
+$c(1, 1, 0, 0) = (1, d(1, 0, 0)) = (1, 1, b(0, 0))$
 
 
 ## Automorphism $c$
@@ -259,7 +272,7 @@ $\psi(c) = (a, d)$, $\psi(d) = (\id, b)$ and $\psi(b) = (a, c)$
 
 ![Automorphism c 3](res/AutomorphismC3.svg){ height=30% }
 
-$a(1, 1, 0, 0) = (1, d(1, 0, 0)) = (1, 1, b(0, 0)) = (1, 1, 0, a(0))$
+$c(1, 1, 0, 0) = (1, d(1, 0, 0)) = (1, 1, b(0, 0)) = (1, 1, 0, a(0))$
 
 
 ## Automorphism $c$
@@ -268,17 +281,19 @@ $\psi(c) = (a, d)$, $\psi(d) = (\id, b)$ and $\psi(b) = (a, c)$
 
 ![Automorphism c 4](res/AutomorphismC4.svg){ height=30% }
 
-$a(1, 1, 0, 0) = (1, d(1, 0, 0)) = (1, 1, b(0, 0)) = (1, 1, 0, a(0)) = (1, 1, 0, 1)$
+$c(1, 1, 0, 0) = (1, d(1, 0, 0)) = (1, 1, b(0, 0)) = (1, 1, 0, a(0)) = (1, 1, 0, 1)$
+
 
 ## Generators of $\Gamma$
 
 ![Generators of Gamma](res/Generators.svg){ height=45% }
 
+
 ## Identities of the Generators
 
 ### Proposition
 
-> * The generators are of order $2$, i. e.
+> * The generators are of order $2$, i. e.,
   $$ a^2 = b^2 = c^2 = d^2. $$
 > * Three generators suffice since  
   $bc = cb = d, bd = db = c$ and $cd = dc = b$\ 
@@ -303,7 +318,10 @@ where $u_1\ldots u_{l}\in\lbrace b,c,d\rbrace$ and $u_0,u_{l+1}\in\lbrace \id,b,
 
 The number of generators appearing in the shortest representation of $\gamma$ as a word of the form above is denoted by $\ell(\gamma)$.
 
+
+
 # A Counterexample to the Unbounded Burnside Problem
+
 
 ## Stabiliser Groups Revisited
 
@@ -320,8 +338,8 @@ Then $\gamma \in \St[\Gamma]{1}$ iff $l$ is odd.
 
 ![Automorphism a](res/AutomorphismA.svg){ height=30% }
 
+---
 
-## Stabiliser Groups Revisited
 
 ### Lemma
 
@@ -330,6 +348,10 @@ Let $\psi\colon\St{1}\to\AutT^2$ be defined as before. Then
 $$ \psi(aba) = (c, a), $$
 $$ \psi(aca) = (d, a), $$
 $$ \psi(ada) = (b, \id). $$
+
+<div class="notes">
+  Note that this implies that a /∈ St_Γ(1)
+</div>
 
 
 ## $\Gamma$ is Infinite
@@ -357,7 +379,7 @@ $\Gamma$ contains the following subgroups isomorphic to an dihedral group
 
 ### Theorem
 
-The First Grigorchuk Group $\Gamma$ is a $2$-group, i. e. for each automorphism $\gamma\in\Gamma$ there exists a non-negative integer $n$ such that
+The first Grigorchuk group $\Gamma$ is a $2$-group, i. e., for each automorphism $\gamma\in\Gamma$ there exists a non-negative integer $n$ such that
 
 $$ \gamma^{2^n}=\id. $$
 
@@ -399,7 +421,7 @@ The word in @eq:word does contain $l$ letters ‘$a$’.
 
 ## Proof – Case 2.1
 
-If $l$ is *even* then the word representing $\gamma$ contains an even number of letters ‘$a$’. Hence,
+If $l$ is *even* then in the word representing $\gamma$ an even number of letters ‘$a$’ is contained. Hence,
 $$ \gamma \in \St[\Gamma]{1}. $$
 
 . . .
@@ -408,8 +430,6 @@ We have
 
 $$ (\gamma_1, \gamma_2) := \psi(\gamma) = \psi(au_1 a u_2 a\ldots u_l)
    =\psi(au_1 a)\psi(u_2)\ldots\psi(au_{l-1}a)\psi(u_l) $$
-
-. . .
 
 and therefore $\ell(\gamma_1), \ell(\gamma_2) \leq l$.
 
@@ -421,8 +441,9 @@ If $l$ is *odd* then $\gamma^2 \in \St[\Gamma]{1}$.
 . . .
 
 Therefore,
-$$ (\alpha,\beta) := \psi(\gamma^2)=\psi(au_1 a u_2 a\ldots u_lau_1 a u_2 a\ldots u_l)=\psi(au_1 a u_2 a\ldots u_l)=$$
+$$ (\alpha,\beta) := \psi(\gamma^2)=\psi(au_1 a u_2 a\ldots u_lau_1 a u_2 a\ldots u_l)=$$
 $$=\psi(au_1 a)\psi(u_2)\ldots\psi(au_{l-2}a)\psi(u_{l-1})\psi(au_l a)\psi(u_1)\ldots\psi(au_{l-1}a)\psi(u_l)$$
+
 
 ## Proof – Case 2.2
 
@@ -430,9 +451,9 @@ $$=\psi(au_1 a)\psi(u_2)\ldots\psi(au_{l-2}a)\psi(u_{l-1})\psi(au_l a)\psi(u_1)\
 >  2. If $\gamma$ contains a ‘$c$’ then $\alpha$ and $\beta$ contain a ‘$d$’.
 >  3. If neither is the case then $\gamma \in \langle a, b \rangle \cong \D_{16}$.
 
-## As a Consequence …
+## As a Consequence, …
 
-the First Grigorchuk Group is
+the first Grigorchuk group is
 
 > * finitely generated,
 > * periodic as well as
@@ -440,10 +461,12 @@ the First Grigorchuk Group is
 
 . . .
 
-and thus poses a counterexample to the *Unbounded Burnside Problem.*
+and thus poses a counterexample to the *unbounded Burnside problem.*
+
 
 
 # Growth of the First Grigorchuk Group
+
 
 ## Growth of the Orders of Automorphisms
 
@@ -477,7 +500,7 @@ Since $O_k \subseteq O_{k + 1}$, the growth function is monotonically increasing
 
 ### Corollary
 
-The growth of $\Gamma$ is bound by an exponential function. More precisely
+The growth of $\Gamma$ is bound by an exponential function. More precisely,
 
 $$ o(k)\leq 2^{\frac{1}{2}k+3}. $$
 
@@ -576,5 +599,15 @@ Let $n$ be a positive integer. There exists an automorphism $\gamma_{n}\in K\sub
 $$\ord(\gamma)\geq 2^n.$$
 
 
+
+# Thank you for your attention
+
+
+## History and Variants
+
+For a brief exposition on variants and the history of Burnside's problems please visit <https://tim6her.github.io/FirstGrigorchukGroup/history.html>. (German)
+
+
 ## References
+
 

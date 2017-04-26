@@ -6,7 +6,7 @@
   <meta name="author" content="Tim B. Herbstrith">
   <meta name="dcterms.date" content="2017-04-28">
   <meta name="keywords" content="Grigorchuk Group, Burnside's Problems, Group Theory">
-  <meta name="description" content="<p>This talk discusses the First Grigorchuk Group in Context of Burnside's Problems</p>">
+  <meta name="description" content="<p>This talk discusses the first Grigorchuk group in context of Burnside's problems</p>">
   <title>The First Grigorchuk Group</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -38,7 +38,7 @@
   <p class="date">28 April 2017</p>
 </section>
 
-<section><section id="burnsides-problems" class="titleslide slide level1"><h1>Burnside's Problems<a href="https://tim6her.github.io/FirstGrigorchukGroup/history.html">¹</a></h1></section><section id="periodic-groups" class="slide level2">
+<section><section id="burnsides-problems" class="titleslide slide level1"><h1>Burnside's Problems</h1></section><section id="periodic-groups" class="slide level2">
 <h2>Periodic Groups</h2>
 <h3 id="definition">Definition</h3>
 <p>A group <span class="math inline">\(G\)</span> is called <em>periodic</em> if for each element <span class="math inline">\(a \in G\)</span> there exists an integer <span class="math inline">\(n &gt; 0\)</span> such that <span class="math display">\[a^n = e.\]</span></p>
@@ -47,10 +47,27 @@
 <h3 id="examples">Examples</h3>
 <ul>
 <li>Every finite group is periodic.</li>
-<li>The direct product of cyclic groups <span class="math display">\[ \bigoplus_{i=2}^\infty \operatorname{\mathbb{Z}}_i \]</span> is periodic.</li>
+<li>The direct sum of cyclic groups <span class="math display">\[ \bigoplus_{i=2}^\infty \operatorname{\mathbb{Z}}_i \]</span> is periodic.</li>
 </ul>
 </div>
 </div>
+</section><section id="bounded-burnside-problem" class="slide level2">
+<h2>Bounded Burnside Problem</h2>
+<blockquote>
+<p>A still undecided problem in the theory of discontinuous groups is whether the order of a group may be not finite while the order of every operation it contains is finite.<br />
+— <span class="citation" data-cites="burnside1902">Burnside (1902)</span></p>
+</blockquote>
+<div class="fragment">
+<h3 id="common-interpretation">Common Interpretation</h3>
+<p>Is every finitely generated, periodic group finite?</p>
+<aside class="notes">
+<p>Newman points out, that by ‘discontinuous groups’ Burnside either meant specific subgroups of Gl_n(ℂ) or assumed that the groups are finitely generated.</p>
+<p>M.F. Newman. ‘A Still Unsettled Question’. In: The Collected Papers of William Burnside. Ed. by P.M. Neumann, A.J. Mann and J.C. Tompson. Vol. I. Oxford University Press on Demand, 2004.</p>
+</aside>
+</div>
+</section><section id="special-case-abelian-groups" class="slide level2">
+<h2>Special Case: Abelian Groups</h2>
+<p>If the group <span class="math inline">\(G\)</span> is assumed to be abelian then the answer to <a href="#/bounded-burnside-problem">BBP</a> is affirmative since <span class="math display">\[ G\cong\operatorname{\mathbb{Z}}^n \oplus \operatorname{\mathbb{Z}}_{q_1} \oplus \cdots \oplus \operatorname{\mathbb{Z}}_{q_t} \]</span> by the <a href="https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Classification">fundamental theorem of finitely generated abelian groups.</a></p>
 </section><section id="groups-with-exponent" class="slide level2">
 <h2>Groups with Exponent</h2>
 <h3 id="definition-1">Definition</h3>
@@ -61,31 +78,18 @@
 <p>Let <span class="math inline">\(\operatorname{\mathbb{F}}_2\)</span> be the field of order <span class="math inline">\(2\)</span>. Then the polynomials <span class="math inline">\(\mathbb F_2[X]\)</span> over <span class="math inline">\(\operatorname{\mathbb{F}}_2\)</span> form a group of exponent <span class="math inline">\(2\)</span> w. r. t. addition.</p>
 </div>
 </div>
-</section><section id="bounded-burnside-problem" class="slide level2">
-<h2>Bounded Burnside Problem</h2>
-<blockquote>
-<p>A still undecided problem in the theory of discontinuous groups is whether the order of a group may be not finite while the order of every operation it contains is finite.<br />
-— <span class="citation" data-cites="burnside1902">(Burnside 1902)</span></p>
-</blockquote>
-<div class="fragment">
-<h3 id="common-interpretation">Common Interpretation</h3>
-<p>Is every finitely generated, periodic group finite?</p>
-</div>
-</section><section id="special-case-abelian-groups" class="slide level2">
-<h2>Special Case: Abelian Groups</h2>
-<p>If the group <span class="math inline">\(G\)</span> is assumed to be abelian then the answer to <a href="#/bounded-burnside-problem">BBP</a> is affirmative since <span class="math display">\[ G\cong\operatorname{\mathbb{Z}}^n \oplus \operatorname{\mathbb{Z}}_{q_1} \oplus \cdots \oplus \operatorname{\mathbb{Z}}_{q_t} \]</span> by the <a href="https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Classification">Fundamental Theorem of Finitely Generated Abelian Groups.</a></p>
 </section><section id="unbounded-burnside-problem" class="slide level2">
 <h2>Unbounded Burnside Problem</h2>
 <blockquote>
 <p>Let <span class="math inline">\({A_1,\ldots, A_{m}}\)</span> be a set of independent operations finite in number, and suppose that they satisfy the system of relations given by <span class="math display">\[S^n=1\]</span> where <span class="math inline">\(n\)</span> is a given integer, while <span class="math inline">\(S\)</span> represents in turn any and every operation which can be generated from the m given operations <span class="math inline">\(A\)</span>.</p>
 <p>Is the group thus defined one of finite order, and if so what is its order?<br />
-— <span class="citation" data-cites="burnside1902">(Burnside 1902)</span></p>
+— <span class="citation" data-cites="burnside1902">Burnside (1902)</span></p>
 </blockquote>
 </section><section id="special-case-exponent-2" class="slide level2">
 <h2>Special Case: Exponent <span class="math inline">\(2\)</span></h2>
 <p>If the group is of exponent <span class="math inline">\(2\)</span> then it is abelian since</p>
 <p><span class="math display">\[ (ab)(ab) = e = (ab)(ba). \]</span></p>
-<p>The answer to <a href="#/unbounded-burnside-problem">UBP</a> is affirmative by the <a href="https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Classification">Fundamental Theorem of Finitely Generated Abelian Groups.</a></p>
+<p>The answer to <a href="#/unbounded-burnside-problem">UBP</a> is affirmative by the <a href="https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Classification">fundamental theorem of finitely generated abelian groups.</a></p>
 </section></section>
 <section><section id="graphtheoretical-preliminaries" class="titleslide slide level1"><h1>Graphtheoretical Preliminaries</h1></section><section id="graphs" class="slide level2">
 <h2>Graphs</h2>
@@ -93,30 +97,34 @@
 <img src="res/Graph.svg" alt="A Graph" style="height:30.0%" /><figcaption>A Graph</figcaption>
 </figure>
 <p>A (simple) <em>graph</em> is a pair of two sets <span class="math inline">\((V,E)\)</span>, where <span class="math inline">\(V\)</span> is non-empty and <span class="math inline">\(E\)</span> is a subset of all unordered pairs <span class="math inline">\(\lbrace v_1,v_2\rbrace\in\mathcal{P}(V)\)</span> that fulfil <span class="math inline">\(v_1\neq v_2\)</span>. The set <span class="math inline">\(V\)</span> is called the <em>vertex set</em> and <span class="math inline">\(E\)</span> the <em>edge set</em> of the graph <span class="math inline">\((V,E)\)</span>.</p>
-</section><section id="walks" class="slide level2">
-<h2>Walks</h2>
-<figure>
-<img src="res/Walk.svg" alt="A 4 − 3-Walk" style="height:30.0%" /><figcaption>A 4 − 3-Walk</figcaption>
-</figure>
-<p>A <em><span class="math inline">\(u-v\)</span>-walk</em> is a finite sequence <span class="math inline">\((u=v_0,{v_1,\ldots, v_{n}}=v)\)</span> in which <span class="math inline">\(\lbrace v_{i-1},v_i\rbrace\in E\)</span> for <span class="math inline">\(1\leq i\leq n\)</span>.</p>
-<aside class="notes">
-<p>dt. »Weg«</p>
-</aside>
-</section><section id="paths" class="slide level2">
-<h2>Paths</h2>
-<figure>
-<img src="res/Path.svg" alt="A Path" style="height:30.0%" /><figcaption>A Path</figcaption>
-</figure>
-<p>A <em><span class="math inline">\(u-v\)</span>-path</em> is a <span class="math inline">\(u-v\)</span>-walk, such that all vertices in the walk except <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> differ pairwise.</p>
-<aside class="notes">
-<p>dt. »Pfad«</p>
-</aside>
-</section><section id="cycles" class="slide level2">
-<h2>Cycles</h2>
-<figure>
-<img src="res/Cycle.svg" alt="A Cycle" style="height:30.0%" /><figcaption>A Cycle</figcaption>
-</figure>
-<p>An <span class="math inline">\(u-u\)</span>-path <span class="math inline">\((u=v_0,{v_1,\ldots, v_{n}}=u)\)</span> is called <em>cycle</em> if it contains more than <span class="math inline">\(2\)</span> vertices.</p>
+<!--
+## Walks
+
+![A 4 − 3-Walk](res/Walk.svg){ height=30% }
+
+A *$u-v$-walk* is a finite sequence $(u=v_0,\seq{v}=v)$ in which $\lbrace v_{i-1},v_i\rbrace\in E$ for $1\leq i\leq n$.
+
+<div class="notes">
+  dt. »Weg«
+</div>
+
+
+## Paths
+
+![A Path](res/Path.svg){ height=30% }
+
+A *$u-v$-path* is a $u-v$-walk, such that all vertices in the walk except $u$ and $v$ differ pairwise.
+
+<div class="notes">
+  dt. »Pfad«
+</div>
+
+## Cycles
+
+![A Cycle](res/Cycle.svg){ height=30% }
+
+An $u-u$-path $(u=v_0,\seq{v}=u)$ is called *cycle* if it contains more than $2$ vertices.
+-->
 </section><section id="graph-automorphisms" class="slide level2">
 <h2>Graph-Automorphisms</h2>
 <figure>
@@ -146,6 +154,9 @@
 <img src="res/Subtree.svg" alt="Subtree" style="height:30.0%" /><figcaption>Subtree</figcaption>
 </figure>
 <p>The <em>induced</em> subgraph of <span class="math inline">\({T^{(2)}}\)</span> containing all sequences that extend <span class="math inline">\(({b_1,\ldots, b_{n}}) \in {T^{(2)}}\)</span> is denoted by <span class="math inline">\({{T^{(2)}}_{({b_1,\ldots, b_{n}})}}\)</span>.</p>
+<aside class="notes">
+<p>Note that these subtrees are isomorphic to the full binary tree</p>
+</aside>
 </section><section id="levels-of-t2" class="slide level2">
 <h2>Levels of <span class="math inline">\({T^{(2)}}\)</span></h2>
 <figure>
@@ -160,8 +171,8 @@
 <h3 id="proposition">Proposition</h3>
 <p>Let <span class="math inline">\(\varphi\in{\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}\)</span>. Then</p>
 <ul>
-<li class="fragment"><span class="math inline">\(\varphi\)</span> fixes the root, i. e. <span class="math display">\[\varphi(\emptyset) = \emptyset\]</span> and</li>
-<li class="fragment"><span class="math inline">\(\varphi\)</span> fixes the levels, i. e. <span class="math display">\[\lvert \varphi(v)\rvert=\lvert v\rvert,\quad\forall v\in{V\left({T^{(2)}}\right)}.\]</span></li>
+<li class="fragment"><span class="math inline">\(\varphi\)</span> fixes the root, i. e., <span class="math display">\[\varphi(\emptyset) = \emptyset\]</span> and</li>
+<li class="fragment"><span class="math inline">\(\varphi\)</span> fixes the levels, i. e., <span class="math display">\[\lvert \varphi(v)\rvert=\lvert v\rvert,\quad\forall v\in{V\left({T^{(2)}}\right)}.\]</span></li>
 </ul>
 </section><section id="action-of-operatornamemathrmautleftt2right-on-mathrmlk" class="slide level2">
 <h2>Action of <span class="math inline">\({\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}{}\)</span> on <span class="math inline">\(\mathrm{L}(k)\)</span></h2>
@@ -204,7 +215,7 @@
 <span class="math inline">\(c := \psi^{-1}(a, d)\)</span> as well as<br />
 <span class="math inline">\(d := \psi^{-1}(\operatorname{id}, b).\)</span><br />
 </li>
-<li class="fragment">The <em>First Grigorchuk Group</em> is defined as <span class="math display">\[ \Gamma := \langle a, b, c, d \rangle \subseteq {\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}. \]</span></li>
+<li class="fragment">The <em>first Grigorchuk group</em> is defined as <span class="math display">\[ \Gamma := \langle a, b, c, d \rangle \subseteq {\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}. \]</span></li>
 </ul>
 </section><section id="automorphism-c" class="slide level2">
 <h2>Automorphism <span class="math inline">\(c\)</span></h2>
@@ -213,7 +224,7 @@
 <img src="res/AutomorphismC1.svg" alt="Automorphism c 1" style="height:30.0%" /><figcaption>Automorphism c 1</figcaption>
 </figure>
 <div class="fragment">
-<p><span class="math inline">\(a(1, 1, 0, 0) = (1, d(1, 0, 0))\)</span></p>
+<p><span class="math inline">\(c(1, 1, 0, 0) = (1, d(1, 0, 0))\)</span></p>
 </div>
 </section><section id="automorphism-c-1" class="slide level2">
 <h2>Automorphism <span class="math inline">\(c\)</span></h2>
@@ -221,21 +232,21 @@
 <figure>
 <img src="res/AutomorphismC2.svg" alt="Automorphism c 2" style="height:30.0%" /><figcaption>Automorphism c 2</figcaption>
 </figure>
-<p><span class="math inline">\(a(1, 1, 0, 0) = (1, d(1, 0, 0)) = (1, 1, b(0, 0))\)</span></p>
+<p><span class="math inline">\(c(1, 1, 0, 0) = (1, d(1, 0, 0)) = (1, 1, b(0, 0))\)</span></p>
 </section><section id="automorphism-c-2" class="slide level2">
 <h2>Automorphism <span class="math inline">\(c\)</span></h2>
 <p><span class="math inline">\(\psi(c) = (a, d)\)</span>, <span class="math inline">\(\psi(d) = (\operatorname{id}, b)\)</span> and <span class="math inline">\(\psi(b) = (a, c)\)</span></p>
 <figure>
 <img src="res/AutomorphismC3.svg" alt="Automorphism c 3" style="height:30.0%" /><figcaption>Automorphism c 3</figcaption>
 </figure>
-<p><span class="math inline">\(a(1, 1, 0, 0) = (1, d(1, 0, 0)) = (1, 1, b(0, 0)) = (1, 1, 0, a(0))\)</span></p>
+<p><span class="math inline">\(c(1, 1, 0, 0) = (1, d(1, 0, 0)) = (1, 1, b(0, 0)) = (1, 1, 0, a(0))\)</span></p>
 </section><section id="automorphism-c-3" class="slide level2">
 <h2>Automorphism <span class="math inline">\(c\)</span></h2>
 <p><span class="math inline">\(\psi(c) = (a, d)\)</span>, <span class="math inline">\(\psi(d) = (\operatorname{id}, b)\)</span> and <span class="math inline">\(\psi(b) = (a, c)\)</span></p>
 <figure>
 <img src="res/AutomorphismC4.svg" alt="Automorphism c 4" style="height:30.0%" /><figcaption>Automorphism c 4</figcaption>
 </figure>
-<p><span class="math inline">\(a(1, 1, 0, 0) = (1, d(1, 0, 0)) = (1, 1, b(0, 0)) = (1, 1, 0, a(0)) = (1, 1, 0, 1)\)</span></p>
+<p><span class="math inline">\(c(1, 1, 0, 0) = (1, d(1, 0, 0)) = (1, 1, b(0, 0)) = (1, 1, 0, a(0)) = (1, 1, 0, 1)\)</span></p>
 </section><section id="generators-of-gamma" class="slide level2">
 <h2>Generators of <span class="math inline">\(\Gamma\)</span></h2>
 <figure>
@@ -245,7 +256,7 @@
 <h2>Identities of the Generators</h2>
 <h3 id="proposition-1">Proposition</h3>
 <ul>
-<li class="fragment">The generators are of order <span class="math inline">\(2\)</span>, i. e. <span class="math display">\[ a^2 = b^2 = c^2 = d^2. \]</span></li>
+<li class="fragment">The generators are of order <span class="math inline">\(2\)</span>, i. e., <span class="math display">\[ a^2 = b^2 = c^2 = d^2. \]</span></li>
 <li class="fragment">Three generators suffice since<br />
 <span class="math inline">\(bc = cb = d, bd = db = c\)</span> and <span class="math inline">\(cd = dc = b\)</span> </li>
 </ul>
@@ -276,11 +287,14 @@
 </figure>
 </div>
 </div>
-</section><section id="stabiliser-groups-revisited-1" class="slide level2">
-<h2>Stabiliser Groups Revisited</h2>
+</section><section class="slide level2">
+
 <h3 id="lemma-2">Lemma</h3>
 <p>Let <span class="math inline">\(\psi\colon{\mathrm{St}_{}(1)}\to{\operatorname{\mathrm{Aut}}\left({T^{(2)}}\right)}^2\)</span> be defined as before. Then</p>
 <p><span class="math display">\[ \psi(aba) = (c, a), \]</span> <span class="math display">\[ \psi(aca) = (d, a), \]</span> <span class="math display">\[ \psi(ada) = (b, \operatorname{id}). \]</span></p>
+<aside class="notes">
+<p>Note that this implies that a /∈ St_Γ(1)</p>
+</aside>
 </section><section id="gamma-is-infinite" class="slide level2">
 <h2><span class="math inline">\(\Gamma\)</span> is Infinite</h2>
 <h3 id="theorem">Theorem</h3>
@@ -299,7 +313,7 @@
 </section><section id="gamma-is-periodic" class="slide level2">
 <h2><span class="math inline">\(\Gamma\)</span> is periodic</h2>
 <h3 id="theorem-1">Theorem</h3>
-<p>The First Grigorchuk Group <span class="math inline">\(\Gamma\)</span> is a <span class="math inline">\(2\)</span>-group, i. e. for each automorphism <span class="math inline">\(\gamma\in\Gamma\)</span> there exists a non-negative integer <span class="math inline">\(n\)</span> such that</p>
+<p>The first Grigorchuk group <span class="math inline">\(\Gamma\)</span> is a <span class="math inline">\(2\)</span>-group, i. e., for each automorphism <span class="math inline">\(\gamma\in\Gamma\)</span> there exists a non-negative integer <span class="math inline">\(n\)</span> such that</p>
 <p><span class="math display">\[ \gamma^{2^n}=\operatorname{id}. \]</span></p>
 </section><section id="proof-by-induction-on-the-length" class="slide level2">
 <h2>Proof by Induction on the Length</h2>
@@ -330,20 +344,18 @@
 </div>
 </section><section id="proof-case-2.1" class="slide level2">
 <h2>Proof – Case 2.1</h2>
-<p>If <span class="math inline">\(l\)</span> is <em>even</em> then the word representing <span class="math inline">\(\gamma\)</span> contains an even number of letters ‘<span class="math inline">\(a\)</span>’. Hence, <span class="math display">\[ \gamma \in {\mathrm{St}_{\Gamma}(1)}. \]</span></p>
+<p>If <span class="math inline">\(l\)</span> is <em>even</em> then in the word representing <span class="math inline">\(\gamma\)</span> an even number of letters ‘<span class="math inline">\(a\)</span>’ is contained. Hence, <span class="math display">\[ \gamma \in {\mathrm{St}_{\Gamma}(1)}. \]</span></p>
 <div class="fragment">
 <p>We have</p>
 <p><span class="math display">\[ (\gamma_1, \gamma_2) := \psi(\gamma) = \psi(au_1 a u_2 a\ldots u_l)
    =\psi(au_1 a)\psi(u_2)\ldots\psi(au_{l-1}a)\psi(u_l) \]</span></p>
-</div>
-<div class="fragment">
 <p>and therefore <span class="math inline">\(\ell(\gamma_1), \ell(\gamma_2) \leq l\)</span>.</p>
 </div>
 </section><section id="proof-case-2.2" class="slide level2">
 <h2>Proof – Case 2.2</h2>
 <p>If <span class="math inline">\(l\)</span> is <em>odd</em> then <span class="math inline">\(\gamma^2 \in {\mathrm{St}_{\Gamma}(1)}\)</span>.</p>
 <div class="fragment">
-<p>Therefore, <span class="math display">\[ (\alpha,\beta) := \psi(\gamma^2)=\psi(au_1 a u_2 a\ldots u_lau_1 a u_2 a\ldots u_l)=\psi(au_1 a u_2 a\ldots u_l)=\]</span> <span class="math display">\[=\psi(au_1 a)\psi(u_2)\ldots\psi(au_{l-2}a)\psi(u_{l-1})\psi(au_l a)\psi(u_1)\ldots\psi(au_{l-1}a)\psi(u_l)\]</span></p>
+<p>Therefore, <span class="math display">\[ (\alpha,\beta) := \psi(\gamma^2)=\psi(au_1 a u_2 a\ldots u_lau_1 a u_2 a\ldots u_l)=\]</span> <span class="math display">\[=\psi(au_1 a)\psi(u_2)\ldots\psi(au_{l-2}a)\psi(u_{l-1})\psi(au_l a)\psi(u_1)\ldots\psi(au_{l-1}a)\psi(u_l)\]</span></p>
 </div>
 </section><section id="proof-case-2.2-1" class="slide level2">
 <h2>Proof – Case 2.2</h2>
@@ -353,15 +365,15 @@
 <li class="fragment">If neither is the case then <span class="math inline">\(\gamma \in \langle a, b \rangle \cong \operatorname{D}_{16}\)</span>.</li>
 </ol>
 </section><section id="as-a-consequence" class="slide level2">
-<h2>As a Consequence …</h2>
-<p>the First Grigorchuk Group is</p>
+<h2>As a Consequence, …</h2>
+<p>the first Grigorchuk group is</p>
 <ul>
 <li class="fragment">finitely generated,</li>
 <li class="fragment">periodic as well as</li>
 <li class="fragment">infinite</li>
 </ul>
 <div class="fragment">
-<p>and thus poses a counterexample to the <em>Unbounded Burnside Problem.</em></p>
+<p>and thus poses a counterexample to the <em>unbounded Burnside problem.</em></p>
 </div>
 </section></section>
 <section><section id="growth-of-the-first-grigorchuk-group" class="titleslide slide level1"><h1>Growth of the First Grigorchuk Group</h1></section><section id="growth-of-the-orders-of-automorphisms" class="slide level2">
@@ -384,7 +396,7 @@
 </section><section id="upper-bounds-for-the-growth-of-gamma" class="slide level2">
 <h2>Upper Bounds for the Growth of <span class="math inline">\(\Gamma\)</span></h2>
 <h3 id="corollary">Corollary</h3>
-<p>The growth of <span class="math inline">\(\Gamma\)</span> is bound by an exponential function. More precisely</p>
+<p>The growth of <span class="math inline">\(\Gamma\)</span> is bound by an exponential function. More precisely,</p>
 <p><span class="math display">\[ o(k)\leq 2^{\frac{1}{2}k+3}. \]</span></p>
 <div class="fragment">
 <div fragment="true">
@@ -446,6 +458,10 @@
 <h3 id="theorem-2">Theorem</h3>
 <p>Let <span class="math inline">\(n\)</span> be a positive integer. There exists an automorphism <span class="math inline">\(\gamma_{n}\in K\subseteq\Gamma\)</span>, such that</p>
 <p><span class="math display">\[\operatorname{ord}(\gamma)\geq 2^n.\]</span></p>
+</section></section>
+<section><section id="thank-you-for-your-attention" class="titleslide slide level1"><h1>Thank you for your attention</h1></section><section id="history-and-variants" class="slide level2">
+<h2>History and Variants</h2>
+<p>For a brief exposition on variants and the history of Burnside's problems please visit <a href="https://tim6her.github.io/FirstGrigorchukGroup/history.html" class="uri">https://tim6her.github.io/FirstGrigorchukGroup/history.html</a>. (German)</p>
 </section><section id="references" class="slide level2 unnumbered">
 <h2>References</h2>
 <div id="refs" class="references">
