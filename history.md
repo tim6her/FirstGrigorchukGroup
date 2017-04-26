@@ -3,6 +3,9 @@ title: Weiterführendes zu den Burnside-Problemen
 subtitle: Geschichte und Varianten
 author: Tim B. Herbstrith
 date: 28 April 2017
+keywords: [Burnside's Problems, Group Theory]
+description: >
+  This talk discusses the history and varinats of Burnside's problems
 ---
 
 1902:
