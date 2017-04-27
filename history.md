@@ -17,7 +17,7 @@ description: >
     > theory of discontinuous groups
 
     das *Unbounded Burnside Problem* auf.\
-    Da er das Problem nicht lösen kann, fragt Burnside die “einfachere”
+    Da er das Problem nicht lösen kann, fragt Burnside die „einfachere“
     Frage
 
     > Ist jede endlich erzeugte Gruppe mit\
