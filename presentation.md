@@ -30,7 +30,7 @@ $$a^n = e.$$
    is periodic.
 </div>
 
-## Bounded Burnside Problem
+## Unbounded Burnside Problem
 
 > A still undecided problem in the theory of discontinuous groups is whether the order of a group may be not finite while the order of every operation it contains is finite.  
 > — @burnside1902
@@ -50,7 +50,7 @@ Is every finitely generated, periodic group finite?
 
 ## Special Case: Abelian Groups
 
-If the group $G$ is assumed to be abelian then the answer to [BBP][Bounded Burnside Problem] is affirmative since
+If the group $G$ is assumed to be abelian then the answer to [UBP][Unbounded Burnside Problem] is affirmative since
 $$ G\cong\Z^n \oplus \Z_{q_1} \oplus \cdots \oplus \Z_{q_t} $$
 by the [fundamental theorem of finitely generated abelian groups.](https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Classification)
 
@@ -72,7 +72,7 @@ Let $\F_2$ be the field of order $2$. Then the polynomials $\mathbb F_2[X]$ over
 </div>
 
 
-## Unbounded Burnside Problem
+## Bounded Burnside Problem
 
 > Let $\seq[m]{A}$ be a set of independent operations finite in number, and suppose that they satisfy the system of relations given by
 > $$S^n=1$$
@@ -88,7 +88,7 @@ If the group is of exponent $2$ then it is abelian since
 
 $$ ab = (ab)^{-1} = ba. $$
 
-The answer to [UBP][Unbounded Burnside Problem] is affirmative by the [fundamental theorem of finitely generated abelian groups.](https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Classification)
+The answer to [BBP][Bounded Burnside Problem] is affirmative by the [fundamental theorem of finitely generated abelian groups.](https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Classification)
 
 
 
