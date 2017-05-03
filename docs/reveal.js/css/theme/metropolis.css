@@ -78,6 +78,7 @@ body.dark .reveal h6 {
     font-size: 1.77em;
     text-transform: lowercase;
     letter-spacing: 0.2em;
+    font-variant-ligatures: none;
 }
 
 .reveal h2 {
@@ -87,12 +88,14 @@ body.dark .reveal h6 {
     border-bottom: 2px solid #33474b;
     text-transform: lowercase;
     letter-spacing: 0.2em;
+    font-variant-ligatures: none;
 }
 
 .reveal h3 {
     font-size: .95em;
     text-transform: lowercase;
     letter-spacing: 0.2em;
+    font-variant-ligatures: none;
     }
 
 .reveal h4 {
@@ -109,6 +112,7 @@ p.subtitle {
     text-transform: lowercase;
     letter-spacing: 0.2em;
     border-bottom: 2px solid #AE1C3E;
+    font-variant-ligatures: none;
 }
 
 p.author, p.date {
@@ -121,6 +125,7 @@ h1.title {
     margin-bottom: 5px;
     text-transform: lowercase;
     letter-spacing: 0.2em;
+    font-variant-ligatures: none;
 }
 
 .level2 h1 {
